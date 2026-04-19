@@ -15,17 +15,9 @@ const SECURITY_HEADERS = [
 ];
 
 const nextConfig: NextConfig = {
-  async rewrites() {
-    // Serve the Claude Design static landing page at the site root.
-    // The file lives at public/home.html and references its own assets
-    // (styles.css, app.js, content.js, fonts/, images/) directly from public/.
-    return [
-      {
-        source: "/",
-        destination: "/home.html",
-      },
-    ];
-  },
+  // Root rewrite ("/" → "/home.html") lives in vercel.json so it runs at
+  // Vercel's edge before Next.js routing — Next's own rewrites for "/"
+  // lose to app/layout.tsx during file-system routing and return 404.
   async headers() {
     return [
       {
