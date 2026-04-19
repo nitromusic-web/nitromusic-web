@@ -15,9 +15,16 @@ const SECURITY_HEADERS = [
 ];
 
 const nextConfig: NextConfig = {
-  // Root rewrite ("/" → "/home.html") lives in vercel.json so it runs at
-  // Vercel's edge before Next.js routing — Next's own rewrites for "/"
-  // lose to app/layout.tsx during file-system routing and return 404.
+  async rewrites() {
+    // `beforeFiles` runs before Next.js file-system routing AND before the
+    // /api routes — so "/" is mapped to the Claude Design static file while
+    // every other path (including /api/contact) keeps Next.js routing.
+    return {
+      beforeFiles: [{ source: "/", destination: "/home.html" }],
+      afterFiles: [],
+      fallback: [],
+    };
+  },
   async headers() {
     return [
       {
