@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1280">
+<title>NitroMusic — Signature short-form systems for music</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#top" class="nav-logo"><img src="images/logo.png" alt="NitroMusic"></a>
+  <div class="nav-links">
+    <a href="#services" class="active" data-n="services">서비스</a>
+    <a href="#network" data-n="network">네트워크</a>
+    <a href="#cases" data-n="cases">캠페인</a>
+    <a href="#pilot" data-n="pilot">파일럿</a>
+    <a href="#column" data-n="column">칼럼</a>
+    <a href="#faq" data-n="faq">FAQ</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button data-lang="kr" class="on">KR</button>
+      <button data-lang="en">EN</button>
+    </div>
+    <a href="#contact" class="btn-cta" data-n="contact-btn">문의하기 <span class="arrow">→</span></a>
+  </div>
+</nav>
+
+<!-- SECTION INDICATOR -->
+<aside class="section-indicator">
+  <a href="#top" data-label="HERO" class="active"></a>
+  <a href="#services" data-label="SERVICES"></a>
+  <a href="#network" data-label="NETWORK"></a>
+  <a href="#cases" data-label="CAMPAIGNS"></a>
+  <a href="#aggregate" data-label="AGGREGATE"></a>
+  <a href="#pilot" data-label="PILOT"></a>
+  <a href="#why" data-label="WHY"></a>
+  <a href="#column" data-label="COLUMN"></a>
+  <a href="#faq" data-label="FAQ"></a>
+  <a href="#contact" data-label="CONTACT"></a>
+</aside>
+
+<!-- HERO -->
+<section id="top" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-noise"></div>
+
+  <div class="hero-inner">
+    <div class="hero-meta-top">
+      <div class="pill" id="hero-status-live"><span class="dot"></span> LIVE · 2026 Q2</div>
+      <div id="hero-date">SEOUL / 26.04</div>
+    </div>
+
+    <div class="hero-title-block reveal">
+      <div class="hero-kicker" id="hero-kicker">NITRO MUSIC × KBK CONSULTING</div>
+      <h1 class="hero-title">
+        <span id="hero-title-1">음원을,</span><br>
+        <span class="line2" id="hero-title-2">터뜨린다.</span>
+      </h1>
+      <p class="hero-sub" id="hero-sub">...</p>
+      <div class="hero-ctas">
+        <a href="#contact" class="btn-primary" id="hero-cta-primary">파일럿 상담 예약 <span class="arrow">→</span></a>
+        <a href="#cases" class="btn-ghost" id="hero-cta-secondary">성과 사례 보기 <span>↓</span></a>
+      </div>
+    </div>
+
+    <div class="hero-foot">
+      <div class="item"><div class="k" id="hero-m1-k">23.5M<span class="unit">+</span></div><div class="l" id="hero-m1-l">Total views / 6 months</div></div>
+      <div class="item"><div class="k" id="hero-m2-k">163</div><div class="l" id="hero-m2-l">Campaign posts</div></div>
+      <div class="item"><div class="k" id="hero-m3-k">100M<span class="unit">+</span></div><div class="l" id="hero-m3-l">META ad spend (KRW)</div></div>
+      <div class="item"><div class="k" id="hero-m4-k">15+</div><div class="l" id="hero-m4-l">Owned channels</div></div>
+    </div>
+  </div>
+
+  <div class="hero-variant-switch">
+    <span>HERO</span>
+    <button data-hv="1" class="on">01</button>
+    <button data-hv="2">02</button>
+    <button data-hv="3">03</button>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-track"></div>
+</div>
+
+<!-- CLIENT LOGO WALL -->
+<section class="logo-wall">
+  <div class="logo-wall-inner reveal">
+    <div>
+      <h3 id="cli-eyebrow">TRUSTED BY</h3>
+      <div class="title-big" id="cli-title">함께한 고객.</div>
+    </div>
+    <div class="logos" id="cli-logos"></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section-head reveal">
+    <div class="eyebrow" id="svc-eyebrow">WHAT WE DO</div>
+    <h2 class="h-lg kr" id="svc-title">숏폼 단포맷 시스템, 처음부터 끝까지.</h2>
+    <p class="lead" id="svc-sub" style="margin-top: 24px;">...</p>
+  </div>
+  <div class="service-grid reveal" id="svc-grid"></div>
+</section>
+
+<!-- NETWORK -->
+<section id="network" class="network-section">
+  <div class="section-head reveal">
+    <div class="eyebrow" id="net-eyebrow">NETWORK & INFRASTRUCTURE</div>
+    <h2 class="h-lg" id="net-title">Major-Grade Network.</h2>
+    <p class="lead" id="net-sub" style="margin-top: 20px;">...</p>
+  </div>
+  <div class="stat-grid reveal" id="net-stats"></div>
+  <div class="platform-row reveal">
+    <div class="p-label" id="net-platform-label">RUNNING ON</div>
+    <div class="p-list" id="net-platform-list"></div>
+  </div>
+</section>
+
+<!-- CASES -->
+<section id="cases" class="case-section">
+  <div class="section-head reveal">
+    <div class="eyebrow" id="case-eyebrow">CAMPAIGNS / 2025–2026</div>
+    <h2 class="h-lg kr" id="case-title">장르와 레이블을 가리지 않는<br>검증된 실행력.</h2>
+    <p style="margin-top: 16px; color: var(--text-mute); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em;" id="case-sub">CLICK TO EXPAND</p>
+  </div>
+  <div class="case-list reveal" id="case-list"></div>
+</section>
+
+<!-- AGGREGATE -->
+<section id="aggregate" class="aggregate-section">
+  <div class="section-head reveal">
+    <div class="eyebrow" id="agg-eyebrow">AGGREGATE PERFORMANCE / 6 MONTHS</div>
+    <h2 class="h-lg kr" id="agg-title">6개월, 4개 메이저 캠페인, 163건.</h2>
+  </div>
+  <div class="aggregate">
+    <div class="big-num reveal"><span class="num" data-count="23.5M">23.5M</span><span class="plus">+</span></div>
+    <div class="reveal">
+      <p class="caption" id="agg-caption"></p>
+      <div class="breakdown" id="agg-breakdown"></div>
+    </div>
+  </div>
+</section>
+
+<!-- PILOT -->
+<section id="pilot" class="pilot-section">
+  <div class="section-head reveal">
+    <div class="eyebrow" id="pilot-eyebrow">4-WEEK PILOT</div>
+    <h2 class="h-lg kr" id="pilot-title">처음 만나는 팀과는, 4주 파일럿으로.</h2>
+    <p class="lead" id="pilot-sub" style="margin-top: 20px;">...</p>
+  </div>
+  <div class="pilot-grid reveal" id="pilot-grid"></div>
+  <div class="pilot-deliverables reveal">
+    <div class="k" id="pilot-deliv-k">WEEKLY DELIVERABLES</div>
+    <div class="items" id="pilot-deliv-items"></div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="why-section">
+  <div class="why-grid reveal">
+    <div class="why-lead">
+      <div class="eyebrow" id="why-eyebrow">WHY NITROMUSIC</div>
+      <h2 id="why-title" style="margin-top: 20px;"></h2>
+      <p id="why-sub"></p>
+    </div>
+    <div class="why-items" id="why-items"></div>
+  </div>
+</section>
+
+<!-- COLUMN -->
+<section id="column" class="column-section">
+  <div class="section-head reveal">
+    <div class="eyebrow" id="col-eyebrow">COLUMN</div>
+    <h2 class="h-lg" id="col-title">Short-form Notes.</h2>
+    <p class="lead" id="col-sub" style="margin-top: 16px;">...</p>
+  </div>
+  <div class="col-filters reveal" id="col-filters"></div>
+  <div class="col-layout reveal">
+    <div class="col-top5">
+      <div class="head"><h3 id="col-top5-title">Nitro 인기 Top 5</h3><div class="month" id="col-top5-sub"></div></div>
+      <div id="col-top5-list"></div>
+    </div>
+    <div class="col-new">
+      <div class="head"><h3><span class="new-pill">NEW</span><span id="col-new-title">새로 발행된 마케팅 콘텐츠</span></h3><a href="#" class="more" id="col-new-more">전체 보기 →</a></div>
+      <div class="col-new-grid" id="col-new-grid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="faq-section">
+  <div class="faq-grid">
+    <div class="reveal">
+      <div class="eyebrow" id="faq-eyebrow">FAQ</div>
+      <h2 class="h-lg kr" id="faq-title" style="margin-top: 20px;">자주 묻는 질문.</h2>
+      <p class="lead" id="faq-sub" style="margin-top: 20px;">...</p>
+    </div>
+    <div class="faq-list reveal" id="faq-list"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div class="contact-left reveal">
+      <div class="eyebrow" id="co-eyebrow">LET'S TALK</div>
+      <h2 id="co-title" style="margin-top: 20px;"></h2>
+      <p id="co-sub"></p>
+      <div class="contact-channels" id="co-channels"></div>
+    </div>
+    <form class="contact-form reveal" onsubmit="event.preventDefault(); this.innerHTML='<div style=\'text-align:center; padding: 60px 20px;\'><div style=\'font-family: var(--font-display); font-size: 40px; color: var(--red); font-weight: 500;\'>✓</div><div style=\'font-size: 18px; font-weight: 600; margin-top: 16px;\'>요청서가 제출되었습니다.</div><div style=\'color: var(--text-dim); margin-top: 8px; font-size: 14px;\'>영업일 기준 2일 내에 회신드립니다.</div></div>';">
+      <div class="form-head">
+        <h3 id="co-form-head">캠페인 요청서</h3>
+        <div class="seq" id="co-form-seq">FORM / 01</div>
+      </div>
+      <div id="co-form"></div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="foot-logo">
+      <a href="#top" class="nav-logo"><img src="images/logo.png" alt="NitroMusic" style="height:32px;"></a>
+      <p id="foot-tag"></p>
+    </div>
+    <div>
+      <h4 id="foot-col1-h">서비스</h4>
+      <ul id="foot-col1-items"></ul>
+    </div>
+    <div>
+      <h4 id="foot-col2-h">회사</h4>
+      <ul id="foot-col2-items"></ul>
+    </div>
+    <div>
+      <h4 id="foot-col3-h">리소스</h4>
+      <ul id="foot-col3-items"></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span id="foot-copy">© 2026 KBK CONSULTING · NITRO MUSIC</span>
+    <span id="foot-meta">SEOUL / BUSAN</span>
+  </div>
+</footer>
+
+<script src="content.js?v=19"></script>
+<script src="app.js?v=19"></script>
+</body>
+</html>
