@@ -878,7 +878,7 @@ section#services {
 section#network {
   background-image:
     linear-gradient(rgba(10,10,11,0.64), rgba(10,10,11,0.64)),
-    url('images/bg/section-bg-2.png');
+    url('images/bg/section-bg-2.png?v=2');
 }
 section#cases {
   background-image:
