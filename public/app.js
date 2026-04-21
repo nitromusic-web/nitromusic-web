@@ -176,10 +176,11 @@
     const half = Math.ceil(cl.logos.length / 2);
     const topHtml = cl.logos.slice(0, half).map(renderLogo).join('');
     const bottomHtml = cl.logos.slice(half).map(renderLogo).join('');
-    // Duplicate each row for seamless marquee loop
+    // Triplicate each row — 넓은 모니터에서도 트랙이 화면 폭보다 길게 유지되어
+    // 공백(여백)이 드러나지 않고 끊김 없이 반복되도록.
     $('#cli-logos').innerHTML = `
-      <div class="logo-track">${topHtml}${topHtml}</div>
-      <div class="logo-track logo-track-reverse">${bottomHtml}${bottomHtml}</div>
+      <div class="logo-track">${topHtml}${topHtml}${topHtml}</div>
+      <div class="logo-track logo-track-reverse">${bottomHtml}${bottomHtml}${bottomHtml}</div>
     `;
 
     // Column
