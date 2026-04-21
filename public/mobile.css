@@ -29,7 +29,7 @@
   }
   .nav-logo img { height: 28px; }
   .nav-links { display: none; }
-  .nav-right { gap: 8px; }
+  .nav-right { gap: 13px; }
 
   /* 모바일 nav 순서: [문의하기] [KR/EN] [햄버거] */
   .btn-cta { order: 1; }
@@ -427,13 +427,160 @@
   .case-detail .metrics .m .mv { font-size: 15px; }
   .case-detail .metrics .m .ml { font-size: 9px; letter-spacing: 0.08em; }
 
+  /* ---- AGGREGATE 모바일 ---- */
+  .aggregate {
+    gap: 28px;
+  }
+  .aggregate .big-num {
+    font-size: 88px;
+    line-height: 0.9;
+    align-self: center;
+  }
+  .aggregate .caption {
+    font-size: 15px;
+    line-height: 1.55;
+    margin-bottom: 20px;
+  }
+  .aggregate .breakdown .b {
+    padding: 16px 14px;
+  }
+  .aggregate .breakdown .b .bv { font-size: 22px; }
+  .aggregate .breakdown .b .bl { font-size: 10px; margin-top: 4px; letter-spacing: 0.1em; }
+
+  /* ---- PILOT 2×2 (준비·검증 / 확산·정착) ---- */
+  .pilot-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .pilot-step {
+    min-height: 180px;
+    padding: 22px 16px 18px;
+  }
+  .pilot-step .title {
+    font-size: 20px;
+    margin-top: 12px;
+    margin-bottom: 14px;
+  }
+  .pilot-step .wk { font-size: 9px; letter-spacing: 0.16em; }
+  .pilot-step .desc { font-size: 12px; line-height: 1.5; }
+  .pilot-step .arrow-line { display: none; }
+  .pilot-deliverables {
+    margin-top: 24px;
+    padding: 18px 18px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  /* ---- WHY 섹션 모바일 숨김 (내용이 길어 모바일 UX 저하) ---- */
+  section#why { display: none; }
+
   /* ---- COLUMN 섹션 ---- */
-  /* 일반 칼럼은 2개만 보이게 */
+  /* AUDIENCE 필터 모바일 제거 */
+  .col-filters { display: none; }
+
+  /* Top 5 썸네일·텍스트 크기 조정, 제목 강조 */
+  .col-top5 .head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    margin-bottom: 18px;
+  }
+  .col-top5 .head h3 { font-size: 22px; }
+  .col-top5 .head .month { font-size: 11px; }
+
+  .top5-item {
+    padding: 14px 4px;
+    gap: 12px;
+  }
+  .top5-item .rank {
+    font-size: 28px;
+    width: 28px;
+    flex-shrink: 0;
+  }
+  .top5-item .thumb {
+    width: 68px;
+    height: 68px;
+    flex-shrink: 0;
+    border-radius: 4px;
+  }
+  .top5-item .body { min-width: 0; }
+  .top5-item .body .cat {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+  .top5-item .body .t {
+    font-size: 14px;
+    line-height: 1.4;
+    color: var(--text);
+    font-weight: 700;
+  }
+  .top5-item .body .t em {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .top5-item .views {
+    font-size: 11px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+  .top5-item .views .vv {
+    font-size: 13px;
+  }
+
+  /* 일반 칼럼 헤더 폰트 축소 (한 줄 정렬) */
+  .col-new .head {
+    gap: 10px;
+  }
+  .col-new .head h3 {
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .col-new .head h3 .new-pill {
+    font-size: 9px;
+    padding: 2px 6px;
+  }
+  .col-new .head .more {
+    font-size: 11px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* 일반 칼럼 2개만 · 중앙 정렬 · 박스 확대 */
+  .col-new-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
   .col-new-grid > *:nth-child(n+3) {
     display: none;
   }
-  /* col-filters는 mobile.js에서 Top5 뒤로 DOM 이동. 시각 간격만 조정 */
-  .col-filters {
-    margin-top: 32px;
+  .col-new-card .thumb {
+    aspect-ratio: 16/10;
+    padding: 22px;
+  }
+  .col-new-card .thumb .t-text {
+    font-size: 22px;
+  }
+  .col-new-card .body {
+    padding: 16px 18px 18px;
+    gap: 8px;
+  }
+  .col-new-card h4 { font-size: 16px; }
+  .col-new-card .cat { font-size: 11px; }
+  /* 메타는 가로 한 줄 유지 (세로로 잘리지 않게) */
+  .col-new-card .meta {
+    flex-wrap: nowrap;
+    font-size: 11px;
+    gap: 6px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .col-new-card .meta > * {
+    flex-shrink: 0;
   }
 }

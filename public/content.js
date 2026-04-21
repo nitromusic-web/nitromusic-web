@@ -158,8 +158,8 @@ window.NITRO_I18N = {
       ]
     },
     aggregate: {
-      eyebrow: "AGGREGATE PERFORMANCE / 6 MONTHS",
-      title: "6개월, 4개 메이저 캠페인, 163건.",
+      eyebrow: "AGGREGATE PERFORMANCE",
+      title: "4개 메이저 캠페인, 163건.",
       caption: "단기간 내 <b>23,511,262 뷰</b>를 만든 실전 데이터. 장르와 레이블의 프로파일이 달라도, 포맷 규율 하나로 재현된 성과입니다.",
       breakdown: [
         { v: "623,847", l: "TOTAL LIKES" },
@@ -380,8 +380,8 @@ window.NITRO_I18N = {
       ]
     },
     aggregate: {
-      eyebrow: "AGGREGATE PERFORMANCE / 6 MONTHS",
-      title: "6 months, 4 major campaigns, 163 posts.",
+      eyebrow: "AGGREGATE PERFORMANCE",
+      title: "4 major campaigns, 163 posts.",
       caption: "<b>23,511,262 views</b> generated in six months. Different genres, different label profiles — reproducible under a single format discipline.",
       breakdown: [
         { v: "623,847", l: "TOTAL LIKES" },
