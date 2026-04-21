@@ -419,6 +419,10 @@ section { padding: 120px var(--pad); position: relative; }
 .stat .v {
   font-family: var(--font-display); font-size: 72px; font-weight: 500; line-height: 1;
   color: var(--red); letter-spacing: -0.035em;
+  text-shadow:
+    0 0 26px rgba(230,57,70,0.45),
+    0 0 56px rgba(230,57,70,0.22);
+  animation: red-glow 3.2s ease-in-out infinite;
 }
 .stat .v .unit { font-size: 40px; margin-left: 4px;}
 .stat .l {
@@ -428,7 +432,7 @@ section { padding: 120px var(--pad); position: relative; }
 .stat .d { font-size: 14px; color: var(--text); margin-top: 8px; line-height: 1.45;}
 
 .platform-row {
-  max-width: var(--maxw); margin: 48px auto 0; display: flex; gap: 96px; align-items: center;
+  max-width: var(--maxw); margin: 84px auto 0; display: flex; gap: 96px; align-items: center;
   flex-wrap: wrap;
 }
 .platform-row .p-label {
@@ -639,7 +643,9 @@ section { padding: 120px var(--pad); position: relative; }
 /* YG Plus 전용: 원본 캔버스에 여백이 많아 PLUS 텍스트가 작게 보이는 문제 —
    해당 셀 이미지를 확대해 YG 심볼과 PLUS 텍스트가 모두 선명하게 읽히도록. */
 .logo-wall .logo-cell[title="YG Plus"] img {
-  transform: scale(1.4);
+  /* 새 이미지(image 1061)는 여백이 적어 원본 비율로 contain되어 전체 표시됨.
+     교체 후 셀 안쪽 여백 살짝 확보 목적의 미세 축소. */
+  transform: scale(0.95);
   transform-origin: center center;
 }
 .logo-wall .logo-text { font-size: 11px; color: var(--text-mute); letter-spacing: 0.05em; text-align: center; font-family: var(--font-mono);}
@@ -836,6 +842,27 @@ section { padding: 120px var(--pad); position: relative; }
 }
 .faq-item.open .faq-a { max-height: 300px; padding-top: 16px;}
 
+/* FAQ 타이틀: 크기 증가 + 은은한 빨간 글로우 (느린 펄스) */
+#faq-title {
+  font-size: clamp(52px, 5.5vw, 84px);
+  text-shadow:
+    0 0 14px rgba(230,57,70,0.22),
+    0 0 34px rgba(230,57,70,0.10);
+  animation: faq-soft-glow 4.2s ease-in-out infinite;
+}
+@keyframes faq-soft-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 12px rgba(230,57,70,0.16),
+      0 0 28px rgba(230,57,70,0.06);
+  }
+  50% {
+    text-shadow:
+      0 0 20px rgba(230,57,70,0.34),
+      0 0 44px rgba(230,57,70,0.16);
+  }
+}
+
 /* =============== CONTACT =============== */
 .contact-section {
   background: #0a0a0b;
@@ -1014,6 +1041,7 @@ section#contact {
   align-items: center;
   width: max-content;
   animation: platform-marquee 28s linear infinite;
+  transform: translateY(10px);
 }
 .platform-row:hover .p-track { animation-play-state: paused; }
 @keyframes platform-marquee {
