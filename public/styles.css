@@ -761,7 +761,7 @@ section { padding: 120px var(--pad); position: relative; }
   display: grid; grid-template-columns: 1fr 1.2fr; gap: 96px;
 }
 .contact-left h2 { font-family: var(--font-kr); font-weight: 800; font-size: clamp(48px, 5.5vw, 72px); letter-spacing: -0.035em; line-height: 1.02;}
-.contact-left h2 em { font-style: normal; color: var(--red); font-family: var(--font-display); font-weight: 500;}
+.contact-left h2 em { font-style: normal; color: var(--red); font-family: var(--font-display); font-weight: 500; display: block;}
 .contact-left p { font-size: 17px; color: var(--text-dim); margin-top: 24px; line-height: 1.6; max-width: 440px;}
 .contact-channels { margin-top: 48px; display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--line);}
 .contact-channels a {

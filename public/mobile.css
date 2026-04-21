@@ -476,8 +476,21 @@
   section#why { display: none; }
 
   /* ---- COLUMN 섹션 ---- */
-  /* AUDIENCE 필터 모바일 제거 */
-  .col-filters { display: none; }
+  /* 모바일: col-layout을 1열 스택으로 재구성.
+     mobile.js가 필터를 col-layout 안 마지막 위치로 이동 → Top5 → 새로발행 → 필터 */
+  .col-layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .col-filters {
+    margin-top: 8px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+  .col-filters::-webkit-scrollbar { display: none; }
+  .col-filters button { flex-shrink: 0; }
 
   /* Top 5 썸네일·텍스트 크기 조정, 제목 강조 */
   .col-top5 .head {

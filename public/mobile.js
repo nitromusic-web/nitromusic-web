@@ -49,4 +49,42 @@
   if (mq.addEventListener) mq.addEventListener('change', handleResize);
   else mq.addListener(handleResize);
 
+  // 모바일(≤767): 칼럼 섹션 순서 조정
+  // 데스크탑: [필터] [Top5 + 새로발행] (col-layout 2열)
+  // 모바일:   [Top5] [새로발행(2개)] [필터]  ← 필터를 col-layout 맨 끝으로
+  function placeColumnFilters() {
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    const filters = document.getElementById('col-filters');
+    const colSection = document.getElementById('column');
+    const colLayout = document.querySelector('.col-layout');
+    const colNew = document.querySelector('.col-new');
+    if (!filters || !colSection || !colLayout) return;
+
+    if (isMobile) {
+      // col-layout의 마지막 자식으로 이동 (= col-new 뒤)
+      if (filters.parentElement !== colLayout) {
+        colLayout.appendChild(filters);
+      }
+    } else {
+      // 데스크탑 원위치: col-layout 직전 (section 자식)
+      if (filters.parentElement !== colSection) {
+        colSection.insertBefore(filters, colLayout);
+      }
+    }
+  }
+
+  // 콘텐츠 렌더(i18n) 완료 대기
+  function runWhenReady() {
+    if (document.getElementById('col-filters') && document.querySelector('.col-new')) {
+      placeColumnFilters();
+    } else {
+      setTimeout(runWhenReady, 50);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runWhenReady);
+  } else {
+    runWhenReady();
+  }
+  window.addEventListener('resize', placeColumnFilters);
 })();

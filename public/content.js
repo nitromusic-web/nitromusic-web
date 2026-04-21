@@ -180,7 +180,7 @@ window.NITRO_I18N = {
       ],
       deliverables: {
         k: "주간 전달물",
-        items: ["한 장 요약 리포트", "톱 에디트 에셋 라이브러리", "데이터 부록 (Shazam, Spotify, IG Reels 스냅샷)"]
+        items: ["한 장 요약 리포트", "앵커 릴스 포멧 라이브러리", "데이터 부록 (Shazam, Spotify, IG Reels 스냅샷)"]
       }
     },
     why: {
