@@ -175,8 +175,8 @@ window.NITRO_I18N = {
       steps: [
         { wk: "WEEK 0", t: "준비", d: "스코프 확정, 브리프 작성, 앵커<br>크리에이터 선정." },
         { wk: "WEEK 1", t: "검증", d: "앵커 크리에이터의 레퍼런스 포스트<br>3–5건으로 포맷 가설을 검증합니다." },
-        { wk: "WEEK 2", t: "확산", d: "위닝 포맷의 롱테일 확산. 크리에이터 규율 점검, 캠페인 규모 확대." },
-        { wk: "WEEK 3–4", t: "정착", d: "위너 확장, 주간 리포팅, 데이터 이관 및 다음 단계 플랜 수립." }
+        { wk: "WEEK 2", t: "확산", d: "위닝 포맷의 롱테일 확산. 크리에이터 지속 점검, 캠페인 규모 확대, 아웃라이어 영상 생성." },
+        { wk: "WEEK 3–4", t: "정착", d: "주간 리포팅, 바이럴 연료 추가 투입." }
       ],
       deliverables: {
         k: "주간 전달물",
@@ -284,8 +284,9 @@ window.NITRO_I18N = {
       col1: { h: "서비스", items: ["Format Engineering", "Anchor + Long-tail Ops", "Deep-link Conversion", "Weekly Reporting"] },
       col2: { h: "회사", items: ["About", "Team", "Careers", "Press Kit"] },
       col3: { h: "리소스", items: ["Column", "Case Studies", "Corporate Deck", "Media"] },
-      copyright: "© 2026 KBK CONSULTING · NITRO MUSIC",
-      meta: "SEOUL / BUSAN"
+      address: "서울특별시 마포구 잔다리로 7길",
+      owner: "대표자 : 최보건 Logan Choi  |  사업자등록번호 : 623-16-01889",
+      copyright: "Copyright © 2022 KBK Consulting. All rights reserved."
     }
   },
   en: {
@@ -513,8 +514,9 @@ window.NITRO_I18N = {
       col1: { h: "Services", items: ["Format Engineering", "Anchor + Long-tail Ops", "Deep-link Conversion", "Weekly Reporting"] },
       col2: { h: "Company", items: ["About", "Team", "Careers", "Press Kit"] },
       col3: { h: "Resources", items: ["Column", "Case Studies", "Corporate Deck", "Media"] },
-      copyright: "© 2026 KBK CONSULTING · NITRO MUSIC",
-      meta: "SEOUL / BUSAN"
+      address: "Janda-ri-ro 7-gil, Mapo-gu, Seoul, Republic of Korea",
+      owner: "Representative : Logan Choi (최보건)  |  Business No. : 623-16-01889",
+      copyright: "Copyright © 2022 KBK Consulting. All rights reserved."
     }
   }
 };

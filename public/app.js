@@ -318,8 +318,10 @@
     $('#foot-col2-items').innerHTML = f.col2.items.map(x => `<li><a href="#">${x}</a></li>`).join('');
     $('#foot-col3-h').textContent = f.col3.h;
     $('#foot-col3-items').innerHTML = f.col3.items.map(x => `<li><a href="#">${x}</a></li>`).join('');
+    const footAddress = $('#foot-address'); if (footAddress) footAddress.textContent = f.address || '';
+    const footOwner = $('#foot-owner'); if (footOwner) footOwner.textContent = f.owner || '';
     $('#foot-copy').textContent = f.copyright;
-    $('#foot-meta').textContent = f.meta;
+    const footMeta = $('#foot-meta'); if (footMeta) footMeta.textContent = f.meta || '';
 
     // Apply reveal observer (newly rendered elements)
     applyReveal();
