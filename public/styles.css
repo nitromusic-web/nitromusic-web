@@ -146,7 +146,7 @@ section { padding: 120px var(--pad); position: relative; }
   margin: 0 auto 64px;
   max-width: var(--maxw);
   width: 100%;
-  transform: translateX(-30px);
+  transform: translateX(-70px);
 }
 .section-head > * {
   max-width: 920px;
@@ -477,7 +477,8 @@ section { padding: 120px var(--pad); position: relative; }
   border-top: 1px solid var(--line);
 }
 .case-row {
-  display: grid; grid-template-columns: 70px minmax(0, auto) 1fr 0.8fr 0.9fr 40px;
+  /* 모든 행의 period/posts/views X 위치 통일을 위해 고정 비율 사용 */
+  display: grid; grid-template-columns: 70px 1.5fr 1fr 0.7fr 0.8fr 40px;
   gap: 32px; align-items: center;
   padding: 28px 12px; border-bottom: 1px solid var(--line);
   cursor: pointer; transition: background .2s, padding .2s;

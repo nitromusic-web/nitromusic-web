@@ -262,7 +262,7 @@ window.NITRO_I18N = {
         { k: "TELEGRAM", v: "@NitroMusic" }
       ],
       form: {
-        head: "캠페인 요청서",
+        head: "회사 제안서 / 캠페인 요청서",
         seq: "FORM / 01",
         f_name: "담당자명",
         f_company: "소속",
