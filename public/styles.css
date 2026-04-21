@@ -328,6 +328,16 @@ section { padding: 120px var(--pad); position: relative; }
   color: var(--text);
 }
 .hero-foot .item .k .unit { color: var(--red); }
+
+/* Hero 메인 수치 중 두 개(23.5M+ / 100M+)만 빨간 글로우 강조 */
+#hero-m1-k,
+#hero-m3-k {
+  color: var(--red);
+  text-shadow:
+    0 0 24px rgba(230,57,70,0.5),
+    0 0 56px rgba(230,57,70,0.25);
+  animation: red-glow 3.2s ease-in-out infinite;
+}
 .hero-foot .item .l {
   font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
   color: var(--text-mute); margin-top: 4px; font-family: var(--font-mono); font-weight: 500;
