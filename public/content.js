@@ -205,7 +205,13 @@ window.NITRO_I18N = {
         { src: "images/logos/yg-plus.png", name: "YG Plus" },
         { src: "images/logos/route.png", name: "Route Company" },
         { src: "images/logos/whyes.png", name: "Whyes Entertainment" },
-        { src: "images/logos/howtoouse.png", name: "How to Use" }
+        { src: "images/logos/howtoouse.png", name: "How to Use" },
+        { src: "images/logos/image-1064.png", name: "Client" },
+        { src: "images/logos/image-1066.png", name: "Client" },
+        { src: "images/logos/image-1067.png", name: "Client" },
+        { src: "images/logos/image-1068.png", name: "Client" },
+        { src: "images/logos/image-1069.png", name: "DXD Dance Crew" },
+        { src: "images/logos/frame-791.png", name: "VIVIE" }
       ]
     },
     column: {
@@ -428,7 +434,13 @@ window.NITRO_I18N = {
         { src: "images/logos/yg-plus.png", name: "YG Plus" },
         { src: "images/logos/route.png", name: "Route Company" },
         { src: "images/logos/whyes.png", name: "Whyes Entertainment" },
-        { src: "images/logos/howtoouse.png", name: "How to Use" }
+        { src: "images/logos/howtoouse.png", name: "How to Use" },
+        { src: "images/logos/image-1064.png", name: "Client" },
+        { src: "images/logos/image-1066.png", name: "Client" },
+        { src: "images/logos/image-1067.png", name: "Client" },
+        { src: "images/logos/image-1068.png", name: "Client" },
+        { src: "images/logos/image-1069.png", name: "DXD Dance Crew" },
+        { src: "images/logos/frame-791.png", name: "VIVIE" }
       ]
     },
     column: {

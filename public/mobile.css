@@ -260,27 +260,20 @@
     padding-right: 20px;
   }
 
-  /* ---- LOGO WALL (함께한 고객) ---- */
+  /* ---- LOGO WALL 2-row marquee (모바일) ---- */
   .logo-wall {
-    padding: 28px 0 32px;
-  }
-  .logo-wall-inner {
-    grid-template-columns: 1fr;
-    gap: 0;
-  }
-  .logo-wall-inner > div:first-child {
-    display: none;
+    padding: 24px 0 28px;
   }
   .logo-wall .logos {
-    border-left: 0;
+    gap: 10px;
   }
   .logo-wall .logo-track {
-    gap: 36px;
-    padding: 4px 16px;
+    gap: 28px;
+    padding: 4px 12px;
   }
   .logo-wall .logo-cell {
-    width: 140px;
-    height: 76px;
+    width: 110px;
+    height: 60px;
   }
 
   /* ---- 섹션 헤드 공통 축소 (h-lg 타이틀 잘림 방지) ---- */

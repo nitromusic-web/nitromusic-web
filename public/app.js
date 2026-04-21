@@ -163,17 +163,22 @@
         <p>${i.d}</p>
       </div>`).join('');
 
-    // Clients
+    // Clients — two-row marquee (top: R→L, bottom: L→R)
     const cl = d.clients;
-    $('#cli-eyebrow').textContent = cl.eyebrow;
-    $('#cli-title').textContent = cl.title;
+    const cliEyebrow = $('#cli-eyebrow'); if (cliEyebrow) cliEyebrow.textContent = cl.eyebrow;
+    const cliTitle = $('#cli-title'); if (cliTitle) cliTitle.textContent = cl.title;
     const renderLogo = (l) => {
       if (typeof l === 'string') return `<div class="logo-cell"><span class="logo-text">${l}</span></div>`;
       return `<div class="logo-cell" title="${l.name}"><img src="${l.src}" alt="${l.name}" loading="lazy"/></div>`;
     };
-    // Duplicate logos for seamless marquee loop
-    const once = cl.logos.map(renderLogo).join('');
-    $('#cli-logos').innerHTML = `<div class="logo-track">${once}${once}</div>`;
+    const half = Math.ceil(cl.logos.length / 2);
+    const topHtml = cl.logos.slice(0, half).map(renderLogo).join('');
+    const bottomHtml = cl.logos.slice(half).map(renderLogo).join('');
+    // Duplicate each row for seamless marquee loop
+    $('#cli-logos').innerHTML = `
+      <div class="logo-track">${topHtml}${topHtml}</div>
+      <div class="logo-track logo-track-reverse">${bottomHtml}${bottomHtml}</div>
+    `;
 
     // Column
     const col = d.column;
