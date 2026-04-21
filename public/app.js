@@ -52,7 +52,7 @@
         <p>${c[0].d}</p>
         <ul>${c[0].list.map(i => `<li><span>${i.k}</span><span class="tag">${i.v}</span></li>`).join('')}</ul>
         <div class="big">${s.feature.big}</div>
-        <div style="margin-top:12px; font-size:13px; color:var(--text-dim); max-width:320px; line-height:1.5;">
+        <div style="margin-top:12px; font-size:13px; color:var(--text-dim); max-width:560px; line-height:1.55;">
           <b style="color:var(--text); font-weight:600; display:block; margin-bottom:6px;">${s.feature.t}</b>${s.feature.d}
         </div>
       </div>
