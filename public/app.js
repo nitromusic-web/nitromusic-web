@@ -279,6 +279,9 @@
         <div class="form-field full"><label>${co.form.f_artist}</label><input type="text" placeholder="e.g. Paul Kim — Wanna Love You"></div>
       </div>
       <div class="form-row">
+        <div class="form-notice">${co.form.notice || ''}</div>
+      </div>
+      <div class="form-row">
         <div class="form-field full"><label>${co.form.f_goal}</label>
           <div class="checks" data-group="goal">
             <div class="check">Streaming conversion</div>

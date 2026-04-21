@@ -275,6 +275,7 @@ window.NITRO_I18N = {
         f_vertical: "앵커 버티컬",
         f_vertical_opts: ["Concert", "VS", "Meme", "Choreo", "Behind"],
         f_msg: "추가 설명 / 타임라인",
+        notice: "※ 미발매 곡일 경우, 음성 파일은 <b>nitro@nitromusic.pro</b> 로 별도 전송 부탁드립니다.",
         submit: "요청서 제출",
         privacy: "개인정보 수집·이용 동의"
       }
@@ -284,7 +285,7 @@ window.NITRO_I18N = {
       col1: { h: "서비스", items: ["Format Engineering", "Anchor + Long-tail Ops", "Deep-link Conversion", "Weekly Reporting"] },
       col2: { h: "회사", items: ["About", "Team", "Careers", "Press Kit"] },
       col3: { h: "리소스", items: ["Column", "Case Studies", "Corporate Deck", "Media"] },
-      address: "서울특별시 마포구 잔다리로 7길",
+      address: "서울특별시 마포구 양화로 120",
       owner: "대표자 : 최보건 Logan Choi  |  사업자등록번호 : 623-16-01889",
       copyright: "Copyright © 2022 KBK Consulting. All rights reserved."
     }
@@ -501,10 +502,11 @@ window.NITRO_I18N = {
         f_artist: "Artist / Track",
         f_goal: "Campaign goal",
         f_budget: "Budget range",
-        f_budget_opts: ["~ 10M KRW", "10–30M KRW", "30–50M KRW", "50M KRW+"],
+        f_budget_opts: ["< $10K", "$10K – $25K", "$25K – $40K", "$40K+"],
         f_vertical: "Anchor vertical",
         f_vertical_opts: ["Concert", "VS", "Meme", "Choreo", "Behind"],
         f_msg: "Notes / timeline",
+        notice: "※ For unreleased tracks, please email the audio file to <b>nitro@nitromusic.pro</b> separately.",
         submit: "Submit brief",
         privacy: "I agree to the privacy policy"
       }
@@ -514,7 +516,7 @@ window.NITRO_I18N = {
       col1: { h: "Services", items: ["Format Engineering", "Anchor + Long-tail Ops", "Deep-link Conversion", "Weekly Reporting"] },
       col2: { h: "Company", items: ["About", "Team", "Careers", "Press Kit"] },
       col3: { h: "Resources", items: ["Column", "Case Studies", "Corporate Deck", "Media"] },
-      address: "Janda-ri-ro 7-gil, Mapo-gu, Seoul, Republic of Korea",
+      address: "120 Yanghwa-ro, Mapo-gu, Seoul, Republic of Korea",
       owner: "Representative : Logan Choi (최보건)  |  Business No. : 623-16-01889",
       copyright: "Copyright © 2022 KBK Consulting. All rights reserved."
     }
