@@ -30,10 +30,12 @@
     // Hero
     renderHero();
 
-    // Ticker
+    // Ticker (optional — HTML에서 제거될 수 있음)
     const ticker = $('.ticker-track');
-    const items = d.ticker.concat(d.ticker);
-    ticker.innerHTML = items.map((x, i) => `<span>${x}</span><span class="sep">✦</span>`).join('');
+    if (ticker) {
+      const items = d.ticker.concat(d.ticker);
+      ticker.innerHTML = items.map((x, i) => `<span>${x}</span><span class="sep">✦</span>`).join('');
+    }
 
     // Service
     const s = d.service;
