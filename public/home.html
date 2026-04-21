@@ -2,12 +2,13 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=1280">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NitroMusic — Signature short-form systems for music</title>
 <link rel="icon" href="/favicon.ico?v=3" sizes="any">
 <link rel="icon" type="image/png" href="/favicon.png?v=3">
 <link rel="shortcut icon" href="/favicon.ico?v=3">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="mobile.css?v=1">
 </head>
 <body>
 
@@ -28,8 +29,26 @@
       <button data-lang="en">EN</button>
     </div>
     <a href="#contact" class="btn-cta" data-n="contact-btn">문의하기 <span class="arrow">→</span></a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
+
+<!-- MOBILE MENU DRAWER -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav class="mobile-menu-links">
+    <a href="#services" data-n="services">서비스</a>
+    <a href="#network" data-n="network">네트워크</a>
+    <a href="#cases" data-n="cases">캠페인</a>
+    <a href="#pilot" data-n="pilot">파일럿</a>
+    <a href="#column" data-n="column">칼럼</a>
+    <a href="#faq" data-n="faq">FAQ</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <a href="#contact" class="btn-cta">문의하기 <span class="arrow">→</span></a>
+  </div>
+</div>
 
 <!-- SECTION INDICATOR -->
 <aside class="section-indicator">
@@ -256,5 +275,6 @@
 
 <script src="content.js?v=19"></script>
 <script src="app.js?v=19"></script>
+<script src="mobile.js?v=1"></script>
 </body>
 </html>
