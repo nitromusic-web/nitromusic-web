@@ -187,9 +187,9 @@ window.NITRO_I18N = {
       eyebrow: "WHY NITROMUSIC",
       title_1: "Taste, Structure,",
       title_em: "and Discipline.",
-      sub: "감각만으로도, 구조만으로도 안 됩니다.<br>두 가지를 주간 단위 규율로 묶는 것 —<br>그게 NitroMusic이 메이저 레이블의 실행 파트너로 선택된 이유입니다.",
+      sub: "감각만으로도, 구조만으로도 안 됩니다.<br>두 가지를 주간 단위 규율로 묶는 것 —<br>그게 NitroMusic이 메이저 레이블의<br>실행 파트너로 선택된 이유입니다.",
       items: [
-        { n: "01 / TASTE", t: "Korea-based trend sensitivity", d: "한국 기반 트렌드 감도와, 글로벌 메이저가 요구하는 실행 품질을 동시에 갖췄습니다." },
+        { n: "01 / TASTE", t: "Korea-based trend sensitivity", d: "한국 기반 트렌드 감도와, 글로벌 메이저가 요구하는<br>실행 품질을 동시에 갖췄습니다." },
         { n: "02 / STRUCTURE", t: "Conversion-first design", d: "바닐라 조회수 최적화가 아닌, 듣기 전환까지를 디자인하는 숏폼 설계." },
         { n: "03 / SCALE", t: "Anchor + Long-tail ops", d: "앵커 채널과 롱테일 크리에이터를 포맷 규율 아래 동시 운영합니다." },
         { n: "04 / DISCIPLINE", t: "Weekly reporting rhythm", d: "매주 리포트, 매주 포맷 점검 — 캠페인 전 기간에 걸쳐 규율을 유지합니다." }
@@ -216,7 +216,7 @@ window.NITRO_I18N = {
     },
     column: {
       eyebrow: "COLUMN",
-      title: "Nitro 인사이트.",
+      title: "Nitro Music 인사이트.",
       sub: "한국 숏폼 마케팅 현장의 관찰, 데이터, 캠페인 노트.",
       filters_label: "AUDIENCE",
       filters: ["전체", "프로모터 담당자", "CEO", "시니어 아티스트", "신예 아티스트", "신입 마케터"],
