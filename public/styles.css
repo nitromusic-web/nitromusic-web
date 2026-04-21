@@ -81,7 +81,7 @@ img { display: block; max-width: 100%; }
 .nav-logo .sub { font-size: 10px; letter-spacing: 0.2em; color: var(--text-dim); margin-left: 2px; font-weight: 500;}
 .nav-links { display: flex; align-items: center; gap: 56px; }
 .nav-links a {
-  font-size: 27px; color: var(--text-dim); font-weight: 400;
+  font-size: 22px; color: var(--text-dim); font-weight: 400;
   letter-spacing: -0.015em;
   position: relative; padding: 6px 0; transition: color .18s;
 }
