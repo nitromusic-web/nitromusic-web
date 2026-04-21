@@ -38,7 +38,7 @@
     // Service
     const s = d.service;
     $('#svc-eyebrow').textContent = s.eyebrow;
-    $('#svc-title').textContent = s.title;
+    $('#svc-title').innerHTML = s.title;
     $('#svc-sub').innerHTML = s.sub;
     const svcGrid = $('#svc-grid');
     const c = s.cards;

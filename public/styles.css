@@ -851,3 +851,47 @@ section { padding: 120px var(--pad); position: relative; }
 .tweaks-panel .t-btns { display: flex; gap: 4px;}
 .tweaks-panel .t-btns button { padding: 4px 8px; font-size: 10px; border: 1px solid var(--line-strong); border-radius: 2px; color: var(--text-dim); font-family: var(--font-mono); letter-spacing: 0.1em;}
 .tweaks-panel .t-btns button.on { background: var(--red); border-color: var(--red); color: white; }
+
+/* =============== SECTION BACKGROUND IMAGES =============== */
+/* 일부 섹션에 이미지 배경 + 어두운 오버레이. PC/모바일 공통. */
+section#services,
+section#network,
+section#cases,
+section#pilot,
+section#column,
+section#contact {
+  background-color: #0a0a0b;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+section#services {
+  background-image:
+    linear-gradient(rgba(10,10,11,0.84), rgba(10,10,11,0.84)),
+    url('images/bg/section-bg-1.png');
+}
+section#network {
+  background-image:
+    linear-gradient(rgba(10,10,11,0.84), rgba(10,10,11,0.84)),
+    url('images/bg/section-bg-2.png');
+}
+section#cases {
+  background-image:
+    linear-gradient(rgba(10,10,11,0.84), rgba(10,10,11,0.84)),
+    url('images/bg/section-bg-3.png');
+}
+section#pilot {
+  background-image:
+    linear-gradient(rgba(10,10,11,0.84), rgba(10,10,11,0.84)),
+    url('images/bg/section-bg-4.png');
+}
+section#column {
+  background-image:
+    linear-gradient(rgba(10,10,11,0.84), rgba(10,10,11,0.84)),
+    url('images/bg/section-bg-5.png');
+}
+section#contact {
+  background-image:
+    linear-gradient(rgba(10,10,11,0.84), rgba(10,10,11,0.84)),
+    url('images/bg/section-bg-6.png');
+}
