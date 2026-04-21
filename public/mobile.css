@@ -27,13 +27,14 @@
     padding: 12px 20px;
     gap: 10px;
   }
-  .nav-logo img { height: 22px; }
+  .nav-logo img { height: 28px; }
   .nav-links,
   .lang-toggle { display: none; }
   .nav-right { gap: 8px; }
   .btn-cta {
-    padding: 8px 12px;
-    font-size: 12px;
+    padding: 10px 16px;
+    font-size: 15px;
+    border-radius: 16px;
     box-shadow: none;
   }
   .btn-cta .arrow { display: none; }
@@ -223,14 +224,40 @@
     letter-spacing: -0.015em;
   }
   .hero-foot .item .l {
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    margin-top: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    margin-top: 6px;
+    line-height: 1.35;
   }
 
   /* 섹션 공통 패딩 — 다른 섹션은 다음 단계에서 세부 조정 예정 */
   section {
     padding-left: 20px;
     padding-right: 20px;
+  }
+
+  /* ---- LOGO WALL (함께한 고객) ---- */
+  .logo-wall {
+    padding: 28px 0 32px;
+  }
+  .logo-wall-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .logo-wall-inner > div:first-child {
+    display: none;
+  }
+  .logo-wall .logos {
+    border-left: 0;
+  }
+  .logo-wall .logo-track {
+    gap: 36px;
+    padding: 4px 16px;
+  }
+  .logo-wall .logo-cell {
+    width: 120px;
+    height: 56px;
   }
 }

@@ -65,7 +65,7 @@ img { display: block; max-width: 100%; }
   font-family: var(--font-display); font-weight: 700; font-size: 20px;
   letter-spacing: 0.02em;
 }
-.nav-logo img { height: 26px; width: auto; display: block;}
+.nav-logo img { height: 32px; width: auto; display: block;}
 .nav-logo-mark {
   width: 28px; height: 28px; display: grid; place-items: center;
   border: 1.5px solid var(--text); border-radius: 2px;
