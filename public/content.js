@@ -19,7 +19,7 @@ window.NITRO_I18N = {
       v1_title_line1: "청취 구조를",
       v1_title_line2: "설계하다.",
       v1_sub: "레이블과 유통사, 아티스트 팀을 위한 숏폼 시스템.<br>단순 재생수가 아닌 ‘전환’을 설계합니다.",
-      v1_cta_primary: "파일럿 상담 예약",
+      v1_cta_primary: "회사 제안서 받기",
       v1_cta_secondary: "성과 사례 보기",
       // --- Variant 2: 문제 제기형 ---
       v2_kicker: "SHORT-FORM MUSIC MARKETING",
@@ -289,7 +289,7 @@ window.NITRO_I18N = {
       v1_title_line1: "We make",
       v1_title_line2: "tracks break.",
       v1_sub: "Single-format systems for labels, distributors, and artist teams.<br>We engineer conversion — not vanity views.",
-      v1_cta_primary: "Book a pilot consult",
+      v1_cta_primary: "Request a proposal",
       v1_cta_secondary: "See campaign results",
       v2_kicker: "SHORT-FORM MUSIC MARKETING",
       v2_title_line1: "Views are up.",
