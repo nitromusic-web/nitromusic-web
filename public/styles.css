@@ -922,10 +922,16 @@ section { padding: 120px var(--pad); position: relative; }
 .contact-channels .v { font-family: var(--font-display); font-size: 18px; font-weight: 500; letter-spacing: -0.005em; color: var(--text);}
 .contact-channels a:hover .v { color: var(--red);}
 
-/* Form */
+/* Form — 배경과 확실히 구분되는 박스 */
 .contact-form {
-  background: var(--bg-1); border: 1px solid var(--line-strong);
-  padding: 40px; position: relative;
+  background: var(--bg-2);
+  border: 1px solid rgba(255,255,255,0.10);
+  padding: 56px;
+  position: relative;
+  border-radius: 8px;
+  box-shadow:
+    0 24px 64px -16px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(230,57,70,0.04) inset;
 }
 .contact-form .form-head {
   display: flex; justify-content: space-between; align-items: baseline;
