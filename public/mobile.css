@@ -277,6 +277,10 @@
   }
 
   /* ---- 섹션 헤드 공통 축소 (h-lg 타이틀 잘림 방지) ---- */
+  /* 모바일에선 PC용 -70px 쉬프트 취소 */
+  .section-head {
+    translate: 0 0;
+  }
   .h-lg {
     font-size: 30px;
     line-height: 1.15;
