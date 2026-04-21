@@ -252,7 +252,7 @@
     const co = d.contact;
     $('#co-eyebrow').textContent = co.eyebrow;
     $('#co-title').innerHTML = `${co.title_1}<br><em>${co.title_em}</em>`;
-    $('#co-sub').textContent = co.sub;
+    $('#co-sub').innerHTML = co.sub;
     $('#co-channels').innerHTML = co.channels.map(ch => `
       <a href="#"><span class="k">${ch.k}</span><span class="v">${ch.v}</span><span class="arrow">→</span></a>
     `).join('');

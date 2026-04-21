@@ -248,7 +248,7 @@ window.NITRO_I18N = {
       eyebrow: "LET'S TALK",
       title_1: "다음 앵커 포스트를,",
       title_em: "함께 설계하시죠.",
-      sub: "프로젝트 개요만 간단히 보내주시면, 영업일 기준 2일 내에 파일럿 제안과 레퍼런스를 회신드립니다.",
+      sub: "프로젝트 개요만 간단히 보내주시면,<br>영업일 기준 2일 내에 파일럿 제안과 레퍼런스를 회신드립니다.",
       channels: [
         { k: "EMAIL", v: "nitro@nitromusic.pro" },
         { k: "INSTAGRAM", v: "@audio_room_" },
@@ -470,7 +470,7 @@ window.NITRO_I18N = {
       eyebrow: "LET'S TALK",
       title_1: "Let's design",
       title_em: "your next anchor post.",
-      sub: "Send a brief project outline and we'll return a pilot proposal plus references within 2 business days.",
+      sub: "Send a brief project outline and we'll return<br>a pilot proposal plus references within 2 business days.",
       channels: [
         { k: "EMAIL", v: "nitro@nitromusic.pro" },
         { k: "INSTAGRAM", v: "@audio_room_" },
