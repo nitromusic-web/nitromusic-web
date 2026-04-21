@@ -27,7 +27,7 @@
     padding: 12px 16px;
     gap: 8px;
   }
-  .nav-logo img { height: 28px; }
+  .nav-logo img { height: 42px; }
   .nav-links { display: none; }
   .nav-right { gap: 13px; }
 
@@ -99,7 +99,7 @@
     display: flex;
     flex-direction: column;
     position: fixed;
-    top: 58px;
+    top: 70px;
     left: 0; right: 0; bottom: 0;
     z-index: 90;
     background: rgba(10,10,11,0.97);

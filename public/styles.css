@@ -65,7 +65,7 @@ img { display: block; max-width: 100%; }
   font-family: var(--font-display); font-weight: 700; font-size: 20px;
   letter-spacing: 0.02em;
 }
-.nav-logo img { height: 32px; width: auto; display: block;}
+.nav-logo img { height: 48px; width: auto; display: block;}
 .nav-logo-mark {
   width: 28px; height: 28px; display: grid; place-items: center;
   border: 1.5px solid var(--text); border-radius: 2px;
@@ -154,7 +154,7 @@ section { padding: 120px var(--pad); position: relative; }
 
 /* =============== HERO =============== */
 .hero {
-  position: relative; min-height: 88vh; padding-top: 80px; padding-bottom: 80px;
+  position: relative; min-height: 88vh; padding-top: 104px; padding-bottom: 80px;
   display: flex; flex-direction: column; justify-content: flex-end;
   overflow: hidden;
 }
@@ -327,6 +327,10 @@ section { padding: 120px var(--pad); position: relative; }
 .service-card.feature .big {
   font-family: var(--font-display); font-size: 90px; font-weight: 600; color: var(--red);
   line-height: 1; letter-spacing: -0.04em; margin-top: 32px;
+  text-shadow:
+    0 0 24px rgba(230,57,70,0.5),
+    0 0 56px rgba(230,57,70,0.28);
+  animation: red-glow 3.2s ease-in-out infinite;
 }
 .service-card.feature h3 { font-size: 28px; }
 
@@ -432,6 +436,22 @@ section { padding: 120px var(--pad); position: relative; }
   font-family: var(--font-display); font-weight: 500;
   font-size: clamp(120px, 16vw, 260px);
   line-height: 0.85; color: var(--red); letter-spacing: -0.05em;
+  text-shadow:
+    0 0 32px rgba(230,57,70,0.5),
+    0 0 72px rgba(230,57,70,0.28);
+  animation: red-glow 3.2s ease-in-out infinite;
+}
+@keyframes red-glow {
+  0%, 100% {
+    text-shadow:
+      0 0 28px rgba(230,57,70,0.42),
+      0 0 64px rgba(230,57,70,0.22);
+  }
+  50% {
+    text-shadow:
+      0 0 40px rgba(230,57,70,0.62),
+      0 0 96px rgba(230,57,70,0.38);
+  }
 }
 .aggregate .big-num .plus { font-size: 0.5em; vertical-align: super; color: var(--text); }
 .aggregate .caption { font-size: 18px; color: var(--text-dim); line-height: 1.5; margin-bottom: 32px;}
