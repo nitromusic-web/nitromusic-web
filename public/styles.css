@@ -138,13 +138,7 @@ img { display: block; max-width: 100%; }
 
 /* =============== GLOBAL LAYOUT =============== */
 section { padding: 120px var(--pad); position: relative; }
-.section-head {
-  margin: 0 auto 64px;
-  max-width: var(--maxw);
-}
-.section-head > * {
-  max-width: 920px;
-}
+.section-head { margin-bottom: 64px; max-width: 920px;}
 .eyebrow {
   display: inline-flex; align-items: center; gap: 10px;
   font-family: var(--font-mono);
