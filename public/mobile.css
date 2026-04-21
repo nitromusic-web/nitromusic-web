@@ -514,8 +514,20 @@
   .form-field select { font-size: 16px; }
   .form-field label { font-size: 11px; letter-spacing: 0.14em; }
   .form-notice { font-size: 12px; padding: 10px 12px; }
-  .form-row { flex-direction: column; gap: 18px; }
-  .form-field.full { grid-column: auto; }
+  /* .form-row는 grid(2열)이므로 grid-template-columns 오버라이드 필요 */
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 14px;
+  }
+  .form-field,
+  .form-field.full {
+    grid-column: auto;
+    min-width: 0;
+  }
+  .form-field input,
+  .form-field textarea,
+  .form-field select { width: 100%; }
   .check { font-size: 13px; padding: 7px 12px; }
 
   /* ---- COLUMN 섹션 ---- */
