@@ -48,4 +48,43 @@
   };
   if (mq.addEventListener) mq.addEventListener('change', handleResize);
   else mq.addListener(handleResize);
+
+  // 모바일(≤767): 칼럼 섹션의 필터 탭을 Top5 바로 밑으로 이동
+  function placeColumnFilters() {
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    const filters = document.getElementById('col-filters');
+    const top5 = document.querySelector('.col-top5');
+    const colSection = document.getElementById('column');
+    const colLayout = document.querySelector('.col-layout');
+    if (!filters || !top5 || !colSection || !colLayout) return;
+
+    if (isMobile) {
+      // Top5 뒤 (= col-new 앞)에 삽입
+      const colNew = document.querySelector('.col-new');
+      if (colNew && filters.nextElementSibling !== colNew.previousElementSibling) {
+        colLayout.insertBefore(filters, colNew);
+      }
+    } else {
+      // 데스크탑 원위치: col-layout 직전
+      if (filters.parentElement !== colSection) {
+        colSection.insertBefore(filters, colLayout);
+      }
+    }
+  }
+
+  // 초기 실행은 콘텐츠 렌더 이후 필요. app.js가 renderAll 완료한 뒤 실행되도록
+  // 약간 지연시키고, 리사이즈에도 반응.
+  function runWhenReady() {
+    if (document.getElementById('col-filters') && document.querySelector('.col-top5')) {
+      placeColumnFilters();
+    } else {
+      setTimeout(runWhenReady, 50);
+    }
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runWhenReady);
+  } else {
+    runWhenReady();
+  }
+  window.addEventListener('resize', placeColumnFilters);
 })();

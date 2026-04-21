@@ -24,23 +24,40 @@
 
   /* ---- NAV ---- */
   .nav {
-    padding: 12px 20px;
-    gap: 10px;
+    padding: 12px 16px;
+    gap: 8px;
   }
   .nav-logo img { height: 28px; }
-  .nav-links,
-  .lang-toggle { display: none; }
+  .nav-links { display: none; }
   .nav-right { gap: 8px; }
+
+  /* 모바일 nav 순서: [문의하기] [KR/EN] [햄버거] */
+  .btn-cta { order: 1; }
+  .lang-toggle { order: 2; }
+  .nav-hamburger { order: 3; }
+
   .btn-cta {
-    padding: 7px 16px;
-    font-size: 15px;
+    padding: 7px 14px;
+    font-size: 14px;
     font-family: var(--font-kr);
     font-weight: 700;
-    border-radius: 16px;
+    border-radius: 14px;
     box-shadow: none;
     letter-spacing: -0.02em;
   }
   .btn-cta .arrow { display: none; }
+
+  /* 언어 토글 — 문의하기 오른쪽에 작게 */
+  .lang-toggle {
+    display: inline-flex;
+    font-size: 10px;
+    border-radius: 14px;
+  }
+  .lang-toggle button {
+    padding: 5px 8px;
+    font-size: 10px;
+    letter-spacing: 0.04em;
+  }
 
   /* 햄버거 버튼 */
   .nav-hamburger {
@@ -264,5 +281,159 @@
   .logo-wall .logo-cell {
     width: 120px;
     height: 56px;
+  }
+
+  /* ---- 섹션 헤드 공통 축소 (h-lg 타이틀 잘림 방지) ---- */
+  .h-lg {
+    font-size: 30px;
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+  .h-lg.kr {
+    letter-spacing: -0.035em;
+  }
+  .section-head {
+    margin-bottom: 36px;
+  }
+  .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    margin-bottom: 14px;
+  }
+  .lead {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* ---- SERVICE GRID 1열 스택 ---- */
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .service-card,
+  .service-card.wide,
+  .service-card.narrow,
+  .service-card.feature {
+    grid-column: 1 / -1;
+    padding: 26px 22px;
+  }
+  .service-card .num {
+    font-size: 12px;
+  }
+  .service-card h3 { font-size: 18px; }
+  .service-card p { font-size: 14px; }
+  .service-card.feature h3 { font-size: 22px; }
+  .service-card.feature .big {
+    font-size: 52px;
+    margin-top: 20px;
+  }
+
+  /* ---- NETWORK STATS 2x2 ---- */
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .stat {
+    padding: 22px 14px;
+  }
+  .stat .v {
+    font-size: 34px;
+    letter-spacing: -0.03em;
+  }
+  .stat .v .unit {
+    font-size: 18px;
+  }
+  .stat .l {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    margin-top: 14px;
+  }
+  .stat .d {
+    font-size: 11px;
+    margin-top: 6px;
+    line-height: 1.35;
+  }
+
+  /* 플랫폼 마키 모바일 */
+  .platform-row {
+    margin-top: 28px;
+    gap: 12px;
+  }
+  .platform-row .p-label {
+    flex: 0 0 100%;
+    font-size: 10px;
+  }
+  .platform-row .p-list .p-item {
+    font-size: 13px;
+    gap: 8px;
+  }
+  .platform-row .p-track {
+    gap: 24px;
+    animation-duration: 22s;
+  }
+
+  /* ---- CAMPAIGN CARDS 간소화 ---- */
+  .case-section { padding-top: 64px; padding-bottom: 64px; }
+  .case-row {
+    grid-template-columns: 1fr auto auto;
+    gap: 12px;
+    padding: 22px 8px;
+  }
+  .case-row:hover,
+  .case-row.open {
+    padding-left: 8px;
+  }
+  .case-row .no,
+  .case-row .period,
+  .case-row .posts { display: none; }
+
+  .case-row .client {
+    font-size: 16px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .case-row .client .sub {
+    font-size: 11px;
+    margin-top: 2px;
+  }
+  .case-row .views {
+    font-size: 18px;
+  }
+  .case-row .chev { font-size: 14px; }
+
+  /* 펼쳤을 때 기간·포스트수 복원 (detail 안에 노출) */
+  .case-row.open .no,
+  .case-row.open .period,
+  .case-row.open .posts {
+    display: block;
+    grid-column: 1 / -1;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--text-mute);
+    font-family: var(--font-mono);
+  }
+  .case-row.open .period { order: 10; }
+  .case-row.open .posts { order: 11; }
+
+  .case-detail-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 20px 0 8px;
+  }
+  .case-detail .metrics {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .case-detail .metrics .m { padding: 10px 0; }
+  .case-detail .metrics .m .mv { font-size: 15px; }
+  .case-detail .metrics .m .ml { font-size: 9px; letter-spacing: 0.08em; }
+
+  /* ---- COLUMN 섹션 ---- */
+  /* 일반 칼럼은 2개만 보이게 */
+  .col-new-grid > *:nth-child(n+3) {
+    display: none;
+  }
+  /* col-filters는 mobile.js에서 Top5 뒤로 DOM 이동. 시각 간격만 조정 */
+  .col-filters {
+    margin-top: 32px;
   }
 }

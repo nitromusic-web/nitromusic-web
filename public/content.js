@@ -38,8 +38,8 @@ window.NITRO_I18N = {
       // --- Foot metrics ---
       m1_k: "23.5M",
       m1_l: "Total views / 6 months",
-      m2_k: "163",
-      m2_l: "Campaign posts",
+      m2_k: "4",
+      m2_l: "Major campaigns · 163 posts",
       m3_k: "100M",
       m3_l: "META ad spend managed (KRW)",
       m4_k: "15+",
@@ -54,7 +54,7 @@ window.NITRO_I18N = {
     service: {
       eyebrow: "WHAT WE DO",
       title: "숏폼 레이어 시스템,<br>처음부터 끝까지.",
-      sub: "트렌드를 잡는 감각과 전환을 만드는 구조.<br>NitroMusic은 재생수가 아닌 듣는 행동까지 설계하는<br>4단계 레이어로 움직입니다.",
+      sub: "트렌드를 잡는 감각과 전환을 만드는 구조.<br>NitroMusic은 재생수가 아닌 듣는 행동까지<br>설계하는 4단계 레이어로 움직입니다.",
       cards: [
           { n: "01", t: "포맷 엔지니어링", d: "앵커 포맷 설계부터 숏폼 내 음원 결합 구간까지.<br>소리와 컷의 배치를 공학적으로 설계합니다.", list: [
           { k: "비주얼 미스매치 타겟팅", v: "01" },
@@ -82,7 +82,7 @@ window.NITRO_I18N = {
         { v: "10K", u: "+", l: "포스트당 최소 뷰", d: "캠페인 포스트 최소 뷰 기준선" }
       ],
       platforms: {
-        label: "운영 플랫폼",
+        label: "활동 플랫폼",
         list: ["Instagram Reels", "TikTok", "YouTube Shorts", "Spotify", "Apple Music", "YouTube Music"]
       }
     },
@@ -170,7 +170,7 @@ window.NITRO_I18N = {
     },
     pilot: {
       eyebrow: "4-WEEK PILOT",
-      title: "처음 만나는 팀과는, 4주 파일럿으로.",
+      title: "처음 만나는 팀과는,<br>4주 파일럿으로.",
       sub: "작게 시작해 위닝 포맷을 찾고, 검증된 것만 확장합니다.",
       steps: [
         { wk: "WEEK 0", t: "준비", d: "스코프 확정, 브리프 작성, 앵커 크리에이터 선정." },
@@ -304,8 +304,8 @@ window.NITRO_I18N = {
       v3_cta_secondary: "View clients",
       m1_k: "23.5M",
       m1_l: "Total views / 6 months",
-      m2_k: "163",
-      m2_l: "Campaign posts",
+      m2_k: "4",
+      m2_l: "Major campaigns · 163 posts",
       m3_k: "100M",
       m3_l: "META ad spend managed (KRW)",
       m4_k: "15+",
@@ -392,7 +392,7 @@ window.NITRO_I18N = {
     },
     pilot: {
       eyebrow: "4-WEEK PILOT",
-      title: "New team? We start with a 4-week pilot.",
+      title: "New team?<br>We start with a 4-week pilot.",
       sub: "Start small, find the winning format, scale only what converts.",
       steps: [
         { wk: "WEEK 0", t: "PREP", d: "Scope, briefs, anchor creator selection." },

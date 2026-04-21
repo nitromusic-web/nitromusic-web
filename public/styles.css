@@ -895,3 +895,26 @@ section#contact {
     linear-gradient(rgba(10,10,11,0.84), rgba(10,10,11,0.84)),
     url('images/bg/section-bg-6.png');
 }
+
+/* =============== PLATFORM MARQUEE (네트워크 SNS) =============== */
+.platform-row .p-list {
+  display: block;
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+}
+.platform-row .p-track {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  width: max-content;
+  animation: platform-marquee 28s linear infinite;
+}
+.platform-row:hover .p-track { animation-play-state: paused; }
+@keyframes platform-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

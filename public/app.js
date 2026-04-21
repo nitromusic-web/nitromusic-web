@@ -86,11 +86,12 @@
         <div class="d">${st.d}</div>
       </div>`).join('');
     $('#net-platform-label').textContent = n.platforms.label;
-    $('#net-platform-list').innerHTML = n.platforms.list.map(p => {
+    const platformOnce = n.platforms.list.map(p => {
       const key = (typeof p === 'string' ? p : p.name || '').toLowerCase();
       const name = typeof p === 'string' ? p : p.name;
       return `<span class="p-item">${platformIcon(key)} <span>${name}</span></span>`;
     }).join('');
+    $('#net-platform-list').innerHTML = `<div class="p-track">${platformOnce}${platformOnce}</div>`;
 
     // Cases
     const cs = d.cases;
@@ -137,7 +138,7 @@
     // Pilot
     const p = d.pilot;
     $('#pilot-eyebrow').textContent = p.eyebrow;
-    $('#pilot-title').textContent = p.title;
+    $('#pilot-title').innerHTML = p.title;
     $('#pilot-sub').textContent = p.sub;
     $('#pilot-grid').innerHTML = p.steps.map((s, i) => `
       <div class="pilot-step">
