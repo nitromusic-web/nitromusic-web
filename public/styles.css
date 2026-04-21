@@ -146,7 +146,7 @@ section { padding: 120px var(--pad); position: relative; }
   margin: 0 auto 64px;
   max-width: var(--maxw);
   width: 100%;
-  transform: translateX(-10px);
+  transform: translateX(-30px);
 }
 .section-head > * {
   max-width: 920px;
