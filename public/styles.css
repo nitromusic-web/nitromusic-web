@@ -186,6 +186,72 @@ section { padding: 120px var(--pad); position: relative; }
     linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: calc(100%/12) 100%;
 }
+
+/* === Hero ambient motion — subtle animated background (2026-04-21) === */
+.hero-bg {
+  animation:
+    heroKenBurns 28s ease-in-out infinite alternate,
+    heroLightPulse 5s ease-in-out infinite;
+  will-change: transform, filter;
+}
+@keyframes heroKenBurns {
+  0%   { transform: scale(1.00) translate3d(0, 0, 0); }
+  100% { transform: scale(1.06) translate3d(-0.8%, -1.2%, 0); }
+}
+@keyframes heroLightPulse {
+  0%, 100% { filter: contrast(1.05) brightness(0.78) saturate(1.05); }
+  50%      { filter: contrast(1.08) brightness(0.82) saturate(1.09); }
+}
+.hero-smoke1, .hero-smoke2 {
+  position: absolute; inset: -15%; z-index: 0; pointer-events: none;
+  mix-blend-mode: screen; will-change: transform, opacity;
+}
+.hero-smoke1 {
+  background:
+    radial-gradient(ellipse 45% 35% at 25% 75%, rgba(255, 90, 70, 0.14) 0%, transparent 65%),
+    radial-gradient(ellipse 35% 30% at 75% 40%, rgba(255, 130, 90, 0.10) 0%, transparent 65%),
+    radial-gradient(ellipse 55% 45% at 50% 55%, rgba(220, 70, 50, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 30% 25% at 85% 80%, rgba(255, 100, 60, 0.10) 0%, transparent 65%);
+  filter: blur(40px);
+  animation: heroSmokeDrift1 22s ease-in-out infinite;
+}
+.hero-smoke2 {
+  background:
+    radial-gradient(ellipse 40% 35% at 15% 30%, rgba(255, 80, 60, 0.10) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 40% at 85% 20%, rgba(255, 110, 80, 0.09) 0%, transparent 70%);
+  filter: blur(50px);
+  animation: heroSmokeDrift2 30s ease-in-out infinite;
+}
+@keyframes heroSmokeDrift1 {
+  0%   { transform: translate3d(0, 3%, 0) scale(1.00); opacity: 0.75; }
+  33%  { transform: translate3d(1.2%, -2%, 0) scale(1.05); opacity: 1.00; }
+  66%  { transform: translate3d(-0.8%, 1%, 0) scale(1.02); opacity: 0.85; }
+  100% { transform: translate3d(0, 3%, 0) scale(1.00); opacity: 0.75; }
+}
+@keyframes heroSmokeDrift2 {
+  0%   { transform: translate3d(-1%, 0, 0) scale(1.03); opacity: 0.6; }
+  50%  { transform: translate3d(1%, -3%, 0) scale(1.08); opacity: 0.9; }
+  100% { transform: translate3d(-1%, 0, 0) scale(1.03); opacity: 0.6; }
+}
+.hero-vignette-pulse {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(0, 0, 0, 0.25) 100%);
+  animation: heroVignettePulse 7s ease-in-out infinite;
+}
+@keyframes heroVignettePulse {
+  0%, 100% { opacity: 0.5; }
+  50%      { opacity: 0.7; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg,
+  .hero-smoke1,
+  .hero-smoke2,
+  .hero-vignette-pulse {
+    animation: none !important;
+  }
+}
+/* === End hero ambient motion === */
+
 .hero-inner { position: relative; z-index: 2; max-width: var(--maxw); margin: 0 auto; width: 100%;}
 
 .hero-meta-top {
@@ -553,7 +619,7 @@ section { padding: 120px var(--pad); position: relative; }
 }
 .logo-wall .logo-cell {
   flex: 0 0 auto;
-  width: 180px; height: 78px;
+  width: 180px; height: 96px;
   display: grid; place-items: center;
   position: relative;
 }
