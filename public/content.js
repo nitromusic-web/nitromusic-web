@@ -199,10 +199,10 @@ window.NITRO_I18N = {
       eyebrow: "TRUSTED BY",
       title: "함께한 고객.",
       logos: [
-        { src: "images/logos/yg-plus.png", name: "YG Plus" },
         { src: "images/logos/frame-779.png", name: "Warner Music Korea" },
         { src: "images/logos/dnation.png", name: "D-Nation Entertainment" },
         { src: "images/logos/cosm.png", name: "Cosm Company" },
+        { src: "images/logos/yg-plus.png", name: "YG Plus" },
         { src: "images/logos/route.png", name: "Route Company" },
         { src: "images/logos/whyes.png", name: "Whyes Entertainment" },
         { src: "images/logos/howtoouse.png", name: "How to Use" }
@@ -422,10 +422,10 @@ window.NITRO_I18N = {
       eyebrow: "TRUSTED BY",
       title: "Clients we've worked with.",
       logos: [
-        { src: "images/logos/yg-plus.png", name: "YG Plus" },
         { src: "images/logos/frame-779.png", name: "Warner Music Korea" },
         { src: "images/logos/dnation.png", name: "D-Nation Entertainment" },
         { src: "images/logos/cosm.png", name: "Cosm Company" },
+        { src: "images/logos/yg-plus.png", name: "YG Plus" },
         { src: "images/logos/route.png", name: "Route Company" },
         { src: "images/logos/whyes.png", name: "Whyes Entertainment" },
         { src: "images/logos/howtoouse.png", name: "How to Use" }
