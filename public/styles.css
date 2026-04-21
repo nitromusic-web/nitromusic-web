@@ -329,13 +329,12 @@ section { padding: 120px var(--pad); position: relative; }
 }
 .hero-foot .item .k .unit { color: var(--red); }
 
-/* Hero 메인 수치 중 두 개(23.5M+ / 100M+)만 빨간 글로우 강조 */
-#hero-m1-k,
-#hero-m3-k {
-  color: var(--red);
+/* 숫자는 흰색 유지, + 기호(.unit)에만 빨간 글로우 — 23.5M+ / 100M+ 두 항목 */
+#hero-m1-k .unit,
+#hero-m3-k .unit {
   text-shadow:
-    0 0 24px rgba(230,57,70,0.5),
-    0 0 56px rgba(230,57,70,0.25);
+    0 0 18px rgba(230,57,70,0.6),
+    0 0 40px rgba(230,57,70,0.3);
   animation: red-glow 3.2s ease-in-out infinite;
 }
 .hero-foot .item .l {
