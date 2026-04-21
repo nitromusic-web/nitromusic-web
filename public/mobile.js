@@ -73,10 +73,34 @@
     }
   }
 
+  // 모바일(≤767): Contact 섹션에서 form을 channels 바로 앞으로 이동
+  // 모바일 요구 순서: eyebrow → title → sub → FORM → channels
+  function placeContactForm() {
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+    const contactInner = document.querySelector('.contact-inner');
+    const contactLeft = document.querySelector('.contact-left');
+    const contactForm = document.querySelector('.contact-form');
+    const channels = document.getElementById('co-channels');
+    if (!contactInner || !contactLeft || !contactForm || !channels) return;
+
+    if (isMobile) {
+      // form을 co-channels 바로 앞에 (contact-left 내부로 이동)
+      if (contactForm.parentElement !== contactLeft || contactForm.nextElementSibling !== channels) {
+        contactLeft.insertBefore(contactForm, channels);
+      }
+    } else {
+      // 원위치: contact-inner의 자식으로 되돌림 (contact-left 뒤 = 오른쪽 컬럼)
+      if (contactForm.parentElement !== contactInner) {
+        contactInner.appendChild(contactForm);
+      }
+    }
+  }
+
   // 콘텐츠 렌더(i18n) 완료 대기
   function runWhenReady() {
     if (document.getElementById('col-filters') && document.querySelector('.col-new')) {
       placeColumnFilters();
+      placeContactForm();
     } else {
       setTimeout(runWhenReady, 50);
     }
@@ -86,5 +110,8 @@
   } else {
     runWhenReady();
   }
-  window.addEventListener('resize', placeColumnFilters);
+  window.addEventListener('resize', () => {
+    placeColumnFilters();
+    placeContactForm();
+  });
 })();

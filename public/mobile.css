@@ -495,8 +495,28 @@
     margin-top: 16px;
   }
   .contact-channels { margin-top: 28px; }
-  .contact-channels a { padding: 14px 0; }
+  .contact-channels a { padding: 14px 0; grid-template-columns: 72px 1fr auto; gap: 12px; }
+  .contact-channels .k { font-size: 10px; letter-spacing: 0.15em; }
   .contact-channels .v { font-size: 15px; }
+
+  /* 모바일 contact: 2열 → 1열 + form을 channels 앞으로 DOM 이동 (mobile.js) */
+  .contact-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .contact-form {
+    padding: 24px 18px;
+  }
+  .contact-form .form-head h3 { font-size: 16px; }
+  .contact-form .form-head .seq { font-size: 10px; }
+  .form-field input,
+  .form-field textarea,
+  .form-field select { font-size: 16px; }
+  .form-field label { font-size: 11px; letter-spacing: 0.14em; }
+  .form-notice { font-size: 12px; padding: 10px 12px; }
+  .form-row { flex-direction: column; gap: 18px; }
+  .form-field.full { grid-column: auto; }
+  .check { font-size: 13px; padding: 7px 12px; }
 
   /* ---- COLUMN 섹션 ---- */
   /* 모바일: col-layout을 1열 스택으로 재구성.
