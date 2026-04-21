@@ -872,32 +872,32 @@ section#contact {
 }
 section#services {
   background-image:
-    linear-gradient(rgba(10,10,11,0.84), rgba(10,10,11,0.84)),
+    linear-gradient(rgba(10,10,11,0.64), rgba(10,10,11,0.64)),
     url('images/bg/section-bg-1.png');
 }
 section#network {
   background-image:
-    linear-gradient(rgba(10,10,11,0.84), rgba(10,10,11,0.84)),
+    linear-gradient(rgba(10,10,11,0.64), rgba(10,10,11,0.64)),
     url('images/bg/section-bg-2.png');
 }
 section#cases {
   background-image:
-    linear-gradient(rgba(10,10,11,0.84), rgba(10,10,11,0.84)),
+    linear-gradient(rgba(10,10,11,0.64), rgba(10,10,11,0.64)),
     url('images/bg/section-bg-3.png');
 }
 section#pilot {
   background-image:
-    linear-gradient(rgba(10,10,11,0.84), rgba(10,10,11,0.84)),
+    linear-gradient(rgba(10,10,11,0.64), rgba(10,10,11,0.64)),
     url('images/bg/section-bg-4.png');
 }
 section#column {
   background-image:
-    linear-gradient(rgba(10,10,11,0.84), rgba(10,10,11,0.84)),
+    linear-gradient(rgba(10,10,11,0.64), rgba(10,10,11,0.64)),
     url('images/bg/section-bg-5.png');
 }
 section#contact {
   background-image:
-    linear-gradient(rgba(10,10,11,0.84), rgba(10,10,11,0.84)),
+    linear-gradient(rgba(10,10,11,0.64), rgba(10,10,11,0.64)),
     url('images/bg/section-bg-6.png');
 }
 
