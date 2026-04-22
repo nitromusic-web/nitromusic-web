@@ -1116,3 +1116,92 @@ section#contact {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
 }
+
+/* ============================================================
+   NAV — "칼럼" link violet-blue neon glow
+   ============================================================ */
+.nav-links a[data-n="column"],
+.mobile-menu-links a[data-n="column"] {
+  color: #b49cff;
+  text-shadow:
+    0 0 6px rgba(155, 124, 255, 0.85),
+    0 0 14px rgba(120, 130, 255, 0.55),
+    0 0 28px rgba(90, 110, 255, 0.35);
+  animation: column-neon-pulse 2.6s ease-in-out infinite;
+}
+.nav-links a[data-n="column"]:hover,
+.mobile-menu-links a[data-n="column"]:hover {
+  color: #d5c5ff;
+}
+/* Keep red underline for active state hidden on column link to avoid clash */
+.nav-links a[data-n="column"]::after { background: #8e7dff; box-shadow: 0 0 10px rgba(155,124,255,0.6); }
+
+@keyframes column-neon-pulse {
+  0%, 100% {
+    text-shadow:
+      0 0 5px rgba(155, 124, 255, 0.72),
+      0 0 12px rgba(120, 130, 255, 0.45),
+      0 0 22px rgba(90, 110, 255, 0.28);
+  }
+  50% {
+    text-shadow:
+      0 0 9px rgba(180, 156, 255, 1),
+      0 0 18px rgba(140, 150, 255, 0.72),
+      0 0 34px rgba(110, 130, 255, 0.5);
+  }
+}
+
+/* ============================================================
+   STICKY INSIGHT BAR — big red bar, same look on PC and mobile.
+   Appears while #aggregate is in viewport.
+   ============================================================ */
+.stick-bar {
+  position: fixed; left: 0; right: 0; bottom: 0;
+  z-index: 60;
+  display: flex; justify-content: center; align-items: center;
+  padding: 22px 40px;
+  background: #E63946;
+  box-shadow:
+    0 -14px 40px rgba(230, 57, 70, 0.28),
+    0 -2px 0 rgba(255, 255, 255, 0.08) inset;
+  transform: translateY(105%);
+  opacity: 0;
+  transition: transform 380ms cubic-bezier(.16,.8,.32,1),
+              opacity  260ms ease;
+  pointer-events: none;
+}
+.stick-bar.show { transform: none; opacity: 1; pointer-events: auto; }
+.stick-bar[hidden] { display: none; }
+.stick-bar__cta {
+  display: inline-flex; align-items: center; gap: 20px;
+  color: #ffffff; text-decoration: none;
+  font-family: var(--font-kr);
+  font-size: clamp(22px, 4.4vw, 41px);
+  font-weight: 700;
+  letter-spacing: -0.028em;
+  line-height: 1.1;
+  padding: 0;
+  text-align: center;
+  transition: transform 160ms ease;
+}
+.stick-bar__cta:hover { transform: translateY(-2px); }
+.stick-bar__cta::before {
+  content: '';
+  width: 12px; height: 12px; border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 0 18px rgba(255, 255, 255, 0.9);
+  animation: sb-pulse 1.6s ease-in-out infinite;
+  flex-shrink: 0;
+}
+.stick-bar__cta .arrow {
+  color: #ffffff;
+  font-size: inherit;
+  font-weight: 700;
+}
+@keyframes sb-pulse { 50% { transform: scale(1.35); opacity: 0.6; } }
+
+@media (max-width: 600px) {
+  .stick-bar { padding: 16px 18px; }
+  .stick-bar__cta { gap: 12px; }
+  .stick-bar__cta::before { width: 9px; height: 9px; }
+}

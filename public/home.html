@@ -204,7 +204,7 @@
       <div id="col-top5-list"></div>
     </div>
     <div class="col-new">
-      <div class="head"><h3><span class="new-pill">NEW</span><span id="col-new-title">새로 발행된 마케팅 콘텐츠</span></h3><a href="#" class="more" id="col-new-more">전체 보기 →</a></div>
+      <div class="head"><h3><span class="new-pill">NEW</span><span id="col-new-title">새로 발행된 마케팅 콘텐츠</span></h3><a href="./column/index.html" class="more" id="col-new-more">전체 보기 →</a></div>
       <div class="col-new-grid" id="col-new-grid"></div>
     </div>
   </div>
@@ -268,8 +268,43 @@
   </div>
 </footer>
 
+<!-- STICKY INSIGHT BAR — appears while #aggregate is in view -->
+<div class="stick-bar" id="stick-bar" aria-hidden="true" hidden>
+  <a href="#column" class="stick-bar__cta">
+    <span class="stick-bar__label" id="stick-bar-label">음원 프로모션 인사이트 받기</span>
+    <span class="arrow">→</span>
+  </a>
+</div>
+
 <script src="content.js?v=38"></script>
-<script src="app.js?v=29"></script>
+<script src="app.js?v=30"></script>
 <script src="mobile.js?v=5"></script>
+<script>
+// Show sticky bar while #aggregate is in viewport
+(function () {
+  const bar = document.getElementById('stick-bar');
+  const target = document.getElementById('aggregate');
+  if (!bar || !target || !('IntersectionObserver' in window)) return;
+
+  let hideTimer;
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        clearTimeout(hideTimer);
+        bar.hidden = false;
+        bar.setAttribute('aria-hidden', 'false');
+        requestAnimationFrame(() => bar.classList.add('show'));
+      } else {
+        bar.classList.remove('show');
+        bar.setAttribute('aria-hidden', 'true');
+        hideTimer = setTimeout(() => {
+          if (!bar.classList.contains('show')) bar.hidden = true;
+        }, 420);
+      }
+    });
+  }, { threshold: 0.18 });
+  io.observe(target);
+})();
+</script>
 </body>
 </html>

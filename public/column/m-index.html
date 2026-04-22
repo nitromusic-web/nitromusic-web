@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fafaf7">
+<script>
+/* Viewport-based redirect to desktop build. Skipped inside iframes
+   so mobile-preview.html keeps working. Preserves ?query and #hash. */
+(function () {
+  if (window.top !== window.self) return;
+  if (window.matchMedia('(min-width: 861px)').matches) {
+    location.replace('index.html' + location.search + location.hash);
+  }
+})();
+</script>
+<title>칼럼 — Nitro Insights</title>
+<link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="m-nav">
+  <a href="#" class="logo"><img src="assets/logo.png" alt="Nitro Music"></a>
+  <div class="center">COLUMN</div>
+  <button class="ham" aria-label="메뉴 열기" id="ham-btn"><span></span></button>
+</nav>
+
+<!-- FULLSCREEN MENU -->
+<aside class="m-menu" id="menu" aria-hidden="true">
+  <div class="bar">
+    <a href="#" class="logo"><img src="assets/logo.png" alt="Nitro Music"></a>
+    <button class="close" aria-label="닫기" id="menu-close">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4 L16 16 M16 4 L4 16" stroke="currentColor" stroke-width="1.5"/></svg>
+    </button>
+  </div>
+  <ul>
+    <li><a href="#"><span class="n">01</span><span data-kr="서비스" data-en="Service">Service</span></a></li>
+    <li><a href="#"><span class="n">02</span><span data-kr="네트워크" data-en="Network">Network</span></a></li>
+    <li><a href="m-index.html" class="active"><span class="n">03</span><span data-kr="칼럼" data-en="Column">Column</span></a></li>
+    <li><a href="#"><span class="n">04</span><span data-kr="캠페인" data-en="Campaigns">Campaigns</span></a></li>
+    <li><a href="#"><span class="n">05</span><span data-kr="회사 소개" data-en="About">About</span></a></li>
+    <li><a href="#"><span class="n">06</span><span data-kr="문의하기" data-en="Contact">Contact</span></a></li>
+  </ul>
+  <a href="#" class="cta-btn" data-kr="무료 상담 신청하기 →" data-en="Book a free consult →">무료 상담 신청하기 →</a>
+  <div class="foot">
+    <span>NITROMUSIC © 2026</span>
+    <div class="lang" role="group" aria-label="Language">
+      <button class="on" data-lang="ko" aria-pressed="true">KR</button>
+      <button data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</aside>
+
+<!-- HERO -->
+<header class="m-hero">
+  <div class="eyebrow">COLUMN · 2026.05 · 16 PUBLISHED</div>
+  <h1><span data-kr="현장에서 쓴," data-en="Notes from the field,">현장에서 쓴,</span><br><em>Nitro Insights.</em></h1>
+  <p class="lead" data-kr="한국 숏폼 음원 마케팅 현장의 관찰, 데이터, 캠페인 노트." data-en="Observations, data, and campaign notes from the Korean short-form music marketing floor.">한국 숏폼 음원 마케팅 현장의 관찰, 데이터, 캠페인 노트.</p>
+  <div class="stats">
+    <div class="c">
+      <div class="v">16<em>.</em></div>
+      <div class="l" data-kr="칼럼" data-en="Columns">Columns</div>
+    </div>
+    <div class="c">
+      <div class="v">4<em>.</em></div>
+      <div class="l" data-kr="카테고리" data-en="Categories">Categories</div>
+    </div>
+  </div>
+</header>
+
+<!-- FILTER BAR -->
+<div class="m-filter">
+  <button class="f-btn" id="filter-btn">
+    <span class="lbl">
+      <span id="filter-label" data-kr="전체 · 모든 독자" data-en="All · All readers">전체 · 모든 독자</span>
+      <span class="ct" id="filter-count">16</span>
+    </span>
+    <span class="chev">▾</span>
+  </button>
+  <button class="search-btn" aria-label="검색">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="7" cy="7" r="5" stroke="currentColor" stroke-width="1.3"/><path d="m11 11 3 3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+  </button>
+</div>
+
+<!-- SECTION: TOP 5 -->
+<section aria-labelledby="top5">
+  <div class="m-sec-head">
+    <h2 id="top5"><span class="k">01 /</span>Top 5</h2>
+    <a href="#" class="all" data-kr="순위 →" data-en="Ranking →">순위 →</a>
+  </div>
+  <div class="m-top5" id="top5-list"></div>
+</section>
+
+<!-- SECTION: FEATURED (Variant B only) -->
+<section aria-labelledby="featured" class="m-featured-section">
+  <div class="m-sec-head">
+    <h2 id="featured"><span class="k">01 /</span>Featured</h2>
+  </div>
+  <div class="m-featured" id="featured-list"></div>
+</section>
+
+<!-- SECTION: LATEST -->
+<section aria-labelledby="latest">
+  <div class="m-sec-head latest">
+    <h2 id="latest"><span class="k">02 /</span><span data-kr="최신 칼럼" data-en="Latest columns">최신 칼럼</span></h2>
+    <a href="#" class="all" data-kr="전체 →" data-en="All →">전체 →</a>
+  </div>
+  <div class="m-latest" id="latest-list"></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="m-footer">
+  <div class="logo"><img src="assets/logo.png" alt="Nitro Music"></div>
+  <p data-kr="숏폼 + 음원. 캠페인을 설계하고, 운영하고, 숫자로 되돌립니다." data-en="Short-form × music. We design, run, and return campaigns in numbers.">숏폼 + 음원. 캠페인을 설계하고, 운영하고, 숫자로 되돌립니다.</p>
+  <div class="links">
+    <div>
+      <h5>SERVICE</h5>
+      <ul>
+        <li><a href="#" data-kr="캠페인 기획" data-en="Campaign design">캠페인 기획</a></li>
+        <li><a href="#" data-kr="숏폼 운영" data-en="Short-form ops">숏폼 운영</a></li>
+        <li><a href="#" data-kr="데이터 분석" data-en="Data analytics">데이터 분석</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>CONTENT</h5>
+      <ul>
+        <li><a href="m-index.html" data-kr="칼럼" data-en="Column">칼럼</a></li>
+        <li><a href="#" data-kr="케이스" data-en="Cases">케이스</a></li>
+        <li><a href="#" data-kr="뉴스레터" data-en="Newsletter">뉴스레터</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>ABOUT</h5>
+      <ul>
+        <li><a href="#" data-kr="회사 소개" data-en="Company">회사 소개</a></li>
+        <li><a href="#" data-kr="네트워크" data-en="Network">네트워크</a></li>
+        <li><a href="#" data-kr="채용" data-en="Careers">채용</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>CONTACT</h5>
+      <ul>
+        <li><a href="#" data-kr="문의하기" data-en="Contact">문의하기</a></li>
+        <li><a href="#">hello@nitro.kr</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="copy">
+    <span>© 2026 NITROMUSIC</span>
+    <span>ALL RIGHTS</span>
+  </div>
+</footer>
+
+<!-- FILTER SHEET -->
+<div class="m-sheet-backdrop" id="sheet-bd"></div>
+<aside class="m-sheet" id="sheet" aria-hidden="true">
+  <div class="handle"></div>
+  <h4 data-kr="카테고리" data-en="Category">카테고리</h4>
+  <div class="opts" id="cat-opts"></div>
+  <h4 data-kr="독자" data-en="Readers">독자</h4>
+  <div class="opts" id="aud-opts"></div>
+  <button class="apply" id="sheet-apply" data-kr="결과 보기" data-en="Show results">결과 보기</button>
+</aside>
+
+<!-- VARIANT PILL -->
+<button class="m-var-pill" id="var-pill">
+  <span class="dot"></span>
+  <span id="var-label">VAR A · NEWS</span>
+</button>
+
+<script src="data.js"></script>
+<script src="i18n.js"></script>
+<script>
+// ============================================================
+// Nitro Insights — Column Mobile — JS (bilingual)
+// ============================================================
+
+const T    = (obj, field) => (window.NITRO_I18N ? window.NITRO_I18N.t(obj, field) : (obj && obj[field] != null ? obj[field] : ''));
+const CAT  = c => (window.NITRO_LANG === 'en' && c.cat_name_en) ? c.cat_name_en : c.cat;
+const READ = c => (window.NITRO_LANG === 'en' && c.read_en) ? c.read_en : c.read;
+
+function audPills(c) {
+  if (!c.audience || !c.audience.length) return '';
+  return c.audience.map(a => {
+    const aud = (window.NITRO_AUDIENCES || []).find(x => x.key === a) || { key: a, label: a };
+    return `<span class="aud ${a}">${T(aud, 'label')}</span>`;
+  }).join('');
+}
+
+const state = {
+  variant: localStorage.getItem('nm-mvar') || 'a',
+  cat: 'all',
+  aud: 'all'
+};
+
+// ---- Thumbnail render (compact, 88px square) ----
+function renderThumb(c, small = true) {
+  const hook = (T(c, 'thumb_hook') || '').replace(/\n/g, '<br>');
+  if (c.thumb_mode === 'photo') {
+    return `<div class="thumb photo" style="background:${c.thumb_bg || '#0a0a0b'}">
+      <img src="${c.thumb_img}" alt="">
+    </div>`;
+  }
+  if (c.thumb_mode === 'abstract') {
+    return `<div class="thumb abstract" style="background:${c.thumb_bg};color:${c.thumb_fg}">
+      <span class="hk">${hook}</span>
+    </div>`;
+  }
+  return `<div class="thumb" style="background:${c.thumb_bg};color:${c.thumb_fg}">
+    <span class="hk">${hook}</span>
+  </div>`;
+}
+
+function viewsWord() { return window.NITRO_LANG === 'en' ? 'views' : 'views'; }
+
+// ---- TOP 5 render ----
+function renderTop5() {
+  const host = document.getElementById('top5-list');
+  const top5 = [...NITRO_COLUMNS].sort((a, b) => a.rank - b.rank).slice(0, 5);
+  host.innerHTML = top5.map((c, i) => `
+    <a class="m-top5-row" href="m-article.html?id=${c.id}">
+      <div class="rk">${String(i + 1).padStart(2, '0')}</div>
+      <div class="body">
+        <div class="cat-line"><span class="cat">${c.cat_en}</span>${audPills(c)}</div>
+        <div class="t">${T(c, 'title')}</div>
+        <div class="meta">
+          <span class="v">${c.views}</span>
+          <span>${viewsWord()}</span>
+          <span class="sep">·</span>
+          <span>${READ(c)}</span>
+        </div>
+      </div>
+    </a>
+  `).join('');
+}
+
+// ---- FEATURED render (Variant B) ----
+function renderFeatured() {
+  const host = document.getElementById('featured-list');
+  const feats = NITRO_COLUMNS.filter(c => c.featured).slice(0, 2);
+  host.innerHTML = feats.map(c => `
+    <a class="card" href="m-article.html?id=${c.id}">
+      ${renderThumb(c, false).replace('class="thumb', 'class="thumb featured-thumb')}
+      <div class="cat-line"><span class="cat">${CAT(c)}</span>${audPills(c)}</div>
+      <h3>${T(c, 'title')}</h3>
+      <p class="dek">${T(c, 'dek')}</p>
+      <div class="meta">
+        <span>${c.date}</span>
+        <span>·</span>
+        <span>${READ(c)}</span>
+        <span>·</span>
+        <span class="v">${c.views}</span>
+      </div>
+    </a>
+  `).join('');
+}
+
+// ---- LATEST render ----
+function renderLatest() {
+  const host = document.getElementById('latest-list');
+  let list = [...NITRO_COLUMNS].sort((a, b) => b.date.localeCompare(a.date));
+
+  if (state.variant === 'a') list = list.slice(0, 8);
+  else list = list.slice(0, 12);
+
+  if (state.cat !== 'all') list = list.filter(c => c.cat_en === state.cat);
+  if (state.aud !== 'all') list = list.filter(c => c.audience.includes(state.aud));
+
+  if (!list.length) {
+    const msg = window.NITRO_LANG === 'en'
+      ? 'No columns match this filter.'
+      : '조건에 맞는 칼럼이 없습니다.';
+    host.innerHTML = `<div style="padding:40px 0;text-align:center;color:var(--ink-mute);font-size:13px;">${msg}</div>`;
+    return;
+  }
+
+  host.innerHTML = list.map(c => `
+    <a class="m-row" href="m-article.html?id=${c.id}">
+      ${renderThumb(c, true)}
+      <div class="body">
+        <div class="cat-line"><span class="cat">${c.cat_en}</span>${audPills(c)}</div>
+        <div class="t">${T(c, 'title')}</div>
+        <div class="meta">
+          <span>${c.date.replace(/^\d{4}\./, '')}</span>
+          <span class="sep">·</span>
+          <span>${READ(c)}</span>
+          <span class="sep">·</span>
+          <span class="v">${formatViews(c.views)}</span>
+        </div>
+      </div>
+    </a>
+  `).join('');
+}
+
+function formatViews(v) {
+  const n = parseInt(v.replace(/,/g, ''), 10);
+  if (window.NITRO_LANG === 'en') {
+    if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+    return v;
+  }
+  if (n >= 10000) return (n / 10000).toFixed(1).replace(/\.0$/, '') + '만';
+  if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+  return v;
+}
+
+// ---- FILTER SHEET ----
+function openSheet() {
+  document.getElementById('sheet').classList.add('open');
+  document.getElementById('sheet-bd').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeSheet() {
+  document.getElementById('sheet').classList.remove('open');
+  document.getElementById('sheet-bd').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function renderSheetOpts() {
+  const catHost = document.getElementById('cat-opts');
+  const audHost = document.getElementById('aud-opts');
+
+  catHost.innerHTML = NITRO_CATEGORIES.map(c => {
+    const enKey = catEnKey(c.key);
+    const cnt = c.key === 'all' ? NITRO_COLUMNS.length : NITRO_COLUMNS.filter(x => x.cat_en === enKey).length;
+    return `<button data-cat="${enKey}" class="${state.cat === enKey ? 'on' : ''}">
+      <span>${T(c, 'label')}</span>
+      <span class="ct">${cnt}</span>
+    </button>`;
+  }).join('');
+
+  audHost.innerHTML = NITRO_AUDIENCES.map(a => `
+    <button data-aud="${a.key}" class="${state.aud === a.key ? 'on' : ''}">
+      <span>${T(a, 'label')}</span>
+      <span class="ct">${a.count}</span>
+    </button>
+  `).join('');
+
+  catHost.onclick = (e) => {
+    const btn = e.target.closest('button'); if (!btn) return;
+    state.cat = btn.dataset.cat;
+    catHost.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === btn));
+  };
+  audHost.onclick = (e) => {
+    const btn = e.target.closest('button'); if (!btn) return;
+    state.aud = btn.dataset.aud;
+    audHost.querySelectorAll('button').forEach(b => b.classList.toggle('on', b === btn));
+  };
+}
+
+function catEnKey(k) {
+  return k === 'all' ? 'all' : k;
+}
+
+function applyFilter() {
+  const audObj = NITRO_AUDIENCES.find(a => a.key === state.aud);
+  const catObj = NITRO_CATEGORIES.find(c => catEnKey(c.key) === state.cat);
+  const allReadersLabel = window.NITRO_LANG === 'en' ? 'All readers' : '모든 독자';
+  const audLabel = state.aud === 'all' ? allReadersLabel : (audObj ? T(audObj, 'label') : state.aud);
+  const catLabel = state.cat === 'all'
+    ? (window.NITRO_LANG === 'en' ? 'All' : '전체')
+    : (catObj ? T(catObj, 'label') : '전체');
+  document.getElementById('filter-label').textContent =
+    `${catLabel.length > 12 ? catLabel.slice(0, 12) + '…' : catLabel} · ${audLabel}`;
+
+  let list = NITRO_COLUMNS;
+  if (state.cat !== 'all') list = list.filter(c => c.cat_en === state.cat);
+  if (state.aud !== 'all') list = list.filter(c => c.audience.includes(state.aud));
+  document.getElementById('filter-count').textContent = list.length;
+
+  renderLatest();
+  closeSheet();
+}
+
+// ---- MENU ----
+document.getElementById('ham-btn').onclick = () => {
+  document.getElementById('menu').classList.add('open');
+  document.body.style.overflow = 'hidden';
+};
+document.getElementById('menu-close').onclick = () => {
+  document.getElementById('menu').classList.remove('open');
+  document.body.style.overflow = '';
+};
+
+// ---- Variant toggle ----
+function applyVariant() {
+  document.body.classList.toggle('var-a', state.variant === 'a');
+  document.body.classList.toggle('var-b', state.variant === 'b');
+  document.getElementById('var-label').textContent = state.variant === 'a' ? 'VAR A · NEWS' : 'VAR B · EDITORIAL';
+  document.querySelector('.m-featured-section').style.display = state.variant === 'b' ? 'block' : 'none';
+  document.querySelector('[aria-labelledby="top5"]').style.display = state.variant === 'a' ? 'block' : 'none';
+  renderLatest();
+}
+
+document.getElementById('var-pill').onclick = () => {
+  state.variant = state.variant === 'a' ? 'b' : 'a';
+  localStorage.setItem('nm-mvar', state.variant);
+  applyVariant();
+};
+
+document.getElementById('filter-btn').onclick = () => {
+  renderSheetOpts();
+  openSheet();
+};
+document.getElementById('sheet-bd').onclick = closeSheet;
+document.getElementById('sheet-apply').onclick = applyFilter;
+
+// ---- Init ----
+renderTop5();
+renderFeatured();
+applyVariant();
+applyFilter();
+
+// ---- Re-render on language change ----
+document.addEventListener('nitro-lang-change', () => {
+  renderTop5();
+  renderFeatured();
+  applyFilter();
+});
+</script>
+</body>
+</html>

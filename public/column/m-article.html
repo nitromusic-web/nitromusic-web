@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#fafaf7">
+<script>
+/* Viewport-based redirect to desktop build. Skipped inside iframes.
+   Preserves ?id=cXXX and #hash. */
+(function () {
+  if (window.top !== window.self) return;
+  if (window.matchMedia('(min-width: 861px)').matches) {
+    location.replace('article.html' + location.search + location.hash);
+  }
+})();
+</script>
+<title>칼럼 — Nitro Insights</title>
+<link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+<!-- STICKY BACK BAR -->
+<nav class="m-art-back">
+  <a href="m-index.html" class="b">
+    <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M7.5 2 L3 6 L7.5 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span data-kr="칼럼" data-en="Column">칼럼</span>
+  </a>
+  <div class="mini" id="mini-title">PLAYBOOK · C-002</div>
+  <div class="actions">
+    <button id="ham-btn-art" aria-label="메뉴">
+      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+        <path d="M3 5 H15 M3 9 H15 M3 13 H15" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- FULLSCREEN MENU -->
+<aside class="m-menu" id="menu" aria-hidden="true">
+  <div class="bar">
+    <a href="#" class="logo"><img src="assets/logo.png" alt="Nitro Music"></a>
+    <button class="close" aria-label="닫기" id="menu-close">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4 L16 16 M16 4 L4 16" stroke="currentColor" stroke-width="1.5"/></svg>
+    </button>
+  </div>
+  <ul>
+    <li><a href="#"><span class="n">01</span><span data-kr="서비스" data-en="Service">Service</span></a></li>
+    <li><a href="#"><span class="n">02</span><span data-kr="네트워크" data-en="Network">Network</span></a></li>
+    <li><a href="m-index.html" class="active"><span class="n">03</span><span data-kr="칼럼" data-en="Column">Column</span></a></li>
+    <li><a href="#"><span class="n">04</span><span data-kr="캠페인" data-en="Campaigns">Campaigns</span></a></li>
+    <li><a href="#"><span class="n">05</span><span data-kr="회사 소개" data-en="About">About</span></a></li>
+    <li><a href="#"><span class="n">06</span><span data-kr="문의하기" data-en="Contact">Contact</span></a></li>
+  </ul>
+  <a href="#" class="cta-btn" data-kr="무료 상담 신청하기 →" data-en="Book a free consult →">무료 상담 신청하기 →</a>
+  <div class="foot">
+    <span>NITROMUSIC © 2026</span>
+    <div class="lang" role="group" aria-label="Language">
+      <button class="on" data-lang="ko" aria-pressed="true">KR</button>
+      <button data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</aside>
+
+<!-- ARTICLE HEAD -->
+<header class="m-art-head">
+  <div class="kicker" id="kicker">COLUMN · PLAYBOOK · C-002</div>
+  <h1 id="art-title"></h1>
+  <p class="dek" id="art-dek"></p>
+
+  <div class="m-art-stats">
+    <div class="c audience">
+      <div class="l" data-kr="독자" data-en="For whom">For whom</div>
+      <div class="v" id="for-whom"></div>
+    </div>
+    <div class="c">
+      <div class="l" data-kr="읽기" data-en="Read">Read</div>
+      <div class="v" id="read-time"></div>
+    </div>
+    <div class="c">
+      <div class="l">Views</div>
+      <div class="v" id="views"></div>
+    </div>
+  </div>
+</header>
+
+<!-- BYLINE -->
+<div class="m-art-byline">
+  <div class="av" id="av"></div>
+  <div class="who">
+    <div class="n" id="author"></div>
+    <div class="r" id="author-role"></div>
+  </div>
+  <div class="date" id="date"></div>
+</div>
+
+<!-- HERO -->
+<figure class="m-art-hero" id="art-hero" style="background:#0a0a0b;color:#E63946">
+  <span class="hk" id="hero-hk"></span>
+</figure>
+
+<!-- BODY -->
+<article class="m-art-body">
+  <div id="m-body"></div>
+
+  <div class="m-art-tags">
+    <span class="k" data-kr="TAGS" data-en="TAGS">TAGS</span>
+    <span class="tag" data-kr="#스트리밍전환" data-en="#streaming-conversion">#스트리밍전환</span>
+    <span class="tag" data-kr="#스니펫설계" data-en="#snippet-design">#스니펫설계</span>
+    <span class="tag" data-kr="#딥링크" data-en="#deep-link">#딥링크</span>
+    <span class="tag" data-kr="#관객매치" data-en="#listener-match">#관객매치</span>
+  </div>
+</article>
+
+<!-- RELATED -->
+<section class="m-art-related">
+  <div class="head">
+    <h3><span class="k">03 /</span><span data-kr="다른 칼럼" data-en="More columns">다른 칼럼</span></h3>
+    <a href="m-index.html" class="all" style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.15em;color:var(--ink-dim);text-transform:uppercase;" data-kr="전체 →" data-en="All →">전체 →</a>
+  </div>
+  <div class="list" id="related-list"></div>
+</section>
+
+<!-- STICKY BOTTOM CTA -->
+<div class="m-art-cta-bar">
+  <button id="share-btn">
+    <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2 V10 M7.5 2 L4.5 5 M7.5 2 L10.5 5 M2.5 8 V12 H12.5 V8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span data-kr="공유하기" data-en="Share">공유하기</span>
+  </button>
+  <button class="primary" id="contact-btn" data-kr="캠페인 문의 →" data-en="Book campaign →">
+    캠페인 문의 →
+  </button>
+</div>
+
+<!-- SHARE SHEET -->
+<div class="m-sheet-backdrop" id="sheet-bd"></div>
+<aside class="m-sheet m-share-sheet" id="sheet" aria-hidden="true">
+  <div class="handle"></div>
+  <h4 data-kr="공유 &amp; 저장" data-en="Share &amp; save">공유 &amp; 저장</h4>
+  <div class="share-list">
+    <button><span data-kr="링크 복사" data-en="Copy link">링크 복사</span><span class="ico">URL</span></button>
+    <button><span data-kr="카카오톡" data-en="KakaoTalk">카카오톡</span><span class="ico">KAKAO</span></button>
+    <button><span data-kr="트위터(X)" data-en="X / Twitter">트위터(X)</span><span class="ico">X</span></button>
+    <button><span>LinkedIn</span><span class="ico">LI</span></button>
+    <button><span data-kr="이 칼럼을 뉴스레터로 받기" data-en="Subscribe by newsletter">이 칼럼을 뉴스레터로 받기</span><span class="ico">RSS</span></button>
+  </div>
+</aside>
+
+<script src="data.js"></script>
+<script src="i18n.js"></script>
+<script>
+// ============================================================
+// Mobile Article — hydrate from ?id= param (bilingual)
+// ============================================================
+
+const T    = (obj, field) => (window.NITRO_I18N ? window.NITRO_I18N.t(obj, field) : (obj && obj[field] != null ? obj[field] : ''));
+const CAT  = c => (window.NITRO_LANG === 'en' && c.cat_name_en) ? c.cat_name_en : c.cat;
+const READ = c => (window.NITRO_LANG === 'en' && c.read_en) ? c.read_en : c.read;
+
+function audPills(c) {
+  if (!c.audience || !c.audience.length) return '';
+  return c.audience.map(a => {
+    const aud = (window.NITRO_AUDIENCES || []).find(x => x.key === a) || { key: a, label: a };
+    return `<span class="aud ${a}">${T(aud, 'label')}</span>`;
+  }).join('');
+}
+
+function getParam(k) {
+  return new URL(location.href).searchParams.get(k);
+}
+
+function formatViews(v) {
+  const n = parseInt(v.replace(/,/g, ''), 10);
+  if (window.NITRO_LANG === 'en') {
+    if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+    return v;
+  }
+  if (n >= 10000) return (n / 10000).toFixed(1).replace(/\.0$/, '') + '만';
+  return v;
+}
+
+function audLabelsFor(c) {
+  return c.audience.map(a => {
+    const aud = (window.NITRO_AUDIENCES || []).find(x => x.key === a);
+    return aud ? T(aud, 'label') : a;
+  });
+}
+
+const ARTICLE_ID = getParam('id') || 'c002';
+
+function hydrate() {
+  const c = NITRO_COLUMNS.find(x => x.id === ARTICLE_ID) || NITRO_COLUMNS[1];
+  if (!c) return;
+
+  document.title = T(c, 'title') + ' — Nitro Insights';
+
+  const cidDisplay = c.id.toUpperCase().replace(/^C(\d+)/, 'C-$1');
+  document.getElementById('kicker').textContent =
+    `COLUMN · ${(c.cat_en || '').toUpperCase()} · ${cidDisplay}`;
+  document.getElementById('mini-title').textContent =
+    `${(c.cat_en || '').toUpperCase()} · ${cidDisplay}`;
+  document.getElementById('art-title').textContent = T(c, 'title');
+  document.getElementById('art-dek').textContent = T(c, 'dek');
+
+  document.getElementById('for-whom').innerHTML = audLabelsFor(c).join('<br>');
+  document.getElementById('read-time').textContent = READ(c);
+  document.getElementById('views').textContent = c.views;
+
+  const author = T(c, 'author');
+  document.getElementById('author').textContent = author;
+  document.getElementById('author-role').textContent = (c.author_role || '').toUpperCase();
+  document.getElementById('av').textContent = author.charAt(0);
+  document.getElementById('date').textContent = c.date;
+
+  // Hero
+  const hero = document.getElementById('art-hero');
+  const heroHk = document.getElementById('hero-hk');
+  const hook = (T(c, 'thumb_hook') || '').replace(/\n/g, '<br>');
+  hero.className = 'm-art-hero';
+  if (c.thumb_mode === 'photo') {
+    hero.classList.add('photo');
+    hero.innerHTML = `<img src="${c.thumb_img}" alt=""><span class="hk" style="position:absolute;bottom:16px;left:16px;color:#fff;">${hook}</span>`;
+  } else if (c.thumb_mode === 'abstract') {
+    hero.style.background = c.thumb_bg;
+    hero.style.color = c.thumb_fg;
+    heroHk.style.fontFamily = 'var(--font-dp)';
+    heroHk.style.fontWeight = '500';
+    heroHk.style.fontSize = '56px';
+    heroHk.style.textAlign = 'center';
+    heroHk.innerHTML = hook;
+  } else {
+    hero.style.background = c.thumb_bg;
+    hero.style.color = c.thumb_fg;
+    heroHk.innerHTML = hook;
+  }
+}
+
+function renderBody() {
+  const body = (window.NITRO_ARTICLE_BODY && window.NITRO_ARTICLE_BODY[ARTICLE_ID]) || [];
+  const host = document.getElementById('m-body');
+  host.innerHTML = body.map(b => {
+    const text = T(b, 'text');
+    if (b.type === 'lede')    return `<p class="lede">${text}</p>`;
+    if (b.type === 'h2')      return `<h2 id="${b.id || ''}">${text}</h2>`;
+    if (b.type === 'p')       return `<p>${text}</p>`;
+    if (b.type === 'callout') return `<div class="callout">${text}</div>`;
+    return '';
+  }).join('');
+}
+
+function renderRelated() {
+  const related = NITRO_COLUMNS.filter(c => c.id !== ARTICLE_ID).slice(0, 3);
+  const host = document.getElementById('related-list');
+  host.innerHTML = related.map(c => {
+    const hook = (T(c, 'thumb_hook') || '').replace(/\n/g, '<br>');
+    let thumb;
+    if (c.thumb_mode === 'photo') {
+      thumb = `<div class="thumb photo" style="background:${c.thumb_bg || '#0a0a0b'}"><img src="${c.thumb_img}" alt=""></div>`;
+    } else if (c.thumb_mode === 'abstract') {
+      thumb = `<div class="thumb abstract" style="background:${c.thumb_bg};color:${c.thumb_fg}"><span class="hk">${hook}</span></div>`;
+    } else {
+      thumb = `<div class="thumb" style="background:${c.thumb_bg};color:${c.thumb_fg}"><span class="hk">${hook}</span></div>`;
+    }
+    return `<a class="m-row" href="m-article.html?id=${c.id}">
+      ${thumb}
+      <div class="body">
+        <div class="cat-line"><span class="cat">${c.cat_en}</span>${audPills(c)}</div>
+        <div class="t">${T(c, 'title')}</div>
+        <div class="meta">
+          <span>${c.date.replace(/^\d{4}\./, '')}</span>
+          <span class="sep">·</span>
+          <span>${READ(c)}</span>
+          <span class="sep">·</span>
+          <span class="v">${formatViews(c.views)}</span>
+        </div>
+      </div>
+    </a>`;
+  }).join('');
+}
+
+// menu
+document.getElementById('ham-btn-art').onclick = () => {
+  document.getElementById('menu').classList.add('open');
+  document.body.style.overflow = 'hidden';
+};
+document.getElementById('menu-close').onclick = () => {
+  document.getElementById('menu').classList.remove('open');
+  document.body.style.overflow = '';
+};
+
+// share
+function openShare() {
+  document.getElementById('sheet').classList.add('open');
+  document.getElementById('sheet-bd').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeShare() {
+  document.getElementById('sheet').classList.remove('open');
+  document.getElementById('sheet-bd').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('share-btn').onclick = openShare;
+document.getElementById('sheet-bd').onclick = closeShare;
+
+// contact
+document.getElementById('contact-btn').onclick = () => {
+  const msg = window.NITRO_LANG === 'en' ? 'Navigating to contact page.' : '문의 페이지로 이동합니다.';
+  alert(msg);
+};
+
+// init
+hydrate();
+renderBody();
+renderRelated();
+
+window.scrollTo(0, 0);
+
+// re-render on language change
+document.addEventListener('nitro-lang-change', () => {
+  hydrate();
+  renderBody();
+  renderRelated();
+});
+</script>
+</body>
+</html>

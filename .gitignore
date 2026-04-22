@@ -36,9 +36,16 @@ yarn-error.log*
 # vercel
 .vercel
 
+# velite (마크다운 컴파일 산출물 — 빌드 시 재생성)
+/.velite
+/public/static/blog
+
 # local contact-form submissions (dev fallback)
 /.submissions
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local editor workspace
+Nitro.code-workspace

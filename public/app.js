@@ -200,8 +200,10 @@
     // Top 5
     $('#col-top5-title').textContent = col.top5_title;
     $('#col-top5-sub').textContent = col.top5_sub;
-    $('#col-top5-list').innerHTML = col.top5.map((it, i) => `
-      <div class="top5-item">
+    $('#col-top5-list').innerHTML = col.top5.map((it, i) => {
+      const cid = it.id || ('c' + String(i + 1).padStart(3, '0'));
+      return `
+      <a class="top5-item" href="./column/article.html?id=${cid}" style="text-decoration:none;color:inherit;">
         <div class="rank">${i+1}</div>
         <div class="thumb" style="background: linear-gradient(135deg, ${it.thumb}, ${it.thumb}cc);"></div>
         <div class="body">
@@ -209,8 +211,8 @@
           <div class="t">${it.t}${it.em ? ` <em>${it.em}</em>` : ''}</div>
         </div>
         <div class="views"><span class="vv">${it.views}</span>VIEWS</div>
-      </div>
-    `).join('');
+      </a>
+    `;}).join('');
 
     // New cards
     $('#col-new-title').textContent = col.new_title;
@@ -218,13 +220,14 @@
     const audLabels = state.lang === 'kr'
       ? { ceo: 'CEO', promoter: '프로모터 담당자', senior: '시니어 아티스트', rookie: '신입 마케터', new: '신예 아티스트' }
       : { ceo: 'CEO', promoter: 'Promoter', senior: 'Senior artist', rookie: 'New marketer', new: 'New artist' };
-    $('#col-new-grid').innerHTML = col.new_cards.map(cd => {
+    $('#col-new-grid').innerHTML = col.new_cards.map((cd, i) => {
+      const cid = cd.id || ('c' + String(i + 1).padStart(3, '0'));
       const bg = cd.thumb_bg_img
         ? `background-image: linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)), url('${cd.thumb_bg_img}'); background-size:cover; background-position:center;`
         : `background:${cd.thumb_bg};`;
       const textColor = (cd.thumb_bg_img || (cd.thumb_bg && cd.thumb_bg.match(/#[01][0-9a-f]/i))) ? 'color:white;' : '';
       return `
-      <article class="col-new-card">
+      <a class="col-new-card" href="./column/article.html?id=${cid}" style="text-decoration:none;color:inherit;display:block;">
         <div class="thumb" style="${bg}">
           <div class="t-text" style="${textColor}">${cd.thumb_t} <em>${cd.thumb_em}</em></div>
         </div>
@@ -238,8 +241,14 @@
             <span class="views-ic">👁 ${cd.views}</span>
           </div>
         </div>
-      </article>
+      </a>
     `;}).join('');
+
+    // Sticky insight bar label (bilingual)
+    const sbl = document.getElementById('stick-bar-label');
+    if (sbl) sbl.textContent = state.lang === 'kr'
+      ? '음원 프로모션 인사이트 받기'
+      : 'Get music promotion insights';
 
     // FAQ
     const fa = d.faq;
