@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#F7F5EE">
+<title>칼럼 — Nitro Insights</title>
+<link rel="stylesheet" href="styles.css" media="(min-width: 861px)">
+<link rel="stylesheet" href="mobile.css" media="(max-width: 860px)">
+<style>
+  html, body { margin: 0; padding: 0; }
+  .layout-pc, .layout-mobile { display: none; }
+  @media (min-width: 861px) { .layout-pc     { display: block; } }
+  @media (max-width: 860px) { .layout-mobile { display: block; } }
+
+  /* ======== Pilot request modal (shared across PC & mobile) ======== */
+  .pilot-modal {
+    position: fixed; inset: 0; z-index: 200;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px; font-family: "Pretendard", -apple-system, system-ui, sans-serif;
+  }
+  .pilot-modal[hidden] { display: none; }
+  .pilot-modal__backdrop {
+    position: absolute; inset: 0;
+    background: rgba(10, 10, 11, 0.55);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    animation: pm-fade 180ms ease;
+  }
+  .pilot-modal__panel {
+    position: relative;
+    width: 100%; max-width: 520px;
+    max-height: calc(100vh - 40px); overflow: auto;
+    background: #FFFFFF;
+    border-radius: 14px;
+    padding: 36px 32px 28px;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+    animation: pm-in 220ms cubic-bezier(.16,.8,.32,1);
+  }
+  @keyframes pm-fade { from { opacity: 0; } to { opacity: 1; } }
+  @keyframes pm-in { from { transform: translateY(14px); opacity: 0; } to { transform: none; opacity: 1; } }
+  .pilot-modal__close {
+    position: absolute; top: 14px; right: 14px;
+    width: 34px; height: 34px;
+    display: inline-flex; align-items: center; justify-content: center;
+    color: #6B6B73; border: 0; background: transparent;
+    border-radius: 50%; cursor: pointer;
+    transition: background 140ms ease, color 140ms ease;
+  }
+  .pilot-modal__close:hover { background: rgba(10,10,11,0.06); color: #0A0A0B; }
+  .pilot-modal__eyebrow {
+    font-family: "Space Grotesk", "Pretendard", monospace;
+    font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.14em; color: #E63946;
+    text-transform: uppercase; margin-bottom: 10px;
+  }
+  .pilot-modal__panel h3 {
+    font-size: 24px; font-weight: 800;
+    line-height: 1.28; letter-spacing: -0.02em;
+    color: #0A0A0B; margin: 0 0 10px;
+  }
+  .pilot-modal__lead {
+    font-size: 14px; line-height: 1.62;
+    color: #4F4F57; margin: 0 0 22px;
+  }
+  .pilot-modal__form label {
+    display: block; margin-bottom: 14px;
+  }
+  .pilot-modal__form label > span {
+    display: block;
+    font-size: 12.5px; font-weight: 600;
+    color: #17171A; margin-bottom: 6px;
+    letter-spacing: -0.005em;
+  }
+  .pilot-modal__form input,
+  .pilot-modal__form textarea {
+    width: 100%; box-sizing: border-box;
+    padding: 11px 13px;
+    font-family: inherit; font-size: 14px;
+    color: #0A0A0B;
+    background: #FAFAF7;
+    border: 1px solid rgba(10,10,11,0.14);
+    border-radius: 7px; outline: none;
+    resize: vertical; transition: border-color 140ms ease, background 140ms ease;
+  }
+  .pilot-modal__form input:focus,
+  .pilot-modal__form textarea:focus {
+    border-color: #E63946; background: #fff;
+  }
+  .pilot-modal__actions {
+    display: flex; gap: 10px; justify-content: flex-end;
+    margin-top: 24px;
+  }
+  .pilot-modal__cancel {
+    padding: 11px 18px; font-family: inherit;
+    font-size: 13.5px; font-weight: 600;
+    color: #6B6B73; background: transparent; border: 0;
+    border-radius: 999px; cursor: pointer;
+    transition: color 140ms ease, background 140ms ease;
+  }
+  .pilot-modal__cancel:hover { color: #0A0A0B; background: rgba(10,10,11,0.04); }
+  .pilot-modal__submit {
+    padding: 11px 22px; font-family: inherit;
+    font-size: 13.5px; font-weight: 600;
+    color: #fff; background: #E63946; border: 0;
+    border-radius: 999px; cursor: pointer;
+    transition: background 140ms ease, transform 140ms ease;
+  }
+  .pilot-modal__submit:hover { background: #B02834; transform: translateY(-1px); }
+  body.pm-open { overflow: hidden; }
+  @media (max-width: 500px) {
+    .pilot-modal__panel { padding: 28px 22px 22px; }
+    .pilot-modal__panel h3 { font-size: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     PC LAYOUT  (≥ 861px)
+     ============================================================ -->
+<div class="layout-pc">
+
+  <div class="read-progress" id="rp" style="width:0"></div>
+
+  <nav class="nav">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="NitroMusic"></a>
+    <div class="nav-links">
+      <a href="#" data-kr="서비스" data-en="Services">서비스</a>
+      <a href="#" data-kr="네트워크" data-en="Network">네트워크</a>
+      <a href="#" data-kr="캠페인" data-en="Campaigns">캠페인</a>
+      <a href="#" data-kr="파일럿" data-en="Pilot">파일럿</a>
+      <a href="index.html" class="active" data-kr="칼럼" data-en="Column">칼럼</a>
+      <a href="#" data-kr="FAQ" data-en="FAQ">FAQ</a>
+    </div>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button class="on" aria-pressed="true" data-lang="ko">KR</button>
+        <button aria-pressed="false" data-lang="en">EN</button>
+      </div>
+      <a href="#" class="btn-cta" data-kr="문의하기 →" data-en="Contact →">문의하기 →</a>
+    </div>
+  </nav>
+
+  <main class="page" style="padding: 0;">
+    <div class="article-wrap article">
+      <aside class="article-toc">
+        <div class="tk" data-kr="CONTENTS / 05" data-en="CONTENTS / 05">CONTENTS / 05</div>
+        <ul id="toc-list"></ul>
+      </aside>
+
+      <div class="article-main">
+        <a class="article-back" href="index.html" data-kr="← 칼럼 전체 보기" data-en="← All columns">← 칼럼 전체 보기</a>
+        <div class="article-kicker" id="article-kicker"></div>
+        <h1 id="article-title"></h1>
+        <p class="dek" id="article-dek"></p>
+
+        <div class="byline">
+          <div class="av" id="byline-av"></div>
+          <div class="who">
+            <div class="n" id="byline-name"></div>
+            <div class="r" id="byline-role"></div>
+          </div>
+          <div class="meta">
+            <div><div data-kr="PUBLISHED" data-en="PUBLISHED">PUBLISHED</div><span class="v" id="meta-date"></span></div>
+            <div><div data-kr="READ" data-en="READ">READ</div><span class="v" id="meta-read"></span></div>
+            <div><div data-kr="VIEWS" data-en="VIEWS">VIEWS</div><span class="v" id="meta-views"></span></div>
+          </div>
+        </div>
+
+        <div class="hero-fig" id="hero-fig" style="background:#0a0a0b; color:#E63946;">
+          <div class="hk" id="hero-fig-hk"></div>
+        </div>
+
+        <div class="article-body" id="article-body"></div>
+
+        <div class="article-tags">
+          <span class="k" data-kr="TAGS" data-en="TAGS">TAGS</span>
+          <span class="chip" data-kr="#숏폼" data-en="#short-form">#숏폼</span>
+          <span class="chip" data-kr="#스트리밍전환" data-en="#streaming-conversion">#스트리밍전환</span>
+          <span class="chip" data-kr="#앵커포스트" data-en="#anchor-post">#앵커포스트</span>
+          <span class="chip" data-kr="#스마트링크" data-en="#smart-link">#스마트링크</span>
+          <span class="chip" data-kr="#리스너매치" data-en="#listener-match">#리스너매치</span>
+        </div>
+
+        <div class="article-cta">
+          <div>
+            <h4 data-kr="우리 캠페인도 이 감사 루틴이 필요할까요?" data-en="Does your campaign need this audit routine?">우리 캠페인도 이 감사 루틴이 필요할까요?</h4>
+            <p data-kr="4주 파일럿에서 Prep → Seed → Scale → Consolidate를 1사이클 돌려 드립니다." data-en="We run one full Prep → Seed → Scale → Consolidate cycle in a 4-week pilot.">4주 파일럿에서 Prep → Seed → Scale → Consolidate를 1사이클 돌려 드립니다.</p>
+          </div>
+          <a href="#" class="btn" data-kr="파일럿 상담 예약 →" data-en="Book a pilot →">파일럿 상담 예약 →</a>
+        </div>
+      </div>
+
+      <aside class="article-side">
+        <div class="box">
+          <h5>SHARE</h5>
+          <div class="share-list">
+            <button><span data-kr="링크 복사" data-en="Copy link">링크 복사</span><span class="n">⌘ C</span></button>
+            <button><span data-kr="X / 트위터" data-en="X / Twitter">X / 트위터</span><span class="n">↗</span></button>
+            <button><span>LinkedIn</span><span class="n">↗</span></button>
+            <button><span data-kr="카카오톡" data-en="KakaoTalk">카카오톡</span><span class="n">↗</span></button>
+          </div>
+        </div>
+        <div class="box">
+          <h5>AT A GLANCE</h5>
+          <div class="stat-list">
+            <div class="row"><span>VIEWS</span><span class="v" id="side-views"></span></div>
+            <div class="row"><span>LIKES</span><span class="v" id="side-likes"></span></div>
+            <div class="row"><span>SHARES</span><span class="v" id="side-shares"></span></div>
+            <div class="row"><span>READ</span><span class="v" id="side-read"></span></div>
+            <div class="row"><span>SERIES</span><span class="v">2 / 6</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <section class="article-related">
+    <div class="inner">
+      <h3><span class="k">RELATED</span> <span data-kr="이어 읽기" data-en="Keep reading">이어 읽기</span></h3>
+      <div class="grid" id="related-grid"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="foot-logo">
+        <img src="assets/logo.png" alt="NitroMusic">
+        <p data-kr="레이블, 디스트리뷰터, 아티스트 팀을 위한 숏폼 시스템." data-en="Signature short-form systems for labels, distributors, and artist teams.">Signature short-form systems for labels, distributors, and artist teams.</p>
+      </div>
+      <div><h4 data-kr="서비스" data-en="Services">서비스</h4><ul><li><a href="#">Format Engineering</a></li><li><a href="#">Anchor + Long-tail</a></li></ul></div>
+      <div><h4 data-kr="회사" data-en="Company">회사</h4><ul><li><a href="#">About</a></li><li><a href="#">Team</a></li></ul></div>
+      <div><h4 data-kr="리소스" data-en="Resources">리소스</h4><ul><li><a href="index.html" data-kr="칼럼" data-en="Column">Column</a></li><li><a href="#">Case Studies</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 KBK CONSULTING · NITRO MUSIC</span><span>SEOUL / BUSAN</span></div>
+  </footer>
+</div>
+
+<!-- ============================================================
+     MOBILE LAYOUT  (≤ 860px)
+     ============================================================ -->
+<div class="layout-mobile">
+
+  <nav class="m-art-back">
+    <a href="index.html" class="b">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M7.5 2 L3 6 L7.5 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span data-kr="칼럼" data-en="Column">칼럼</span>
+    </a>
+    <div class="mini" id="mini-title">PLAYBOOK · C-002</div>
+    <div class="actions">
+      <button id="ham-btn-art" aria-label="메뉴">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 5 H15 M3 9 H15 M3 13 H15" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <aside class="m-menu" id="menu" aria-hidden="true">
+    <div class="bar">
+      <a href="#" class="logo"><img src="assets/logo.png" alt="Nitro Music"></a>
+      <button class="close" aria-label="닫기" id="menu-close">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M4 4 L16 16 M16 4 L4 16" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+    <ul>
+      <li><a href="#"><span class="n">01</span><span data-kr="서비스" data-en="Service">Service</span></a></li>
+      <li><a href="#"><span class="n">02</span><span data-kr="네트워크" data-en="Network">Network</span></a></li>
+      <li><a href="index.html" class="active"><span class="n">03</span><span data-kr="칼럼" data-en="Column">Column</span></a></li>
+      <li><a href="#"><span class="n">04</span><span data-kr="캠페인" data-en="Campaigns">Campaigns</span></a></li>
+      <li><a href="#"><span class="n">05</span><span data-kr="회사 소개" data-en="About">About</span></a></li>
+      <li><a href="#"><span class="n">06</span><span data-kr="문의하기" data-en="Contact">Contact</span></a></li>
+    </ul>
+    <a href="#" class="cta-btn" data-kr="무료 상담 신청하기 →" data-en="Book a free consult →">무료 상담 신청하기 →</a>
+    <div class="foot">
+      <span>NITROMUSIC © 2026</span>
+      <div class="lang" role="group" aria-label="Language">
+        <button class="on" data-lang="ko" aria-pressed="true">KR</button>
+        <button data-lang="en" aria-pressed="false">EN</button>
+      </div>
+    </div>
+  </aside>
+
+  <header class="m-art-head">
+    <div class="kicker" id="kicker">COLUMN · PLAYBOOK · C-002</div>
+    <h1 id="art-title"></h1>
+    <p class="dek" id="art-dek"></p>
+
+    <div class="m-art-stats">
+      <div class="c audience">
+        <div class="l" data-kr="독자" data-en="For whom">For whom</div>
+        <div class="v" id="for-whom"></div>
+      </div>
+      <div class="c">
+        <div class="l" data-kr="읽기" data-en="Read">Read</div>
+        <div class="v" id="read-time"></div>
+      </div>
+      <div class="c">
+        <div class="l">Views</div>
+        <div class="v" id="views"></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="m-art-byline">
+    <div class="av" id="av"></div>
+    <div class="who">
+      <div class="n" id="author"></div>
+      <div class="r" id="author-role"></div>
+    </div>
+    <div class="date" id="date"></div>
+  </div>
+
+  <figure class="m-art-hero" id="art-hero" style="background:#0a0a0b;color:#E63946">
+    <span class="hk" id="hero-hk"></span>
+  </figure>
+
+  <article class="m-art-body">
+    <div id="m-body"></div>
+    <div class="m-art-tags">
+      <span class="k" data-kr="TAGS" data-en="TAGS">TAGS</span>
+      <span class="tag" data-kr="#스트리밍전환" data-en="#streaming-conversion">#스트리밍전환</span>
+      <span class="tag" data-kr="#스니펫설계" data-en="#snippet-design">#스니펫설계</span>
+      <span class="tag" data-kr="#딥링크" data-en="#deep-link">#딥링크</span>
+      <span class="tag" data-kr="#관객매치" data-en="#listener-match">#관객매치</span>
+    </div>
+  </article>
+
+  <section class="m-art-related">
+    <div class="head">
+      <h3><span class="k">03 /</span><span data-kr="다른 칼럼" data-en="More columns">다른 칼럼</span></h3>
+      <a href="index.html" class="all" style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:0.15em;color:var(--ink-dim);text-transform:uppercase;" data-kr="전체 →" data-en="All →">전체 →</a>
+    </div>
+    <div class="list" id="related-list"></div>
+  </section>
+
+  <div class="m-art-cta-bar">
+    <button id="share-btn">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 2 V10 M7.5 2 L4.5 5 M7.5 2 L10.5 5 M2.5 8 V12 H12.5 V8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span data-kr="공유하기" data-en="Share">공유하기</span>
+    </button>
+    <button class="primary" id="contact-btn" data-kr="캠페인 문의 →" data-en="Book campaign →">캠페인 문의 →</button>
+  </div>
+
+  <div class="m-sheet-backdrop" id="sheet-bd"></div>
+  <aside class="m-sheet m-share-sheet" id="sheet" aria-hidden="true">
+    <div class="handle"></div>
+    <h4 data-kr="공유 &amp; 저장" data-en="Share &amp; save">공유 &amp; 저장</h4>
+    <div class="share-list">
+      <button><span data-kr="링크 복사" data-en="Copy link">링크 복사</span><span class="ico">URL</span></button>
+      <button><span data-kr="카카오톡" data-en="KakaoTalk">카카오톡</span><span class="ico">KAKAO</span></button>
+      <button><span data-kr="트위터(X)" data-en="X / Twitter">트위터(X)</span><span class="ico">X</span></button>
+      <button><span>LinkedIn</span><span class="ico">LI</span></button>
+      <button><span data-kr="이 칼럼을 뉴스레터로 받기" data-en="Subscribe by newsletter">이 칼럼을 뉴스레터로 받기</span><span class="ico">RSS</span></button>
+    </div>
+  </aside>
+</div>
+
+<!-- ============================================================
+     PILOT REQUEST MODAL  (shared by PC .article-cta and mobile #contact-btn)
+     ============================================================ -->
+<div class="pilot-modal" id="pilot-modal" role="dialog" aria-modal="true" aria-labelledby="pm-title" hidden>
+  <div class="pilot-modal__backdrop" data-pm-close></div>
+  <div class="pilot-modal__panel">
+    <button type="button" class="pilot-modal__close" data-pm-close aria-label="Close">
+      <svg width="18" height="18" viewBox="0 0 20 20" fill="none"><path d="M4 4 L16 16 M16 4 L4 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+
+    <div id="pm-form-view">
+      <div class="pilot-modal__eyebrow" data-kr="4주 파일럿" data-en="4-week pilot">4주 파일럿</div>
+      <h3 id="pm-title" data-kr="파일럿 상담 요청서" data-en="Pilot consultation request">파일럿 상담 요청서</h3>
+      <p class="pilot-modal__lead" data-kr="이름과 연락처, 현재 상황을 알려주시면 영업일 2일 내에 담당자가 회신드립니다." data-en="Share your contact info and current context, and a partner will reply within two business days.">이름과 연락처, 현재 상황을 알려주시면 영업일 2일 내에 담당자가 회신드립니다.</p>
+
+      <form class="pilot-modal__form" id="pm-form" novalidate>
+        <label>
+          <span data-kr="이름" data-en="Name">이름</span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label>
+          <span data-kr="회사 / 소속" data-en="Company / affiliation">회사 / 소속</span>
+          <input type="text" name="company" autocomplete="organization">
+        </label>
+        <label>
+          <span data-kr="이메일" data-en="Email">이메일</span>
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label>
+          <span data-kr="메시지 (현재 상황, 목표, 궁금한 점)" data-en="Message (context, goal, questions)">메시지 (현재 상황, 목표, 궁금한 점)</span>
+          <textarea name="message" rows="4" required></textarea>
+        </label>
+        <div class="pilot-modal__actions">
+          <button type="button" class="pilot-modal__cancel" data-pm-close data-kr="취소" data-en="Cancel">취소</button>
+          <button type="submit" class="pilot-modal__submit" data-kr="요청서 보내기 →" data-en="Send request →">요청서 보내기 →</button>
+        </div>
+      </form>
+    </div>
+
+    <div id="pm-success-view" hidden>
+      <div class="pilot-modal__eyebrow" data-kr="접수 완료" data-en="Received">접수 완료</div>
+      <h3 data-kr="요청서를 받았습니다." data-en="We've got your request.">요청서를 받았습니다.</h3>
+      <p class="pilot-modal__lead" data-kr="입력하신 이메일로 영업일 2일 내에 담당자가 회신드립니다. 감사합니다." data-en="We'll reply to the email you provided within two business days. Thank you.">입력하신 이메일로 영업일 2일 내에 담당자가 회신드립니다. 감사합니다.</p>
+      <div class="pilot-modal__actions">
+        <button type="button" class="pilot-modal__submit" data-pm-close data-kr="닫기" data-en="Close">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="data.js"></script>
+<script src="i18n.js"></script>
+
+<script>
+// ============================================================
+// PC ARTICLE RENDER  (IIFE — isolated)
+// ============================================================
+(function () {
+  if (!document.querySelector('.layout-pc .article-wrap')) return;
+
+  const ARTICLE_ID = new URLSearchParams(location.search).get('id') || 'c002';
+  function findCol(id) { return (window.NITRO_COLUMNS || []).find(c => c.id === id); }
+  const T    = (obj, field) => (window.NITRO_I18N ? window.NITRO_I18N.t(obj, field) : (obj && obj[field] != null ? obj[field] : ''));
+
+  function renderArticle() {
+    const col = findCol(ARTICLE_ID); if (!col) return;
+    const cidDisplay = col.id.toUpperCase().replace(/^C(\d+)/, 'C-$1');
+    document.getElementById('article-kicker').textContent =
+      ['COLUMN', col.cat_en.toUpperCase(), cidDisplay].join(' · ');
+    document.getElementById('article-title').textContent = T(col, 'title');
+    document.getElementById('article-dek').textContent = T(col, 'dek');
+
+    const author = T(col, 'author');
+    document.getElementById('byline-av').textContent = author.charAt(0);
+    document.getElementById('byline-name').textContent = author;
+    document.getElementById('byline-role').textContent = col.author_role;
+    document.getElementById('meta-date').textContent = col.date;
+    document.getElementById('meta-read').textContent = window.NITRO_LANG === 'en' && col.read_en ? col.read_en : col.read;
+    document.getElementById('meta-views').textContent = col.views;
+
+    const hero = document.getElementById('hero-fig');
+    hero.style.background = col.thumb_bg || '#0a0a0b';
+    hero.style.color = col.thumb_fg || '#E63946';
+    const hook = T(col, 'thumb_hook') || '';
+    document.getElementById('hero-fig-hk').innerHTML = hook.replace(/\n/g, '<br>');
+
+    const body = (window.NITRO_ARTICLE_BODY && window.NITRO_ARTICLE_BODY[ARTICLE_ID]) || [];
+    document.getElementById('article-body').innerHTML = body.map(b => {
+      const text = T(b, 'text');
+      if (b.type === 'lede')    return `<p class="lede">${text}</p>`;
+      if (b.type === 'h2')      return `<h2 id="${b.id || ''}">${text}</h2>`;
+      if (b.type === 'p')       return `<p>${text}</p>`;
+      if (b.type === 'callout') return `<div class="callout">${text}</div>`;
+      return '';
+    }).join('');
+
+    const h2s = body.filter(b => b.type === 'h2');
+    document.getElementById('toc-list').innerHTML = h2s.map((b, i) =>
+      `<li><a href="#${b.id}" ${i === 0 ? 'class="active"' : ''}>${T(b, 'text')}</a></li>`
+    ).join('');
+    bindTOCHandlers();
+
+    document.getElementById('side-views').textContent = col.views;
+    document.getElementById('side-likes').textContent = col.likes;
+    document.getElementById('side-shares').textContent = col.shares;
+    document.getElementById('side-read').textContent = window.NITRO_LANG === 'en' && col.read_en ? col.read_en : col.read;
+  }
+
+  function bindTOCHandlers() {
+    document.querySelectorAll('#toc-list a').forEach(a => {
+      a.addEventListener('click', e => {
+        e.preventDefault();
+        const t = document.querySelector(a.getAttribute('href'));
+        if (t) window.scrollTo({ top: t.offsetTop - 100, behavior: 'smooth' });
+      });
+    });
+  }
+
+  function isLightColor(hex) {
+    if (!hex || !hex.startsWith('#')) return false;
+    const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+    return (0.299*r + 0.587*g + 0.114*b) > 160;
+  }
+
+  function renderRelated() {
+    const col = findCol(ARTICLE_ID); if (!col) return;
+    const rel = window.NITRO_COLUMNS.filter(c => c.cat_en === col.cat_en && c.id !== col.id).slice(0, 3);
+    document.getElementById('related-grid').innerHTML = rel.map(c => {
+      const light = isLightColor(c.thumb_bg);
+      const hook = (T(c, 'thumb_hook') || '').replace(/\n/g, '<br>');
+      const catLabel = window.NITRO_LANG === 'en' && c.cat_name_en ? c.cat_name_en : c.cat;
+      const readLabel = window.NITRO_LANG === 'en' && c.read_en ? c.read_en : c.read;
+      const thumb = c.thumb_mode === 'photo' && c.thumb_img
+        ? `<div class="thumb photo"><img src="${c.thumb_img}" alt=""><div class="overlay"><div class="hk">${hook}</div></div></div>`
+        : c.thumb_mode === 'abstract'
+          ? `<div class="thumb abstract ${light?'light-bg':''}" style="background:${c.thumb_bg};color:${c.thumb_fg};"><div class="hk">${hook}</div></div>`
+          : `<div class="thumb ${light?'light-bg':''}" style="background:${c.thumb_bg};color:${c.thumb_fg};"><div class="hk">${hook}</div></div>`;
+      return `<a class="mag-card" href="article.html?id=${c.id}">
+        ${thumb}
+        <div class="body">
+          <div class="cat">${catLabel}</div>
+          <h3>${T(c, 'title')}</h3>
+          <div class="foot"><span>${c.date} · ${readLabel}</span><span class="views">${c.views}</span></div>
+        </div>
+      </a>`;
+    }).join('');
+  }
+
+  // Scroll FX (PC only — guard by width)
+  function onScroll() {
+    if (!window.matchMedia('(min-width: 861px)').matches) return;
+    const h = document.documentElement;
+    const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+    const rp = document.getElementById('rp');
+    if (rp) rp.style.width = pct + '%';
+
+    const links = document.querySelectorAll('#toc-list a');
+    if (!links.length) return;
+    const sections = [...links].map(a => document.querySelector(a.getAttribute('href')));
+    const y = window.scrollY + 140;
+    let active = 0;
+    sections.forEach((s, i) => { if (s && s.offsetTop <= y) active = i; });
+    links.forEach((a, i) => a.classList.toggle('active', i === active));
+  }
+  window.addEventListener('scroll', onScroll);
+
+  function boot() {
+    renderArticle();
+    renderRelated();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+  document.addEventListener('nitro-lang-change', () => { renderArticle(); renderRelated(); });
+})();
+</script>
+
+<script>
+// ============================================================
+// MOBILE ARTICLE RENDER  (IIFE — isolated)
+// ============================================================
+(function () {
+  if (!document.querySelector('.layout-mobile .m-art-head')) return;
+
+  const T    = (obj, field) => (window.NITRO_I18N ? window.NITRO_I18N.t(obj, field) : (obj && obj[field] != null ? obj[field] : ''));
+  const CAT  = c => (window.NITRO_LANG === 'en' && c.cat_name_en) ? c.cat_name_en : c.cat;
+  const READ = c => (window.NITRO_LANG === 'en' && c.read_en) ? c.read_en : c.read;
+  function audPills(c) {
+    if (!c.audience || !c.audience.length) return '';
+    return c.audience.map(a => {
+      const aud = (window.NITRO_AUDIENCES || []).find(x => x.key === a) || { key: a, label: a };
+      return `<span class="aud ${a}">${T(aud, 'label')}</span>`;
+    }).join('');
+  }
+  function getParam(k) { return new URL(location.href).searchParams.get(k); }
+  function formatViews(v) {
+    const n = parseInt(v.replace(/,/g, ''), 10);
+    if (window.NITRO_LANG === 'en') { if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K'; return v; }
+    if (n >= 10000) return (n / 10000).toFixed(1).replace(/\.0$/, '') + '만';
+    return v;
+  }
+  const ARTICLE_ID = getParam('id') || 'c002';
+
+  function audLabelsFor(c) {
+    return c.audience.map(a => {
+      const aud = (window.NITRO_AUDIENCES || []).find(x => x.key === a);
+      return aud ? T(aud, 'label') : a;
+    });
+  }
+
+  function hydrate() {
+    const c = window.NITRO_COLUMNS.find(x => x.id === ARTICLE_ID) || window.NITRO_COLUMNS[1];
+    if (!c) return;
+    document.title = T(c, 'title') + ' — Nitro Insights';
+    const cidDisplay = c.id.toUpperCase().replace(/^C(\d+)/, 'C-$1');
+    document.getElementById('kicker').textContent = `COLUMN · ${(c.cat_en || '').toUpperCase()} · ${cidDisplay}`;
+    document.getElementById('mini-title').textContent = `${(c.cat_en || '').toUpperCase()} · ${cidDisplay}`;
+    document.getElementById('art-title').textContent = T(c, 'title');
+    document.getElementById('art-dek').textContent = T(c, 'dek');
+    document.getElementById('for-whom').innerHTML = audLabelsFor(c).join('<br>');
+    document.getElementById('read-time').textContent = READ(c);
+    document.getElementById('views').textContent = c.views;
+    const author = T(c, 'author');
+    document.getElementById('author').textContent = author;
+    document.getElementById('author-role').textContent = (c.author_role || '').toUpperCase();
+    document.getElementById('av').textContent = author.charAt(0);
+    document.getElementById('date').textContent = c.date;
+
+    const hero = document.getElementById('art-hero');
+    const heroHk = document.getElementById('hero-hk');
+    const hook = (T(c, 'thumb_hook') || '').replace(/\n/g, '<br>');
+    hero.className = 'm-art-hero';
+    if (c.thumb_mode === 'photo') {
+      hero.classList.add('photo');
+      hero.innerHTML = `<img src="${c.thumb_img}" alt=""><span class="hk" style="position:absolute;bottom:16px;left:16px;color:#fff;">${hook}</span>`;
+    } else if (c.thumb_mode === 'abstract') {
+      hero.style.background = c.thumb_bg; hero.style.color = c.thumb_fg;
+      heroHk.style.fontFamily = 'var(--font-dp)'; heroHk.style.fontWeight = '500';
+      heroHk.style.fontSize = '56px'; heroHk.style.textAlign = 'center';
+      heroHk.innerHTML = hook;
+    } else {
+      hero.style.background = c.thumb_bg; hero.style.color = c.thumb_fg;
+      heroHk.innerHTML = hook;
+    }
+  }
+
+  function renderBody() {
+    const body = (window.NITRO_ARTICLE_BODY && window.NITRO_ARTICLE_BODY[ARTICLE_ID]) || [];
+    const host = document.getElementById('m-body');
+    host.innerHTML = body.map(b => {
+      const text = T(b, 'text');
+      if (b.type === 'lede')    return `<p class="lede">${text}</p>`;
+      if (b.type === 'h2')      return `<h2 id="${b.id || ''}">${text}</h2>`;
+      if (b.type === 'p')       return `<p>${text}</p>`;
+      if (b.type === 'callout') return `<div class="callout">${text}</div>`;
+      return '';
+    }).join('');
+  }
+
+  function renderRelated() {
+    const related = window.NITRO_COLUMNS.filter(c => c.id !== ARTICLE_ID).slice(0, 3);
+    const host = document.getElementById('related-list');
+    host.innerHTML = related.map(c => {
+      const hook = (T(c, 'thumb_hook') || '').replace(/\n/g, '<br>');
+      let thumb;
+      if (c.thumb_mode === 'photo')     thumb = `<div class="thumb photo" style="background:${c.thumb_bg || '#0a0a0b'}"><img src="${c.thumb_img}" alt=""></div>`;
+      else if (c.thumb_mode === 'abstract') thumb = `<div class="thumb abstract" style="background:${c.thumb_bg};color:${c.thumb_fg}"><span class="hk">${hook}</span></div>`;
+      else                              thumb = `<div class="thumb" style="background:${c.thumb_bg};color:${c.thumb_fg}"><span class="hk">${hook}</span></div>`;
+      return `<a class="m-row" href="article.html?id=${c.id}">
+        ${thumb}
+        <div class="body">
+          <div class="cat-line"><span class="cat">${c.cat_en}</span>${audPills(c)}</div>
+          <div class="t">${T(c, 'title')}</div>
+          <div class="meta"><span>${c.date.replace(/^\d{4}\./, '')}</span><span class="sep">·</span><span>${READ(c)}</span><span class="sep">·</span><span class="v">${formatViews(c.views)}</span></div>
+        </div>
+      </a>`;
+    }).join('');
+  }
+
+  const ham = document.getElementById('ham-btn-art');
+  if (ham) ham.onclick = () => { document.getElementById('menu').classList.add('open'); document.body.style.overflow = 'hidden'; };
+  const menuClose = document.getElementById('menu-close');
+  if (menuClose) menuClose.onclick = () => { document.getElementById('menu').classList.remove('open'); document.body.style.overflow = ''; };
+
+  function openShare() { document.getElementById('sheet').classList.add('open'); document.getElementById('sheet-bd').classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeShare() { document.getElementById('sheet').classList.remove('open'); document.getElementById('sheet-bd').classList.remove('open'); document.body.style.overflow = ''; }
+  const shareBtn = document.getElementById('share-btn');
+  if (shareBtn) shareBtn.onclick = openShare;
+  const sheetBd = document.getElementById('sheet-bd');
+  if (sheetBd) sheetBd.onclick = closeShare;
+  // contact-btn is wired to the pilot-request modal in the global script below
+
+  function boot() {
+    hydrate(); renderBody(); renderRelated();
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+  document.addEventListener('nitro-lang-change', () => { hydrate(); renderBody(); renderRelated(); });
+})();
+</script>
+
+<script>
+// ============================================================
+// PILOT REQUEST MODAL controller (PC .article-cta .btn + mobile #contact-btn)
+// Placeholder submit — shows success state, no network call.
+// ============================================================
+(function () {
+  const modal = document.getElementById('pilot-modal');
+  if (!modal) return;
+  const formView = document.getElementById('pm-form-view');
+  const successView = document.getElementById('pm-success-view');
+  const form = document.getElementById('pm-form');
+  let lastFocused = null;
+
+  function open() {
+    lastFocused = document.activeElement;
+    modal.hidden = false;
+    document.body.classList.add('pm-open');
+    requestAnimationFrame(() => {
+      const first = modal.querySelector('input, textarea');
+      if (first) first.focus();
+    });
+  }
+  function close() {
+    modal.hidden = true;
+    document.body.classList.remove('pm-open');
+    setTimeout(() => {
+      formView.hidden = false;
+      successView.hidden = true;
+      if (form) form.reset();
+      if (lastFocused && lastFocused.focus) lastFocused.focus();
+    }, 200);
+  }
+
+  // PC CTA button (any <a.btn> inside .article-cta)
+  document.querySelectorAll('.article-cta .btn').forEach(btn => {
+    btn.addEventListener('click', e => { e.preventDefault(); open(); });
+  });
+  // Mobile bottom CTA
+  const contactBtn = document.getElementById('contact-btn');
+  if (contactBtn) {
+    contactBtn.addEventListener('click', e => { e.preventDefault(); open(); });
+  }
+
+  modal.addEventListener('click', e => {
+    const t = e.target.closest('[data-pm-close]');
+    if (t) close();
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    // Placeholder: swap to success view. No network call yet.
+    formView.hidden = true;
+    successView.hidden = false;
+    successView.scrollIntoView({ block: 'start', behavior: 'smooth' });
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !modal.hidden) close();
+  });
+})();
+</script>
+
+</body>
+</html>
