@@ -66,6 +66,29 @@ img { display: block; max-width: 100%; }
 .m-nav .ham span::before { top: -6px; }
 .m-nav .ham span::after { top: 6px; }
 
+/* Inline mini lang toggle (top nav / sticky back bar) */
+.lang-mini {
+  display: inline-flex;
+  border: 1px solid var(--line-str);
+  border-radius: 999px;
+  overflow: hidden;
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  align-self: center;
+  flex-shrink: 0;
+}
+.lang-mini button {
+  padding: 4px 8px;
+  color: var(--ink-mute);
+  line-height: 1.4;
+}
+.lang-mini button.on {
+  background: var(--ink);
+  color: var(--bg);
+}
+
 /* ============ MENU (FULLSCREEN) ============ */
 .m-menu {
   position: fixed; inset: 0; z-index: 120;
@@ -374,7 +397,7 @@ img { display: block; max-width: 100%; }
   white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
   max-width: 180px;
 }
-.m-art-back .actions { display: flex; gap: 4px; }
+.m-art-back .actions { display: flex; gap: 6px; align-items: center; }
 .m-art-back .actions button {
   width: 32px; height: 32px; display: grid; place-items: center;
   color: var(--ink-dim);

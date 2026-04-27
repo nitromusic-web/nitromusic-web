@@ -8,7 +8,7 @@
 
   // ---------------- State ----------------
   const state = {
-    lang: (localStorage.getItem('nitro_lang') === 'en' ? 'en' : 'kr'),
+    lang: (localStorage.getItem('nitro_lang') === 'kr' ? 'kr' : 'en'),
     heroVariant: parseInt(localStorage.getItem('nitro_heroV') || '1', 10),
     colTab: 0
   };

@@ -4,7 +4,7 @@
    ========================================================= */
 (function () {
   var STORAGE_KEY = "nitro-lang";
-  var DEFAULT_LANG = "ko";
+  var DEFAULT_LANG = "en";
   var SUPPORTED = ["ko", "en"];
 
   var initial = localStorage.getItem(STORAGE_KEY);
