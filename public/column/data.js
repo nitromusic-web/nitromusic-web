@@ -21,11 +21,11 @@ window.NITRO_COLUMNS = [
     author_en: "Kim Bogyeong",
     author_role: "Partner, KBK Consulting",
     date: "2026.04.22",
-    read: "7분",
-    read_en: "7 min",
-    views: "24,531",
-    likes: "1,284",
-    shares: "412",
+    read: "6분",
+    read_en: "6 min",
+    views: "1,311",
+    likes: "70",
+    shares: "22",
     thumb_mode: "type",
     thumb_bg: "#E63946",
     thumb_fg: "#ffffff",
@@ -515,6 +515,119 @@ window.NITRO_CATEGORIES = [
 
 // Full article body — c002 updated to match new topic (rap promotion).
 window.NITRO_ARTICLE_BODY = {
+  "c001": [
+    {
+      type: "lede",
+      text: "열 가지를 다 하면 결국 아무것도 남지 않습니다. 인디 아티스트가 소셜에서 헤매는 이유는 전략이 부족해서가 아니에요. 한 번에 너무 많은 채널을 같이 굴리려 하기 때문이죠. NitroMusic이 캠페인을 설계할 때 실제로 비중을 두는 다섯 가지만 골라봤습니다. 나머지는 잠시 내려놓아도 괜찮습니다. 하나가 안정적으로 굴러가기 시작하면, 그때 다음을 얹으면 되거든요.",
+      text_en: "Doing all ten leaves you with none. Indie artists struggle on social not because they lack a strategy, but because they try to run too many channels at once. This piece pulls only the five NitroMusic actually weights when designing campaigns. Park the rest. Once one is running clean, layer the next."
+    },
+    {
+      type: "h2",
+      id: "ch1",
+      text: "01 / 정체성 — 포스팅 전에 세계관부터",
+      text_en: "01 / Identity — your world before your posts"
+    },
+    {
+      type: "p",
+      text: "꾸준히 올려도 기억에 남지 않으면 의미가 없습니다. 인디 아티스트의 진짜 분배력은 '정체성'에서 나오거든요. 곡 제목, 썸네일, 아트워크가 같은 세계 안에 있다는 인상을 줘야 알고리즘 위에서도, 사람의 머릿속에서도 군집이 만들어집니다.",
+      text_en: "Posting consistently doesn't matter if no one remembers you afterward. The real distribution edge for an indie artist is identity. Track titles, thumbnails, and artwork all need to feel like they belong to the same world — that's how clusters form, on the algorithm and inside listeners' heads."
+    },
+    {
+      type: "p",
+      text: "점검해볼 만한 두 가지가 있는데요. 최근 다섯 개 포스트의 컬러와 톤을 한 화면에 모았을 때, 같은 아티스트의 작업으로 읽히는지. 그리고 다음 곡 제목을 가린 채 들었을 때, 팬이 톤만으로 우리 곡임을 알아챌 수 있는지. 둘 중 하나라도 흔들린다면, 캠페인보다 정체성을 정리하는 쪽이 먼저입니다.",
+      text_en: "Two checks worth running. Pull your last five posts onto one screen — do they read as the work of a single artist? And if you mute the title, can your fans tell it's you from tone alone? If either wobbles, fix identity before you fix campaigns."
+    },
+    {
+      type: "callout",
+      text: "정체성은 컬러 팔레트가 아니라 '스킵당하지 않는 이유'입니다. 알고리즘은 장르를 모르지만 사람은 알거든요.",
+      text_en: "Identity isn't a color palette. It's the reason people don't scroll past. Algorithms are genre-blind; people aren't."
+    },
+    {
+      type: "h2",
+      id: "ch2",
+      text: "02 / TikTok 시그니처 시리즈 — 트렌드 추격을 멈출 때",
+      text_en: "02 / TikTok signature series — stop chasing trends"
+    },
+    {
+      type: "p",
+      text: "트렌드 사운드를 사흘 쫓아도 모멘텀은 누적되지 않습니다. 진짜 자산은 '돌아오게 만드는 포맷'에 있어요. 같은 구조의 영상이 열 개쯤 쌓일 때 비로소 알고리즘이 카테고리를 이해하고, 시청자도 다음 편을 기다리기 시작합니다.",
+      text_en: "Three days chasing a trending sound doesn't compound momentum. The real asset is a format that makes people come back. Around ten posts in, the algorithm starts to understand the category and viewers start anticipating the next one."
+    },
+    {
+      type: "p",
+      text: "두 가지를 점검해볼 만한데요. 한 줄로 설명되는 시그니처 포맷이 있는지. 예를 들면 '미발매 곡을 엄마에게 처음 들려주기' 같은 거죠. 그리고 같은 포맷으로 열 편을 찍을 수 있는지. 평가는 열 편 이후에 하는 게 맞습니다. 그 전에 포맷을 바꿔버리면 데이터가 깨져버리거든요.",
+      text_en: "Two checks. Is there a signature format that fits in one line — say, 'playing my unreleased track to my mom for the first time'? And can you shoot ten of them in the same shape? Don't evaluate before post ten. Switching format earlier breaks the data."
+    },
+    {
+      type: "h2",
+      id: "ch3",
+      text: "03 / 인스타 BTS — 완성품이 아닌 과정",
+      text_en: "03 / Instagram BTS — the process, not the polish"
+    },
+    {
+      type: "p",
+      text: "릴리즈 공지만 올리는 계정은 팔로워가 빠집니다. 사람들은 곡이 아니라 곡을 만드는 사람을 따르거든요. 새벽 세 시의 가사 메모, 30초짜리 멜로디 루프, 비트 만들다 망친 첫 시도 — 이런 '미완성'이 완성품보다 도달이 잘 나오는 이유입니다.",
+      text_en: "Accounts that only post release announcements lose followers. People follow the maker, not the song. The 3am lyric notes, the 30-second melody loops, the first beat attempt that didn't land — the unfinished work outperforms the finished one on reach, for exactly that reason."
+    },
+    {
+      type: "callout",
+      text: "엉성한 걸 올리는 편이 낫습니다. 사람들은 그걸 보고 들어와요.",
+      text_en: "Post the messy stuff. That's what people walk in for."
+    },
+    {
+      type: "h2",
+      id: "ch4",
+      text: "04 / Spotify 플레이리스트 — 4–6주 전, 그리고 '진짜 청취자'",
+      text_en: "04 / Spotify playlists — six weeks out, and 'real listeners'"
+    },
+    {
+      type: "p",
+      text: "Spotify for Artists 피칭은 발매 4–6주 전이 마지노선입니다. 발매 당일에 누르면 에디토리얼 윈도우는 이미 닫힌 뒤죠. 장르 선택도 종종 어긋나는데요. 본인이 생각하는 장르가 아니라, 비슷한 곡들이 실제로 어디에 들어가 있는지를 기준으로 잡아야 맞습니다.",
+      text_en: "Spotify for Artists pitching has a four-to-six-week deadline before release. Push it on release day and the editorial window has already closed. Genre selection is often off too — not what you think your genre is, but where similar tracks are actually being placed."
+    },
+    {
+      type: "p",
+      text: "더 중요한 건 플레이리스트의 질입니다. 봇 청취자로 채워진 십만 단위 플레이리스트는 알고리즘에 부정 신호를 보내거든요. 곡을 저장하고 자기 플레이리스트에 옮기는 진짜 청취자가 50명만 있어도 Discover Weekly와 Release Radar로 연결됩니다. 숫자가 아니라 행동이 신호예요.",
+      text_en: "Quality of the playlist matters more than the count. A 100k playlist filled with bot listeners sends a negative signal to the algorithm. Fifty real listeners who save the track and add it to their own playlists are enough to feed Discover Weekly and Release Radar. The signal is behavior, not numbers."
+    },
+    {
+      type: "h2",
+      id: "ch5",
+      text: "05 / 슈퍼팬 200명 — 9,800명을 이기는 코어",
+      text_en: "05 / 200 superfans — the core that beats 9,800"
+    },
+    {
+      type: "p",
+      text: "월간 청취자 1만 명 가운데, 매 곡을 듣고 공유하고 굿즈까지 사는 200명이 나머지 9,800명을 합친 것보다 더 큰 영향을 만듭니다. 그런데 대부분의 아티스트는 이 200명을 데이터로만 보고, 별도 채널을 만들지 않죠.",
+      text_en: "Out of 10,000 monthly listeners, the 200 who play every track, share every drop, and buy the merch outweigh the other 9,800 combined. Most artists see those 200 only as a data point and never build them a separate channel."
+    },
+    {
+      type: "p",
+      text: "디스코드 서버, 비공개 페이스북 그룹, 작은 뉴스레터 — 어느 형태든 '먼저 듣는 권한'을 주는 공간이 필요합니다. 미발매 곡 선공개, 커버아트 투표권, 티켓 우선예매. 비용은 거의 들지 않고, 이 200명이 알아서 외부로 곡을 옮겨줍니다.",
+      text_en: "Discord server, private Facebook group, a small newsletter — any shape works, as long as it gives them 'first listen' rights. Early track drops, cover art votes, ticket pre-sales. Costs almost nothing, and those 200 carry the music outward on their own."
+    },
+    {
+      type: "callout",
+      text: "팬덤은 알고리즘의 반대편에 있습니다. 알고리즘이 끄면 사라지는 청취자가 아니라, 알고리즘과 무관하게 돌아오는 사람들이거든요.",
+      text_en: "Fandom lives on the opposite side of the algorithm. Not listeners who vanish when the algorithm cuts you off — people who come back regardless of it."
+    },
+    {
+      type: "h2",
+      id: "close",
+      text: "마무리 — 한 번에 하나, 30일",
+      text_en: "Closing — one thing, thirty days"
+    },
+    {
+      type: "p",
+      text: "다섯 가지를 한꺼번에 시작하는 건 가장 흔한 실패입니다. 다음 발매를 앞두고는, 다섯 가지 가운데 '아직 손대지 않은 것 하나'만 골라서 30일을 풀로 돌려보는 편이 낫습니다. 결과가 손에 잡히면 그다음을 얹으면 되거든요. NitroMusic이 클라이언트 캠페인을 설계할 때 따르는 순서도 같습니다. 정체성을 먼저 정리하고, 한 채널의 시그니처를 굳히고, 슈퍼팬을 모은 뒤에야 확장으로 넘어가죠.",
+      text_en: "Starting all five at once is the most common failure. Before your next release, pick one of the five you haven't touched yet and run it full for thirty days. When the result is in your hand, layer the next. Same order NitroMusic follows on client campaigns: identity first, signature on one channel, superfans, and only then expansion."
+    },
+    {
+      type: "p",
+      text: "소셜 미디어가 곡을 대신 홍보해주는 일은 없습니다. 다만 제대로 쓰면, 이미 비슷한 무언가를 찾고 있던 사람의 화면에 곡이 올라가요. 결국 그게 전부입니다.",
+      text_en: "Social media won't promote your music for you. But used right, it puts the track on the screen of someone already looking for something just like it. That's the whole game."
+    }
+  ],
   "c002": [
     {
       type: "lede",
