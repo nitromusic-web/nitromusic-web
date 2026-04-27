@@ -17,9 +17,9 @@ window.NITRO_COLUMNS = [
     dek: "TikTok · Instagram · X에서 레이블 없이 돌릴 수 있는 10가지 숏폼 + 커뮤니티 전략.",
     dek_en: "Ten short-form + community plays indie artists can run across TikTok, Instagram, and X without a label.",
     audience: ["new-artist", "promoter"],
-    author: "김보경",
-    author_en: "Kim Bogyeong",
-    author_role: "Partner, KBK Consulting",
+    author: "Dan",
+    author_en: "Dan",
+    author_role: "A&R",
     date: "2026.04.22",
     read: "6분",
     read_en: "6 min",
@@ -48,9 +48,9 @@ window.NITRO_COLUMNS = [
     dek: "스니펫 선정부터 앵커 포스트 배치까지, 랩 릴리스에 최적화된 플랫폼별 홍보 노트.",
     dek_en: "Platform-by-platform promotion notes optimized for rap releases, from snippet curation to anchor placement.",
     audience: ["senior-artist", "promoter"],
-    author: "이정훈",
-    author_en: "Lee Jeonghoon",
-    author_role: "Head of Campaigns",
+    author: "Dan",
+    author_en: "Dan",
+    author_role: "A&R",
     date: "2026.04.20",
     read: "8분",
     read_en: "8 min",
@@ -79,9 +79,9 @@ window.NITRO_COLUMNS = [
     dek: "EDM 씬의 페스티벌 사이클을 활용하는 릴리스 타이밍과 숏폼 포맷 설계.",
     dek_en: "Release timing aligned with festival cycles and short-form formats that fit the EDM scene.",
     audience: ["new-artist", "promoter"],
-    author: "박시연",
-    author_en: "Park Siyeon",
-    author_role: "Data Lead",
+    author: "Dan",
+    author_en: "Dan",
+    author_role: "A&R",
     date: "2026.04.18",
     read: "6분",
     read_en: "6 min",
@@ -110,9 +110,9 @@ window.NITRO_COLUMNS = [
     dek: "월별 지속수익을 구축하는 6단계 — 티어 설계부터 유지율까지.",
     dek_en: "A six-step path to monthly recurring income — tier design through retention.",
     audience: ["new-artist", "rookie-mk"],
-    author: "이정훈",
-    author_en: "Lee Jeonghoon",
-    author_role: "Head of Campaigns",
+    author: "최보건",
+    author_en: "Logan Choi",
+    author_role: "니트로 음원 프로모터",
     date: "2026.04.16",
     read: "5분",
     read_en: "5 min",
@@ -141,9 +141,9 @@ window.NITRO_COLUMNS = [
     dek: "큐레이터 컨택부터 서드파티 서비스 평가까지, 에디토리얼에 끼어드는 실제 경로 16개.",
     dek_en: "From curator outreach to vetting third-party services — sixteen real paths into editorial playlists.",
     audience: ["promoter", "senior"],
-    author: "김보경",
-    author_en: "Kim Bogyeong",
-    author_role: "Partner, KBK Consulting",
+    author: "Dan",
+    author_en: "Dan",
+    author_role: "A&R",
     date: "2026.04.14",
     read: "9분",
     read_en: "9 min",
@@ -172,9 +172,9 @@ window.NITRO_COLUMNS = [
     dek: "스트리밍 플랫폼이 권장하는 라우드니스 타깃과, 마스터링에서 실제 체크할 세 가지.",
     dek_en: "Streaming platform loudness targets and three checks your mastering actually needs.",
     audience: ["senior", "senior-artist"],
-    author: "박시연",
-    author_en: "Park Siyeon",
-    author_role: "Data Lead",
+    author: "예은 박",
+    author_en: "Yeeun Park",
+    author_role: "EDITER",
     date: "2026.04.12",
     read: "7분",
     read_en: "7 min",
@@ -203,9 +203,9 @@ window.NITRO_COLUMNS = [
     dek: "Logic, Ableton, FL, Reaper… 각 DAW가 실제로 어떤 작업흐름에 맞는지 정면 비교.",
     dek_en: "Logic, Ableton, FL, Reaper and more — which DAW actually fits which workflow.",
     audience: ["new-artist", "rookie-mk"],
-    author: "박시연",
-    author_en: "Park Siyeon",
-    author_role: "Data Lead",
+    author: "예은 박",
+    author_en: "Yeeun Park",
+    author_role: "EDITER",
     date: "2026.04.10",
     read: "10분",
     read_en: "10 min",
@@ -234,9 +234,9 @@ window.NITRO_COLUMNS = [
     dek: "DistroKid가 안 맞을 때 고려할 10개의 배급사, 수수료 · 수익금 · 정산 주기 정리.",
     dek_en: "Ten distributors to weigh when DistroKid doesn't fit — fees, royalty splits, payout cycles.",
     audience: ["new-artist", "rookie-mk"],
-    author: "이정훈",
-    author_en: "Lee Jeonghoon",
-    author_role: "Head of Campaigns",
+    author: "최보건",
+    author_en: "Logan Choi",
+    author_role: "니트로 음원 프로모터",
     date: "2026.04.08",
     read: "6분",
     read_en: "6 min",
@@ -265,9 +265,9 @@ window.NITRO_COLUMNS = [
     dek: "출시 6주 전부터 당일까지의 현실적 체크리스트 — 레이블 없이도 돌아가는 릴리스 플랜.",
     dek_en: "A realistic 6-weeks-to-launch checklist for a solo release that still runs without a label.",
     audience: ["new-artist", "rookie-mk"],
-    author: "김보경",
-    author_en: "Kim Bogyeong",
-    author_role: "Partner, KBK Consulting",
+    author: "세바스찬",
+    author_en: "Sebastian",
+    author_role: "SNS 마케터",
     date: "2026.04.06",
     read: "7분",
     read_en: "7 min",
@@ -296,9 +296,9 @@ window.NITRO_COLUMNS = [
     dek: "EP는 싱글의 확장이 아니다. 순서, 앵커, 리드 싱글 선정까지 EP 특화 플레이북.",
     dek_en: "An EP isn't a bigger single. A sequencing, anchor, and lead-pick playbook built for EP releases.",
     audience: ["senior-artist", "new-artist"],
-    author: "이정훈",
-    author_en: "Lee Jeonghoon",
-    author_role: "Head of Campaigns",
+    author: "최보건",
+    author_en: "Logan Choi",
+    author_role: "니트로 음원 프로모터",
     date: "2026.04.04",
     read: "9분",
     read_en: "9 min",
@@ -326,9 +326,9 @@ window.NITRO_COLUMNS = [
     dek: "그래프 3개, 숫자 5개, 결정 1개. NitroMusic이 매주 보내는 원페이지 리포트의 골격을 공개한다.",
     dek_en: "Three charts, five numbers, one decision. The one-page template NitroMusic ships every week.",
     audience: ["ceo", "senior"],
-    author: "이정훈",
-    author_en: "Lee Jeonghoon",
-    author_role: "Head of Campaigns",
+    author: "최보건",
+    author_en: "Logan Choi",
+    author_role: "니트로 음원 프로모터",
     date: "2026.04.02",
     read: "5분",
     read_en: "5 min",
@@ -356,9 +356,9 @@ window.NITRO_COLUMNS = [
     dek: "Shazam 주간 급상승과 Spotify 주간 스트리밍 증가의 상관계수는 얼마인가. 23개 캠페인의 로그를 훑었다.",
     dek_en: "What's the correlation between a weekly Shazam spike and Spotify stream lift? Across 23 campaigns.",
     audience: ["ceo", "promoter"],
-    author: "박시연",
-    author_en: "Park Siyeon",
-    author_role: "Data Lead",
+    author: "예은 박",
+    author_en: "Yeeun Park",
+    author_role: "EDITER",
     date: "2026.03.30",
     read: "7분",
     read_en: "7 min",
@@ -386,9 +386,9 @@ window.NITRO_COLUMNS = [
     dek: "NitroMusic이 실제로 보내는 크리에이터 브리프 원본. 포맷 규율을 흐리지 않으면서 개성을 남기는 필드 구성.",
     dek_en: "The actual brief NitroMusic sends creators. Fields that keep format discipline without killing personality.",
     audience: ["promoter", "rookie-mk"],
-    author: "이정훈",
-    author_en: "Lee Jeonghoon",
-    author_role: "Head of Campaigns",
+    author: "세바스찬",
+    author_en: "Sebastian",
+    author_role: "SNS 마케터",
     date: "2026.03.28",
     read: "4분",
     read_en: "4 min",
@@ -416,9 +416,9 @@ window.NITRO_COLUMNS = [
     dek: "촬영하러 가서 훅을 고민하면 늦다. 대본 없이 앉아서 30분 안에 위너 훅 12개를 뽑아내는 팀 세션 가이드.",
     dek_en: "By the time you're on set, it's too late. A team protocol that pulls 12 winning hooks in 30 minutes.",
     audience: ["new-artist", "rookie-mk", "promoter"],
-    author: "이정훈",
-    author_en: "Lee Jeonghoon",
-    author_role: "Head of Campaigns",
+    author: "세바스찬",
+    author_en: "Sebastian",
+    author_role: "SNS 마케터",
     date: "2026.03.24",
     read: "5분",
     read_en: "5 min",
@@ -446,9 +446,9 @@ window.NITRO_COLUMNS = [
     dek: "한 캠페인에 3개 대행사가 붙어 있을 때 실제로 일어나는 일. 숏폼 단위만 전담하는 구조가 왜 잘 돌아가는가.",
     dek_en: "What really happens when three agencies share a single campaign. Why a short-form-only unit works.",
     audience: ["ceo", "senior"],
-    author: "김보경",
-    author_en: "Kim Bogyeong",
-    author_role: "Partner, KBK Consulting",
+    author: "최보건",
+    author_en: "Logan Choi",
+    author_role: "니트로 음원 프로모터",
     date: "2026.03.20",
     read: "6분",
     read_en: "6 min",
@@ -476,9 +476,9 @@ window.NITRO_COLUMNS = [
     dek: "Noen 'Hold me' 266K 공유의 원인. 공유 동사를 설계에 먼저 박아넣으면 저장과 댓글이 따라온다.",
     dek_en: "Behind Noen 'Hold me's 266K shares. Bake the share verb in first and saves and comments follow.",
     audience: ["senior", "promoter"],
-    author: "박시연",
-    author_en: "Park Siyeon",
-    author_role: "Data Lead",
+    author: "예은 박",
+    author_en: "Yeeun Park",
+    author_role: "EDITER",
     date: "2026.03.16",
     read: "5분",
     read_en: "5 min",
@@ -518,8 +518,8 @@ window.NITRO_ARTICLE_BODY = {
   "c001": [
     {
       type: "lede",
-      text: "열 가지를 다 하면 결국 아무것도 남지 않습니다. 인디 아티스트가 소셜에서 헤매는 이유는 전략이 부족해서가 아니에요. 한 번에 너무 많은 채널을 같이 굴리려 하기 때문이죠. NitroMusic이 캠페인을 설계할 때 실제로 비중을 두는 다섯 가지만 골라봤습니다. 나머지는 잠시 내려놓아도 괜찮습니다. 하나가 안정적으로 굴러가기 시작하면, 그때 다음을 얹으면 되거든요.",
-      text_en: "Doing all ten leaves you with none. Indie artists struggle on social not because they lack a strategy, but because they try to run too many channels at once. This piece pulls only the five NitroMusic actually weights when designing campaigns. Park the rest. Once one is running clean, layer the next."
+      text: "<strong>열 가지를 다 하면 결국 아무것도 남지 않습니다.</strong> 인디 아티스트가 소셜에서 헤매는 이유는 전략이 부족해서가 아니에요. 한 번에 너무 많은 채널을 같이 굴리려 하기 때문이죠. NitroMusic이 캠페인을 설계할 때 실제로 비중을 두는 <strong>다섯 가지만</strong> 골라봤습니다. 나머지는 잠시 내려놓아도 괜찮습니다. 하나가 안정적으로 굴러가기 시작하면, 그때 다음을 얹으면 되거든요.",
+      text_en: "<strong>Doing all ten leaves you with none.</strong> Indie artists struggle on social not because they lack a strategy, but because they try to run too many channels at once. This piece pulls only the <strong>five</strong> NitroMusic actually weights when designing campaigns. Park the rest. Once one is running clean, layer the next."
     },
     {
       type: "h2",
@@ -529,8 +529,8 @@ window.NITRO_ARTICLE_BODY = {
     },
     {
       type: "p",
-      text: "꾸준히 올려도 기억에 남지 않으면 의미가 없습니다. 인디 아티스트의 진짜 분배력은 '정체성'에서 나오거든요. 곡 제목, 썸네일, 아트워크가 같은 세계 안에 있다는 인상을 줘야 알고리즘 위에서도, 사람의 머릿속에서도 군집이 만들어집니다.",
-      text_en: "Posting consistently doesn't matter if no one remembers you afterward. The real distribution edge for an indie artist is identity. Track titles, thumbnails, and artwork all need to feel like they belong to the same world — that's how clusters form, on the algorithm and inside listeners' heads."
+      text: "꾸준히 올려도 기억에 남지 않으면 의미가 없습니다. 인디 아티스트의 진짜 분배력은 <em>'정체성'</em>에서 나오거든요. 곡 제목, 썸네일, 아트워크가 같은 세계 안에 있다는 인상을 줘야 알고리즘 위에서도, 사람의 머릿속에서도 군집이 만들어집니다.",
+      text_en: "Posting consistently doesn't matter if no one remembers you afterward. The real distribution edge for an indie artist is <em>identity</em>. Track titles, thumbnails, and artwork all need to feel like they belong to the same world — that's how clusters form, on the algorithm and inside listeners' heads."
     },
     {
       type: "p",
@@ -550,13 +550,13 @@ window.NITRO_ARTICLE_BODY = {
     },
     {
       type: "p",
-      text: "트렌드 사운드를 사흘 쫓아도 모멘텀은 누적되지 않습니다. 진짜 자산은 '돌아오게 만드는 포맷'에 있어요. 같은 구조의 영상이 열 개쯤 쌓일 때 비로소 알고리즘이 카테고리를 이해하고, 시청자도 다음 편을 기다리기 시작합니다.",
-      text_en: "Three days chasing a trending sound doesn't compound momentum. The real asset is a format that makes people come back. Around ten posts in, the algorithm starts to understand the category and viewers start anticipating the next one."
+      text: "트렌드 사운드를 사흘 쫓아도 모멘텀은 누적되지 않습니다. 진짜 자산은 <strong>'돌아오게 만드는 포맷'</strong>에 있어요. <strong>같은 구조의 영상이 열 개쯤 쌓일 때</strong> 비로소 알고리즘이 카테고리를 이해하고, 시청자도 다음 편을 기다리기 시작합니다.",
+      text_en: "Three days chasing a trending sound doesn't compound momentum. The real asset is <strong>a format that makes people come back</strong>. <strong>Around ten posts in</strong>, the algorithm starts to understand the category and viewers start anticipating the next one."
     },
     {
       type: "p",
-      text: "두 가지를 점검해볼 만한데요. 한 줄로 설명되는 시그니처 포맷이 있는지. 예를 들면 '미발매 곡을 엄마에게 처음 들려주기' 같은 거죠. 그리고 같은 포맷으로 열 편을 찍을 수 있는지. 평가는 열 편 이후에 하는 게 맞습니다. 그 전에 포맷을 바꿔버리면 데이터가 깨져버리거든요.",
-      text_en: "Two checks. Is there a signature format that fits in one line — say, 'playing my unreleased track to my mom for the first time'? And can you shoot ten of them in the same shape? Don't evaluate before post ten. Switching format earlier breaks the data."
+      text: "두 가지를 점검해볼 만한데요. 한 줄로 설명되는 시그니처 포맷이 있는지. 예를 들면 <em>'미발매 곡을 엄마에게 처음 들려주기'</em> 같은 거죠. 그리고 같은 포맷으로 열 편을 찍을 수 있는지. <u>평가는 열 편 이후에</u> 하는 게 맞습니다. 그 전에 포맷을 바꿔버리면 데이터가 깨져버리거든요.",
+      text_en: "Two checks. Is there a signature format that fits in one line — say, <em>'playing my unreleased track to my mom for the first time'</em>? And can you shoot ten of them in the same shape? <u>Don't evaluate before post ten.</u> Switching format earlier breaks the data."
     },
     {
       type: "h2",
@@ -566,8 +566,8 @@ window.NITRO_ARTICLE_BODY = {
     },
     {
       type: "p",
-      text: "릴리즈 공지만 올리는 계정은 팔로워가 빠집니다. 사람들은 곡이 아니라 곡을 만드는 사람을 따르거든요. 새벽 세 시의 가사 메모, 30초짜리 멜로디 루프, 비트 만들다 망친 첫 시도 — 이런 '미완성'이 완성품보다 도달이 잘 나오는 이유입니다.",
-      text_en: "Accounts that only post release announcements lose followers. People follow the maker, not the song. The 3am lyric notes, the 30-second melody loops, the first beat attempt that didn't land — the unfinished work outperforms the finished one on reach, for exactly that reason."
+      text: "릴리즈 공지만 올리는 계정은 팔로워가 빠집니다. 사람들은 <em>곡이 아니라 곡을 만드는 사람</em>을 따르거든요. 새벽 세 시의 가사 메모, 30초짜리 멜로디 루프, 비트 만들다 망친 첫 시도 — 이런 <strong>'미완성'이 완성품보다 도달이 잘 나오는 이유</strong>입니다.",
+      text_en: "Accounts that only post release announcements lose followers. People follow <em>the maker, not the song</em>. The 3am lyric notes, the 30-second melody loops, the first beat attempt that didn't land — <strong>the unfinished work outperforms the finished one on reach</strong>, for exactly that reason."
     },
     {
       type: "callout",
@@ -582,13 +582,13 @@ window.NITRO_ARTICLE_BODY = {
     },
     {
       type: "p",
-      text: "Spotify for Artists 피칭은 발매 4–6주 전이 마지노선입니다. 발매 당일에 누르면 에디토리얼 윈도우는 이미 닫힌 뒤죠. 장르 선택도 종종 어긋나는데요. 본인이 생각하는 장르가 아니라, 비슷한 곡들이 실제로 어디에 들어가 있는지를 기준으로 잡아야 맞습니다.",
-      text_en: "Spotify for Artists pitching has a four-to-six-week deadline before release. Push it on release day and the editorial window has already closed. Genre selection is often off too — not what you think your genre is, but where similar tracks are actually being placed."
+      text: "Spotify for Artists 피칭은 <strong>발매 4–6주 전이 마지노선</strong>입니다. 발매 당일에 누르면 에디토리얼 윈도우는 이미 닫힌 뒤죠. 장르 선택도 종종 어긋나는데요. 본인이 생각하는 장르가 아니라, <em>비슷한 곡들이 실제로 어디에 들어가 있는지</em>를 기준으로 잡아야 맞습니다.",
+      text_en: "Spotify for Artists pitching has a <strong>four-to-six-week deadline</strong> before release. Push it on release day and the editorial window has already closed. Genre selection is often off too — not what you think your genre is, but <em>where similar tracks are actually being placed</em>."
     },
     {
       type: "p",
-      text: "더 중요한 건 플레이리스트의 질입니다. 봇 청취자로 채워진 십만 단위 플레이리스트는 알고리즘에 부정 신호를 보내거든요. 곡을 저장하고 자기 플레이리스트에 옮기는 진짜 청취자가 50명만 있어도 Discover Weekly와 Release Radar로 연결됩니다. 숫자가 아니라 행동이 신호예요.",
-      text_en: "Quality of the playlist matters more than the count. A 100k playlist filled with bot listeners sends a negative signal to the algorithm. Fifty real listeners who save the track and add it to their own playlists are enough to feed Discover Weekly and Release Radar. The signal is behavior, not numbers."
+      text: "더 중요한 건 플레이리스트의 질입니다. <u>봇 청취자로 채워진 십만 단위 플레이리스트는 알고리즘에 부정 신호를 보내거든요.</u> 곡을 저장하고 자기 플레이리스트에 옮기는 진짜 청취자가 50명만 있어도 Discover Weekly와 Release Radar로 연결됩니다. <strong>숫자가 아니라 행동이 신호</strong>예요.",
+      text_en: "Quality of the playlist matters more than the count. <u>A 100k playlist filled with bot listeners sends a negative signal to the algorithm.</u> Fifty real listeners who save the track and add it to their own playlists are enough to feed Discover Weekly and Release Radar. <strong>The signal is behavior, not numbers.</strong>"
     },
     {
       type: "h2",
@@ -598,13 +598,13 @@ window.NITRO_ARTICLE_BODY = {
     },
     {
       type: "p",
-      text: "월간 청취자 1만 명 가운데, 매 곡을 듣고 공유하고 굿즈까지 사는 200명이 나머지 9,800명을 합친 것보다 더 큰 영향을 만듭니다. 그런데 대부분의 아티스트는 이 200명을 데이터로만 보고, 별도 채널을 만들지 않죠.",
-      text_en: "Out of 10,000 monthly listeners, the 200 who play every track, share every drop, and buy the merch outweigh the other 9,800 combined. Most artists see those 200 only as a data point and never build them a separate channel."
+      text: "월간 청취자 1만 명 가운데, 매 곡을 듣고 공유하고 굿즈까지 사는 <strong>200명이 나머지 9,800명을 합친 것보다 더 큰 영향</strong>을 만듭니다. 그런데 대부분의 아티스트는 이 200명을 데이터로만 보고, 별도 채널을 만들지 않죠.",
+      text_en: "Out of 10,000 monthly listeners, <strong>the 200 who play every track, share every drop, and buy the merch outweigh the other 9,800 combined</strong>. Most artists see those 200 only as a data point and never build them a separate channel."
     },
     {
       type: "p",
-      text: "디스코드 서버, 비공개 페이스북 그룹, 작은 뉴스레터 — 어느 형태든 '먼저 듣는 권한'을 주는 공간이 필요합니다. 미발매 곡 선공개, 커버아트 투표권, 티켓 우선예매. 비용은 거의 들지 않고, 이 200명이 알아서 외부로 곡을 옮겨줍니다.",
-      text_en: "Discord server, private Facebook group, a small newsletter — any shape works, as long as it gives them 'first listen' rights. Early track drops, cover art votes, ticket pre-sales. Costs almost nothing, and those 200 carry the music outward on their own."
+      text: "디스코드 서버, 비공개 페이스북 그룹, 작은 뉴스레터 — 어느 형태든 <em>'먼저 듣는 권한'</em>을 주는 공간이 필요합니다. 미발매 곡 선공개, 커버아트 투표권, 티켓 우선예매. 비용은 거의 들지 않고, 이 200명이 알아서 외부로 곡을 옮겨줍니다.",
+      text_en: "Discord server, private Facebook group, a small newsletter — any shape works, as long as it gives them <em>'first listen'</em> rights. Early track drops, cover art votes, ticket pre-sales. Costs almost nothing, and those 200 carry the music outward on their own."
     },
     {
       type: "callout",
@@ -619,8 +619,8 @@ window.NITRO_ARTICLE_BODY = {
     },
     {
       type: "p",
-      text: "다섯 가지를 한꺼번에 시작하는 건 가장 흔한 실패입니다. 다음 발매를 앞두고는, 다섯 가지 가운데 '아직 손대지 않은 것 하나'만 골라서 30일을 풀로 돌려보는 편이 낫습니다. 결과가 손에 잡히면 그다음을 얹으면 되거든요. NitroMusic이 클라이언트 캠페인을 설계할 때 따르는 순서도 같습니다. 정체성을 먼저 정리하고, 한 채널의 시그니처를 굳히고, 슈퍼팬을 모은 뒤에야 확장으로 넘어가죠.",
-      text_en: "Starting all five at once is the most common failure. Before your next release, pick one of the five you haven't touched yet and run it full for thirty days. When the result is in your hand, layer the next. Same order NitroMusic follows on client campaigns: identity first, signature on one channel, superfans, and only then expansion."
+      text: "다섯 가지를 한꺼번에 시작하는 건 가장 흔한 실패입니다. 다음 발매를 앞두고는, 다섯 가지 가운데 <em>'아직 손대지 않은 것 하나'</em>만 골라서 <u>30일을 풀로 돌려보는 편</u>이 낫습니다. 결과가 손에 잡히면 그다음을 얹으면 되거든요. NitroMusic이 클라이언트 캠페인을 설계할 때 따르는 순서도 같습니다. <strong>정체성 → 한 채널의 시그니처 → 슈퍼팬 → 확장</strong>.",
+      text_en: "Starting all five at once is the most common failure. Before your next release, pick one of the five you haven't touched yet and <u>run it full for thirty days</u>. When the result is in your hand, layer the next. Same order NitroMusic follows on client campaigns: <strong>identity → signature on one channel → superfans → expansion</strong>."
     },
     {
       type: "p",
