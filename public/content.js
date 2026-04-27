@@ -226,7 +226,7 @@ window.NITRO_I18N = {
         { cat: "음원 마케팅 기초다지기", t: "음원 마케팅, 처음이시라구요?", em: "'숏폼 + 광고'는 가장 어려운 조합입니다.", views: "24,531", thumb: "#E63946" },
         { cat: "음원 프로모션 실전편", t: "스트리밍 성과가 안 나온다면,", em: "지금 점검해 봐야 할 3가지 체크리스트", views: "19,204", thumb: "#1a1a1a" },
         { cat: "음원 마케팅 기초다지기", t: "마케팅 효과가 없던 2가지 이유,", em: "플랫폼에 대한 이해가 부족한 당신…", views: "17,882", thumb: "#2a0d12" },
-        { cat: "음원 프로모션 실전편", t: "팀장의 보고는 이렇게 다르다: 상향 커뮤니케이션 스킬 (좋은 예 vs 나쁜 예)", em: "", views: "14,107", thumb: "#3a5bbc" },
+        { id: "c001", cat: "음원 프로모션 실전편", t: "SNS에서 인디 아티스트가", em: "헤매는 진짜 이유", views: "1,311", thumb: "#E63946" },
         { cat: "음원 홍보 콘텐츠 정밀 분석", t: "일센스를 키우는 직장인의 문해력 2편: 구성하기, 쓰기 실전편", em: "", views: "12,366", thumb: "#f5efe4" }
       ],
       new_title: "새로 발행된 마케팅 콘텐츠",
@@ -235,7 +235,7 @@ window.NITRO_I18N = {
         { thumb_t: "100만 조회수,", thumb_em: "그걸로 뭐하시게요?", thumb_bg: "#1a1a1a", audience: ["senior", "promoter"], cat: "음원 프로모션 실전편", t: "스트리밍 성과가 안 나온다면, 당장 점검해 봐야 할 3가지 체크리스트", read: "3분 분량", date: "5월 9일, 2026", views: "8,421" },
         { thumb_t: "공들여 만든 릴스,", thumb_em: "떡상 못한 2가지 이유", thumb_bg_img: "images/hero-live.png", audience: ["promoter", "ceo"], cat: "음원 마케팅 기초다지기", t: "존재감 없는 팀의 체질을 바꾸는 5가지 원칙 (ft. 크리에이티브 팀 빌딩)", read: "5분 분량", date: "4월 26일, 2026", views: "6,892" },
         { thumb_t: "나도 글을", thumb_em: "쓸 수 있을까?", thumb_bg: "#eef1f6", audience: ["rookie", "senior"], cat: "음원 마케팅 기초다지기, 엔터테인먼트 정밀 분석", t: "평범한 직장인이 콘텐츠를 만들기까지는: 15초 메모로 시작하는 기록의 확장법 (템플릿 제공)", read: "5분 분량", date: "4월 26일, 2026", views: "5,117" },
-        { thumb_t: "결제 직전,", thumb_em: "왜 고객은 떠날까?", thumb_bg: "#f7e8c8", audience: ["promoter", "rookie"], cat: "음원 마케팅 기초다지기", t: "전환율을 높이고 싶다면? 고객의 행동을 바꾼 작은 실험들 | 쉽게 시작하는 데이터 분석(4)", read: "5분 분량", date: "4월 26일, 2026", views: "4,503" }
+        { id: "c001", thumb_t: "SNS에서 인디 아티스트가", thumb_em: "헤매는 진짜 이유", thumb_bg: "#E63946", audience: ["new", "promoter"], cat: "음원 프로모션 실전편", t: "독립 아티스트를 위한 소셜 미디어 음원 홍보 전략 다섯 가지", read: "6분 분량", date: "4월 22일, 2026", views: "1,311" }
       ]
     },
     faq: {
@@ -457,7 +457,7 @@ window.NITRO_I18N = {
         { cat: "Music marketing basics", t: "New to music marketing?", em: "'Short-form + paid' is one of the hardest combinations.", views: "24,531", thumb: "#E63946" },
         { cat: "Promotion playbook", t: "Streaming numbers flat?", em: "The 3-point checklist to audit right now.", views: "19,204", thumb: "#1a1a1a" },
         { cat: "Music marketing basics", t: "Two reasons your marketing isn't landing —", em: "you don't understand the platform yet.", views: "17,882", thumb: "#2a0d12" },
-        { cat: "Promotion playbook", t: "Managers report up differently: upstream communication (good vs bad examples)", em: "", views: "14,107", thumb: "#3a5bbc" },
+        { id: "c001", cat: "Promotion playbook", t: "Why indies struggle", em: "on social — the real reason.", views: "1,311", thumb: "#E63946" },
         { cat: "Content teardown", t: "Literacy for marketers, Part 2 — structure and the act of writing.", em: "", views: "12,366", thumb: "#f5efe4" }
       ],
       new_title: "Newly published",
@@ -466,7 +466,7 @@ window.NITRO_I18N = {
         { thumb_t: "1M views —", thumb_em: "what's the plan?", thumb_bg: "#1a1a1a", audience: ["senior", "promoter"], cat: "Promotion playbook", t: "Streams aren't landing — the 3-point checklist to audit right now.", read: "3 min read", date: "May 9, 2026", views: "8,421" },
         { thumb_t: "You made the reel,", thumb_em: "so why didn't it pop?", thumb_bg_img: "images/hero-live.png", audience: ["promoter", "ceo"], cat: "Music marketing basics", t: "Five principles to rebuild an overlooked team (ft. creative team building).", read: "5 min read", date: "Apr 26, 2026", views: "6,892" },
         { thumb_t: "Can I really", thumb_em: "write something?", thumb_bg: "#eef1f6", audience: ["rookie", "senior"], cat: "Music marketing basics · Teardown", t: "From ordinary to writer: the 15-second memo expansion method (template included).", read: "5 min read", date: "Apr 26, 2026", views: "5,117" },
-        { thumb_t: "Right before checkout,", thumb_em: "why do they leave?", thumb_bg: "#f7e8c8", audience: ["promoter", "rookie"], cat: "Music marketing basics", t: "Lift conversion: small experiments that moved customer behavior | easy data analysis (4).", read: "5 min read", date: "Apr 26, 2026", views: "4,503" }
+        { id: "c001", thumb_t: "Why indies struggle", thumb_em: "on social — the real reason.", thumb_bg: "#E63946", audience: ["new", "promoter"], cat: "Promotion playbook", t: "10 social-media music promotion strategies for independent artists", read: "6 min read", date: "Apr 22, 2026", views: "1,311" }
       ]
     },
     faq: {

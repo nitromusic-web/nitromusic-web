@@ -148,8 +148,9 @@ section { padding: 120px var(--pad); position: relative; }
   width: 100%;
 }
 /* 와이드 모니터(34인치 등)에서만 좌측 70px 시프트로 서비스 카드 좌측 기준선과 맞춤.
-   좁은 화면에서는 좌측 텍스트가 viewport 밖으로 잘리므로 적용하지 않음. */
-@media (min-width: 1700px) {
+   1820px 기준: maxw(1480) + translate(70*2) + 안전 여유(100*2). 이 미만에서는
+   좌측 텍스트가 viewport 밖으로 잘리므로 시프트 미적용 (예: 1080p × 110% zoom). */
+@media (min-width: 1820px) {
   .section-head { translate: -70px 0; }
 }
 .section-head > * {
