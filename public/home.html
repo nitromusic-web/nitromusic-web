@@ -9,6 +9,11 @@
 <link rel="shortcut icon" href="/favicon.ico?v=3">
 <link rel="stylesheet" href="styles.css?v=32">
 <link rel="stylesheet" href="mobile.css?v=13">
+<style>
+  /* TEMP: 칼럼 탭 비활성화 (DM 캠페인 기간) — 복원 시 이 블록 + is-temp-disabled 속성 제거 */
+  .is-temp-disabled { pointer-events: none !important; opacity: 0.35 !important; cursor: not-allowed !important; }
+  .is-temp-hidden { display: none !important; }
+</style>
 </head>
 <body>
 
@@ -20,7 +25,7 @@
     <a href="#network" data-n="network">네트워크</a>
     <a href="#cases" data-n="cases">캠페인</a>
     <a href="#pilot" data-n="pilot">파일럿</a>
-    <a href="#column" data-n="column">칼럼</a>
+    <a href="#column" data-n="column" class="is-temp-disabled" aria-disabled="true" tabindex="-1">칼럼</a>
     <a href="#faq" data-n="faq">FAQ</a>
   </div>
   <div class="nav-right">
@@ -42,7 +47,7 @@
     <a href="#network" data-n="network">네트워크</a>
     <a href="#cases" data-n="cases">캠페인</a>
     <a href="#pilot" data-n="pilot">파일럿</a>
-    <a href="#column" data-n="column">칼럼</a>
+    <a href="#column" data-n="column" class="is-temp-disabled" aria-disabled="true" tabindex="-1">칼럼</a>
     <a href="#faq" data-n="faq">FAQ</a>
   </nav>
   <div class="mobile-menu-foot">
@@ -59,7 +64,7 @@
   <a href="#aggregate" data-label="AGGREGATE"></a>
   <a href="#pilot" data-label="PILOT"></a>
   <a href="#why" data-label="WHY"></a>
-  <a href="#column" data-label="COLUMN"></a>
+  <a href="#column" data-label="COLUMN" class="is-temp-hidden"></a>
   <a href="#faq" data-label="FAQ"></a>
   <a href="#contact" data-label="CONTACT"></a>
 </aside>
@@ -191,7 +196,7 @@
 </section>
 
 <!-- COLUMN -->
-<section id="column" class="column-section">
+<section id="column" class="column-section is-temp-hidden">
   <div class="section-head reveal">
     <div class="eyebrow" id="col-eyebrow">COLUMN</div>
     <h2 class="h-lg" id="col-title">Short-form Notes.</h2>
@@ -270,7 +275,7 @@
 
 <!-- STICKY INSIGHT BAR — appears while #aggregate is in view -->
 <div class="stick-bar" id="stick-bar" aria-hidden="true" hidden>
-  <a href="#column" class="stick-bar__cta">
+  <a href="#column" class="stick-bar__cta is-temp-disabled" aria-disabled="true" tabindex="-1">
     <span class="stick-bar__label" id="stick-bar-label">음원 프로모션 인사이트 받기</span>
     <span class="arrow">→</span>
   </a>
