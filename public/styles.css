@@ -628,7 +628,7 @@ section { padding: 120px var(--pad); position: relative; }
 .why-item p { font-size: 14px; color: var(--text-dim); line-height: 1.55;}
 
 /* =============== LOGO WALL =============== */
-.logo-wall { background: #060606; padding: 48px 0 56px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);}
+.logo-wall { background: linear-gradient(180deg, var(--bg) 0, #000 64px, #000 calc(100% - 64px), var(--bg) 100%); padding: 48px 0 56px;}
 .logo-wall-inner {
   max-width: none; margin: 0;
   display: block;
