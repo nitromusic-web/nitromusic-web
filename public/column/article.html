@@ -409,6 +409,14 @@
 <script src="i18n.js"></script>
 
 <script>
+  // Count this article view (+1, persisted in localStorage), then refresh effective totals before render.
+  (function () {
+    var id = new URLSearchParams(location.search).get('id') || 'c002';
+    if (window.NITRO_VIEWS) { window.NITRO_VIEWS.bump(id); window.NITRO_VIEWS.apply(); }
+  })();
+</script>
+
+<script>
 // ============================================================
 // PC ARTICLE RENDER  (IIFE — isolated)
 // ============================================================
@@ -448,6 +456,7 @@
       if (b.type === 'h2')      return `<h2 id="${b.id || ''}">${text}</h2>`;
       if (b.type === 'p')       return `<p>${text}</p>`;
       if (b.type === 'callout') return `<div class="callout">${text}</div>`;
+      if (b.type === 'image')   return `<figure class="fig"><div class="frame photo"><img src="${b.src}" alt="${T(b,'alt')||''}" loading="lazy"></div>${T(b,'cap') ? `<figcaption>${T(b,'cap')}</figcaption>` : ''}</figure>`;
       return '';
     }).join('');
 
@@ -612,6 +621,7 @@
       if (b.type === 'h2')      return `<h2 id="${b.id || ''}">${text}</h2>`;
       if (b.type === 'p')       return `<p>${text}</p>`;
       if (b.type === 'callout') return `<div class="callout">${text}</div>`;
+      if (b.type === 'image')   return `<figure class="fig"><div class="frame photo"><img src="${b.src}" alt="${T(b,'alt')||''}" loading="lazy"></div>${T(b,'cap') ? `<figcaption>${T(b,'cap')}</figcaption>` : ''}</figure>`;
       return '';
     }).join('');
   }
