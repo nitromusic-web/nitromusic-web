@@ -223,19 +223,19 @@ window.NITRO_I18N = {
       top5_title: "Nitro 인기 Top 5",
       top5_sub: "[5월] 가장 많이 읽힌 칼럼",
       top5: [
-        { cat: "음원 마케팅 기초다지기", t: "음원 마케팅, 처음이시라구요?", em: "'숏폼 + 광고'는 가장 어려운 조합입니다.", views: "24,531", thumb: "#E63946" },
-        { cat: "음원 프로모션 실전편", t: "스트리밍 성과가 안 나온다면,", em: "지금 점검해 봐야 할 3가지 체크리스트", views: "19,204", thumb: "#1a1a1a" },
-        { cat: "음원 마케팅 기초다지기", t: "마케팅 효과가 없던 2가지 이유,", em: "플랫폼에 대한 이해가 부족한 당신…", views: "17,882", thumb: "#2a0d12" },
-        { id: "c001", cat: "음원 프로모션 실전편", t: "SNS에서 인디 아티스트가", em: "헤매는 진짜 이유", views: "1,311", thumb: "#E63946" },
-        { cat: "음원 홍보 콘텐츠 정밀 분석", t: "일센스를 키우는 직장인의 문해력 2편: 구성하기, 쓰기 실전편", em: "", views: "12,366", thumb: "#f5efe4" }
+        { id: "c002", cat: "음원 프로모션 실전편", t: "2026년 랩 음악 홍보 가이드", em: "", views: "4,801", thumb: "#0a0a0b" },
+        { id: "c003", cat: "음원 프로모션 실전편", t: "2026년 EDM 음악 홍보 가이드", em: "", views: "4,471", thumb: "#E63946" },
+        { id: "c004", cat: "음원 마케팅 기초다지기", t: "뮤지션을 위한 Patreon — 지속가능한 수익을 만드는 6단계", em: "", views: "3,527", thumb: "#3a5bbc" },
+        { id: "c005", cat: "음원 프로모션 실전편", t: "2026년 실제로 먹히는 Spotify 플레이리스트 홍보 팁 16가지", em: "", views: "3,092", thumb: "#1a1a1a" },
+        { id: "c007", cat: "음원 마케팅 기초다지기", t: "2026년 아티스트를 위한 DAW TOP 10", em: "", views: "2,863", thumb: "#2a0d12" }
       ],
       new_title: "새로 발행된 마케팅 콘텐츠",
       new_more: "전체 보기 →",
       new_cards: [
-        { thumb_t: "100만 조회수,", thumb_em: "그걸로 뭐하시게요?", thumb_bg: "#1a1a1a", audience: ["senior", "promoter"], cat: "음원 프로모션 실전편", t: "스트리밍 성과가 안 나온다면, 당장 점검해 봐야 할 3가지 체크리스트", read: "3분 분량", date: "5월 9일, 2026", views: "8,421" },
-        { thumb_t: "공들여 만든 릴스,", thumb_em: "떡상 못한 2가지 이유", thumb_bg_img: "images/hero-live.png", audience: ["promoter", "ceo"], cat: "음원 마케팅 기초다지기", t: "존재감 없는 팀의 체질을 바꾸는 5가지 원칙 (ft. 크리에이티브 팀 빌딩)", read: "5분 분량", date: "4월 26일, 2026", views: "6,892" },
-        { thumb_t: "나도 글을", thumb_em: "쓸 수 있을까?", thumb_bg: "#eef1f6", audience: ["rookie", "senior"], cat: "음원 마케팅 기초다지기, 엔터테인먼트 정밀 분석", t: "평범한 직장인이 콘텐츠를 만들기까지는: 15초 메모로 시작하는 기록의 확장법 (템플릿 제공)", read: "5분 분량", date: "4월 26일, 2026", views: "5,117" },
-        { id: "c001", thumb_t: "SNS에서 인디 아티스트가", thumb_em: "헤매는 진짜 이유", thumb_bg: "#E63946", audience: ["new", "promoter"], cat: "음원 프로모션 실전편", t: "독립 아티스트를 위한 소셜 미디어 음원 홍보 전략 다섯 가지", read: "6분 분량", date: "4월 22일, 2026", views: "1,311" }
+        { id: "c017", thumb_t: "the real", thumb_em: "cost.", thumb_bg_img: "column/images/c017-hero.jpg", audience: ["ceo", "promoter"], cat: "음원 프로모션 실전편", t: "2026년 Spotify 음원 홍보 비용은? 솔직한 내역", read: "8분 분량", date: "6월 29일, 2026", views: "103" },
+        { id: "c021", thumb_t: "clips break", thumb_em: "songs.", thumb_bg_img: "column/images/c021-hero.jpg", audience: ["promoter", "new"], cat: "음원 프로모션 실전편", t: "클립 이코노미 — 클립이 2026년 새 음악을 어떻게 터뜨리는가", read: "6분 분량", date: "6월 19일, 2026", views: "100" },
+        { id: "c020", thumb_t: "the", thumb_em: "algorithm.", thumb_bg_img: "column/images/c020-hero.jpg", audience: ["senior", "promoter"], cat: "음원 홍보 콘텐츠 정밀 분석", t: "스파이크 이후 — Spotify 알고리즘이 계속 밀어주는 방법", read: "7분 분량", date: "6월 22일, 2026", views: "89" },
+        { id: "c019", thumb_t: "1,000", thumb_em: "true fans.", thumb_bg_img: "column/images/c019-hero.jpg", audience: ["new", "rookie"], cat: "음원 프로모션 실전편", t: "제로에서 1,000명의 진정한 팬까지 — 90일 시스템", read: "6분 분량", date: "6월 24일, 2026", views: "72" }
       ]
     },
     faq: {
@@ -454,20 +454,21 @@ window.NITRO_I18N = {
       top5_title: "Nitro Top 5",
       top5_sub: "[May] most-read columns",
       top5: [
-        { cat: "Music marketing basics", t: "New to music marketing?", em: "'Short-form + paid' is one of the hardest combinations.", views: "24,531", thumb: "#E63946" },
-        { cat: "Promotion playbook", t: "Streaming numbers flat?", em: "The 3-point checklist to audit right now.", views: "19,204", thumb: "#1a1a1a" },
-        { cat: "Music marketing basics", t: "Two reasons your marketing isn't landing —", em: "you don't understand the platform yet.", views: "17,882", thumb: "#2a0d12" },
-        { id: "c001", cat: "Promotion playbook", t: "Why indies struggle", em: "on social — the real reason.", views: "1,311", thumb: "#E63946" },
-        { cat: "Content teardown", t: "Literacy for marketers, Part 2 — structure and the act of writing.", em: "", views: "12,366", thumb: "#f5efe4" }
+        { id: "c002", cat: "Promotion playbook", t: "How to Promote Rap Music in 2026", em: "", views: "4,801", thumb: "#0a0a0b" },
+        { id: "c003", cat: "Promotion playbook", t: "How to Promote EDM Music in 2026", em: "", views: "4,471", thumb: "#E63946" },
+        { id: "c004", cat: "Music marketing basics", t: "Patreon for Musicians: 6 Steps to a Sustainable Income", em: "", views: "3,527", thumb: "#3a5bbc" },
+        { id: "c005", cat: "Promotion playbook", t: "16 Spotify Playlist Promotion Tips That Actually Work in 2026", em: "", views: "3,092", thumb: "#1a1a1a" },
+        { id: "c007", cat: "Music marketing basics", t: "10 Best DAWs for Artists in 2026", em: "", views: "2,863", thumb: "#2a0d12" }
       ],
       new_title: "Newly published",
       new_more: "See all →",
       new_cards: [
-        { thumb_t: "1M views —", thumb_em: "what's the plan?", thumb_bg: "#1a1a1a", audience: ["senior", "promoter"], cat: "Promotion playbook", t: "Streams aren't landing — the 3-point checklist to audit right now.", read: "3 min read", date: "May 9, 2026", views: "8,421" },
-        { thumb_t: "You made the reel,", thumb_em: "so why didn't it pop?", thumb_bg_img: "images/hero-live.png", audience: ["promoter", "ceo"], cat: "Music marketing basics", t: "Five principles to rebuild an overlooked team (ft. creative team building).", read: "5 min read", date: "Apr 26, 2026", views: "6,892" },
-        { thumb_t: "Can I really", thumb_em: "write something?", thumb_bg: "#eef1f6", audience: ["rookie", "senior"], cat: "Music marketing basics · Teardown", t: "From ordinary to writer: the 15-second memo expansion method (template included).", read: "5 min read", date: "Apr 26, 2026", views: "5,117" },
-        { id: "c001", thumb_t: "Why indies struggle", thumb_em: "on social — the real reason.", thumb_bg: "#E63946", audience: ["new", "promoter"], cat: "Promotion playbook", t: "10 social-media music promotion strategies for independent artists", read: "6 min read", date: "Apr 22, 2026", views: "1,311" }
+        { id: "c017", thumb_t: "the real", thumb_em: "cost.", thumb_bg_img: "column/images/c017-hero.jpg", audience: ["ceo", "promoter"], cat: "Promotion playbook", t: "How Much Does Spotify Promotion Cost in 2026? An Honest Breakdown", read: "8 min read", date: "Jun 29, 2026", views: "103" },
+        { id: "c021", thumb_t: "clips break", thumb_em: "songs.", thumb_bg_img: "column/images/c021-hero.jpg", audience: ["promoter", "new"], cat: "Promotion playbook", t: "The Clip Economy — How Clips Break New Music in 2026", read: "6 min read", date: "Jun 19, 2026", views: "100" },
+        { id: "c020", thumb_t: "the", thumb_em: "algorithm.", thumb_bg_img: "column/images/c020-hero.jpg", audience: ["senior", "promoter"], cat: "Content teardown", t: "After the Spike — How Spotify’s Algorithm Keeps Pushing You", read: "7 min read", date: "Jun 22, 2026", views: "89" },
+        { id: "c019", thumb_t: "1,000", thumb_em: "true fans.", thumb_bg_img: "column/images/c019-hero.jpg", audience: ["new", "rookie"], cat: "Promotion playbook", t: "From Zero to 1,000 True Fans — A 90-Day System", read: "6 min read", date: "Jun 24, 2026", views: "72" }
       ]
+
     },
     faq: {
       eyebrow: "FAQ",
