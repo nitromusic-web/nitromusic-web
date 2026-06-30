@@ -202,10 +202,13 @@
     $('#col-top5-sub').textContent = col.top5_sub;
     $('#col-top5-list').innerHTML = col.top5.map((it, i) => {
       const cid = it.id || ('c' + String(i + 1).padStart(3, '0'));
+      const t5bg = it.thumb_bg_img
+        ? `background-image:url('${it.thumb_bg_img}'); background-size:cover; background-position:center;`
+        : `background: linear-gradient(135deg, ${it.thumb}, ${it.thumb}cc);`;
       return `
       <a class="top5-item" href="./column/article.html?id=${cid}" style="text-decoration:none;color:inherit;">
         <div class="rank">${i+1}</div>
-        <div class="thumb" style="background: linear-gradient(135deg, ${it.thumb}, ${it.thumb}cc);"></div>
+        <div class="thumb" style="${t5bg}"></div>
         <div class="body">
           <div class="cat">${it.cat}</div>
           <div class="t">${it.t}${it.em ? ` <em>${it.em}</em>` : ''}</div>

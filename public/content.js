@@ -223,11 +223,11 @@ window.NITRO_I18N = {
       top5_title: "Nitro 인기 Top 5",
       top5_sub: "[5월] 가장 많이 읽힌 칼럼",
       top5: [
-        { id: "c002", cat: "음원 프로모션 실전편", t: "2026년 랩 음악 홍보 가이드", em: "", views: "4,801", thumb: "#0a0a0b" },
-        { id: "c003", cat: "음원 프로모션 실전편", t: "2026년 EDM 음악 홍보 가이드", em: "", views: "4,471", thumb: "#E63946" },
-        { id: "c004", cat: "음원 마케팅 기초다지기", t: "뮤지션을 위한 Patreon — 지속가능한 수익을 만드는 6단계", em: "", views: "3,527", thumb: "#3a5bbc" },
-        { id: "c005", cat: "음원 프로모션 실전편", t: "2026년 실제로 먹히는 Spotify 플레이리스트 홍보 팁 16가지", em: "", views: "3,092", thumb: "#1a1a1a" },
-        { id: "c007", cat: "음원 마케팅 기초다지기", t: "2026년 아티스트를 위한 DAW TOP 10", em: "", views: "2,863", thumb: "#2a0d12" }
+        { id: "c002", cat: "음원 프로모션 실전편", t: "2026년 랩 음악 홍보 가이드", em: "", views: "4,801", thumb: "#0a0a0b", thumb_bg_img: "column/images/c002-hero.jpg" },
+        { id: "c003", cat: "음원 프로모션 실전편", t: "2026년 EDM 음악 홍보 가이드", em: "", views: "4,471", thumb: "#E63946", thumb_bg_img: "column/images/c003-hero.jpg" },
+        { id: "c004", cat: "음원 마케팅 기초다지기", t: "뮤지션을 위한 Patreon — 지속가능한 수익을 만드는 6단계", em: "", views: "3,527", thumb: "#3a5bbc", thumb_bg_img: "column/images/c004-hero.jpg" },
+        { id: "c005", cat: "음원 프로모션 실전편", t: "2026년 실제로 먹히는 Spotify 플레이리스트 홍보 팁 16가지", em: "", views: "3,092", thumb: "#1a1a1a", thumb_bg_img: "column/images/c005-hero.jpg" },
+        { id: "c007", cat: "음원 마케팅 기초다지기", t: "2026년 아티스트를 위한 DAW TOP 10", em: "", views: "2,863", thumb: "#2a0d12", thumb_bg_img: "column/images/c007-hero.jpg" }
       ],
       new_title: "새로 발행된 마케팅 콘텐츠",
       new_more: "전체 보기 →",
@@ -454,11 +454,11 @@ window.NITRO_I18N = {
       top5_title: "Nitro Top 5",
       top5_sub: "[May] most-read columns",
       top5: [
-        { id: "c002", cat: "Promotion playbook", t: "How to Promote Rap Music in 2026", em: "", views: "4,801", thumb: "#0a0a0b" },
-        { id: "c003", cat: "Promotion playbook", t: "How to Promote EDM Music in 2026", em: "", views: "4,471", thumb: "#E63946" },
-        { id: "c004", cat: "Music marketing basics", t: "Patreon for Musicians: 6 Steps to a Sustainable Income", em: "", views: "3,527", thumb: "#3a5bbc" },
-        { id: "c005", cat: "Promotion playbook", t: "16 Spotify Playlist Promotion Tips That Actually Work in 2026", em: "", views: "3,092", thumb: "#1a1a1a" },
-        { id: "c007", cat: "Music marketing basics", t: "10 Best DAWs for Artists in 2026", em: "", views: "2,863", thumb: "#2a0d12" }
+        { id: "c002", cat: "Promotion playbook", t: "How to Promote Rap Music in 2026", em: "", views: "4,801", thumb: "#0a0a0b", thumb_bg_img: "column/images/c002-hero.jpg" },
+        { id: "c003", cat: "Promotion playbook", t: "How to Promote EDM Music in 2026", em: "", views: "4,471", thumb: "#E63946", thumb_bg_img: "column/images/c003-hero.jpg" },
+        { id: "c004", cat: "Music marketing basics", t: "Patreon for Musicians: 6 Steps to a Sustainable Income", em: "", views: "3,527", thumb: "#3a5bbc", thumb_bg_img: "column/images/c004-hero.jpg" },
+        { id: "c005", cat: "Promotion playbook", t: "16 Spotify Playlist Promotion Tips That Actually Work in 2026", em: "", views: "3,092", thumb: "#1a1a1a", thumb_bg_img: "column/images/c005-hero.jpg" },
+        { id: "c007", cat: "Music marketing basics", t: "10 Best DAWs for Artists in 2026", em: "", views: "2,863", thumb: "#2a0d12", thumb_bg_img: "column/images/c007-hero.jpg" }
       ],
       new_title: "Newly published",
       new_more: "See all →",
