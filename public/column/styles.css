@@ -532,8 +532,8 @@ input { font: inherit; color: inherit; }
   gap: 14px;
 }
 .feat-side-item {
-  display: grid;
-  grid-template-columns: 168px minmax(0, 1fr);
+  display: flex;
+  flex-direction: column;
   background: var(--bg-card);
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
@@ -548,6 +548,8 @@ input { font: inherit; color: inherit; }
 }
 .feat-side-item > .thumb {
   position: relative;
+  flex: 1 1 auto;
+  min-height: 132px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -577,10 +579,11 @@ input { font: inherit; color: inherit; }
   white-space: pre-line;
 }
 .feat-side-item > .body {
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 16px 18px;
+  padding: 14px 18px;
   min-width: 0;
 }
 .feat-side-item > .body .cat {
