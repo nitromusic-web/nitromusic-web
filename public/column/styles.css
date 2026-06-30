@@ -1034,6 +1034,18 @@ input { font: inherit; color: inherit; }
   font-weight: 500;
 }
 
+/* In-article figure (photo) */
+.article-body .fig { margin: 36px 0; }
+.article-body .fig .frame { border-radius: 10px; overflow: hidden; }
+.article-body .fig .frame.photo img { width: 100%; height: auto; display: block; }
+.article-body .fig figcaption {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  color: var(--ink-mute);
+}
+
 /* Tags */
 .article-tags {
   display: flex;
