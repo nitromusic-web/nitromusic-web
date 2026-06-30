@@ -206,7 +206,6 @@
           <h5>AT A GLANCE</h5>
           <div class="stat-list">
             <div class="row"><span>VIEWS</span><span class="v" id="side-views"></span></div>
-            <div class="row"><span>LIKES</span><span class="v" id="side-likes"></span></div>
             <div class="row"><span>SHARES</span><span class="v" id="side-shares"></span></div>
             <div class="row"><span>READ</span><span class="v" id="side-read"></span></div>
             <div class="row"><span>SERIES</span><span class="v">2 / 6</span></div>
@@ -467,7 +466,6 @@
     bindTOCHandlers();
 
     document.getElementById('side-views').textContent = col.views;
-    document.getElementById('side-likes').textContent = col.likes;
     document.getElementById('side-shares').textContent = col.shares;
     document.getElementById('side-read').textContent = window.NITRO_LANG === 'en' && col.read_en ? col.read_en : col.read;
   }
