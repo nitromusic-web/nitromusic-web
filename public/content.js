@@ -5,7 +5,7 @@
 window.NITRO_I18N = {
   kr: {
     nav: {
-      services: "서비스",
+      live: "라이브 데모",
       network: "네트워크",
       cases: "캠페인",
       pilot: "파일럿",
@@ -14,19 +14,19 @@ window.NITRO_I18N = {
       contact: "문의하기"
     },
     hero: {
-      // --- Variant 1: 강렬한 메인 카피 ---
+      // --- Variant 1: 포지셔닝 선언 (v2 문서 ①) ---
       v1_kicker: "NITRO MUSIC × KBK CONSULTING",
-      v1_title_line1: "청취 구조를",
-      v1_title_line2: "설계하다.",
-      v1_sub: "레이블과 유통사, 아티스트 팀을 위한 숏폼 시스템.<br>단순 재생수가 아닌 ‘전환’을 설계합니다.",
-      v1_cta_primary: "회사 제안서 받기",
+      v1_title_line1: "조회수를 팔지 않는다,",
+      v1_title_line2: "팬에게 각인시킨다.",
+      v1_sub: "숏폼 바이럴을 팬 각인과 검증된 스트리밍 상승으로 전환합니다.<br>레이블·유통사·아티스트 팀을 위한 숏폼 시스템.",
+      v1_cta_primary: "내 곡 분석받기",
       v1_cta_secondary: "성과 사례 보기",
       // --- Variant 2: 문제 제기형 ---
       v2_kicker: "SHORT-FORM MUSIC MARKETING",
       v2_title_line1: "뷰는 찼는데,",
       v2_title_line2: "스트리밍은 그대로.",
       v2_sub: "그 간극을 좁히는 포맷이 있습니다. NitroMusic은 앵커 제작 + 롱테일 크리에이터 운영으로, 재생수가 아닌 듣는 행동까지 설계합니다.",
-      v2_cta_primary: "미팅 요청",
+      v2_cta_primary: "바이럴 진단 리포트 받기",
       v2_cta_secondary: "4주 파일럿 구조 보기",
       // --- Variant 3: 레이블 직설형 ---
       v3_kicker: "FOR LABELS, DISTRIBUTORS & ARTIST TEAMS",
@@ -44,32 +44,26 @@ window.NITRO_I18N = {
       m3_l: "META ad spend managed (KRW)",
       m4_k: "15+",
       m4_l: "Owned short-form channels",
-      status_live: "LIVE · 2026 Q2 캠페인 모집",
-      date_tag: "SEOUL / 26.04"
+      status_live: "LIVE · 2026 Q3 캠페인 모집",
+      date_tag: "SEOUL / 26.07"
     },
     ticker: [
       "WARNER MUSIC KOREA", "NOEN — HOLD ME", "RGB / COSM COMPANY", "PAUL KIM — WANNA LOVE YOU",
       "PURPLE PEPPER AGENCY", "DAEHAK NAEIL", "INDEPENDENT ARTIST TEAMS"
     ],
-    service: {
-      eyebrow: "WHAT WE DO",
-      title: "숏폼 레이어 시스템,<br>처음부터 끝까지.",
-      sub: "트렌드를 잡는 감각과 전환을 만드는 구조.<br>NitroMusic은 재생수가 아닌 듣는 행동까지<br>설계하는 4단계 레이어로 움직입니다.",
-      cards: [
-          { n: "01", t: "포맷 엔지니어링", d: "앵커 포맷 설계부터 숏폼 내 음원 결합 구간까지.<br>소리와 컷의 배치를 공학적으로 설계합니다.", list: [
-          { k: "비주얼 미스매치 타겟팅", v: "01" },
-          { k: "오디오 스니펫 배치 설계", v: "02" },
-          { k: "네이티브 UI 훅", v: "03" }
-        ]},
-        { n: "02", t: "앵커 + 롱테일 운영", d: "우리가 직접 운영하는 메인 채널과 외부 크리에이터들을,<br>같은 제작 기준으로 동시에 움직입니다." },
-        { n: "03", t: "주간 포맷 규율", d: "매주 포맷 규율 점검, 위너 포맷 확산, 주간 리포트 자동 생성." },
-        { n: "04", t: "성과 리포팅", d: "Shazam, Spotify, IG Reels 지표를 통합한 한 장 요약과 데이터 부록을 전달합니다." }
-      ],
-      feature: {
-        big: "×6.3",
-        t: "단순 재생 대비 전환율",
-        d: "메인 영상과 외부 크리에이터를 같은 기획으로 함께 돌리면,<br>조회수만 얻는 광고 대비 실제로 ‘음원을 들어보는’ 비율이 평균 6.3배 높아집니다."
-      }
+    live: {
+      eyebrow: "WHAT WE DO / LIVE",
+      title: "설명은 75초면<br>충분합니다.",
+      sub: "우리가 무엇을 하는지, 왜 조회수를 팔지 않는지 —<br>말보다 직접 보여드리는 게 빠릅니다.",
+      video_fallback_k: "FILM — IN PRODUCTION",
+      video_fallback_t: "조회수를 팔지 않는다,<br>팬에게 각인시킨다.",
+      report_eyebrow: "SOUND TRACKER — LIVE REPORT",
+      report_title: "실제 추적 리포트를 직접 만져보세요.",
+      report_sub: "FUNK TAKA — 릴스·틱톡 확산과 스트리밍 상승을 한 타임라인에 정렬한 실제 리포트입니다. 모든 클립을 매일 수집하고, 삭제된 영상까지 보존합니다. 고객은 캠페인 기간 내내 이 화면을 읽기전용 링크로 받습니다 — 리포트가 곧 ROI 증빙입니다.",
+      report_open: "전체 화면으로 열기",
+      report_url: "https://nitrotrack.xyz/preview/funk",
+      mobile_note: "이 리포트는 PC 화면에 최적화되어 있습니다.<br><b>PC에서 nitromusic.pro</b>를 열면 임베드된 리포트를 직접 만져볼 수 있습니다.",
+      mobile_open: "그래도 새 탭에서 열어보기 →"
     },
     network: {
       eyebrow: "NETWORK & INFRASTRUCTURE",
@@ -110,17 +104,17 @@ window.NITRO_I18N = {
         {
           no: "C-002",
           client: "Noen — Hold me",
-          sub: "Zero-base re-viral of dormant track",
+          sub: "13.3M views, ~7.5K monthly streams — the lesson",
           period: "2025.11 — 2026.01",
           posts: "94",
           views: "13.3M",
-          highlight: "1.9M single post, 266K shares",
-          strategy: "발매 후 동면 상태였던 트랙을 제로베이스에서 재바이럴 시키는 3개월 캠페인. 숏폼 내 결합 구간을 세 번 리디자인, 쉐어 지향 포맷으로 최적화. 앵커 1건에서 1.9M 달성.",
-          chips: ["Zero-base", "Re-viral", "Share-first"],
+          highlight: "13.3M views → ~7.5K monthly streams",
+          strategy: "자비로 집행한 실험 캠페인. 94포스트로 1,340만 조회를 만들었지만, 스트리밍 전환은 월 7천 수준에 그쳤다. 유기적 신호가 없는 곡은 조회수만으로 터지지 않는다 — 이 실패 데이터가 지금의 앵커 시스템과 곡 선정 기준(2주 킬 크라이테리아)의 출발점이다. 우리는 이 사례를 숨기지 않는다. 조회수를 팔지 않는 이유가 여기 있다.",
+          chips: ["Self-funded", "Reach ≠ Conversion", "Origin of Anchor System"],
           metrics: [
             { v: "13.3M", l: "Total views" },
             { v: "266K", l: "Shares" },
-            { v: "12.9K", l: "Saves" }
+            { v: "~7.5K", l: "Monthly streams" }
           ]
         },
         {
@@ -160,18 +154,18 @@ window.NITRO_I18N = {
     aggregate: {
       eyebrow: "AGGREGATE PERFORMANCE",
       title: "4개 메이저 캠페인, 163건.",
-      caption: "단기간 내 <b>23,511,262 뷰</b>를 만든 실전 데이터. 장르와 레이블의 프로파일이 달라도, 포맷 규율 하나로 재현된 성과입니다.",
+      caption: "단기간 내 <b>23,511,262 뷰</b>를 만든 실전 데이터. 하지만 조회수는 주목을 여는 증거일 뿐 — 돈이 걸리는 지표는 저장·공유·포맷 복제 같은 <b>각인 신호</b>이고, 스트리밍은 그 뒤를 따라옵니다.",
       breakdown: [
         { v: "623,847", l: "TOTAL LIKES" },
         { v: "425,156", l: "TOTAL SHARES" },
         { v: "76,435", l: "TOTAL SAVES" },
-        { v: "4 / 4", l: "CAMPAIGN WINS" }
+        { v: "×6.3", l: "LISTEN CONVERSION" }
       ]
     },
     pilot: {
       eyebrow: "4-WEEK PILOT",
       title: "처음 만나는 팀과는,<br>4주 파일럿으로.",
-      sub: "작게 시작해 위닝 포맷을 찾고, 검증된 것만 확장합니다.",
+      sub: "작게 시작해 위닝 포맷을 찾고, 검증된 것만 확장합니다. 2주차 킬 크라이테리아 내장 — 재생·공유·저장 신호가 없으면 저희가 먼저 중단을 제안합니다.",
       steps: [
         { wk: "WEEK 0", t: "준비", d: "스코프 확정, 브리프 작성, 앵커<br>크리에이터 선정." },
         { wk: "WEEK 1", t: "검증", d: "앵커 크리에이터의 레퍼런스 포스트<br>3–5건으로 포맷 가설을 검증합니다." },
@@ -241,12 +235,13 @@ window.NITRO_I18N = {
     faq: {
       eyebrow: "FAQ",
       title: "자주 묻는 질문.",
-      sub: "파일럿 이전 단계에서 가장 많이 받는 질문 6가지.",
+      sub: "파일럿 이전 단계에서 가장 많이 받는 질문.",
       items: [
+        { q: "조회수를 보장해주시나요?", a: "아니요. 조회수는 주목을 여는 증거로만 보여드리고, 돈이 걸리는 KPI로는 쓰지 않습니다. 과금·성과 기준은 각인 신호(저장·공유·포맷 복제)와 스트리밍 지표뿐이며, 조회수 보장·팔로워 단가 딜은 하지 않습니다." },
         { q: "최소 캠페인 단위는 어떻게 되나요?", a: "4주 파일럿이 최소 단위입니다. WEEK 0–4 동안 Prep → Seed → Scale → Consolidate를 1사이클 돌리며 위닝 포맷을 확정합니다." },
         { q: "자체 채널 외에 외부 크리에이터도 운영하나요?", a: "네. 자체 앵커 채널 15+와 함께, 장르/리스너 매치가 맞는 롱테일 크리에이터를 포맷 규율 하에 동시에 운영합니다." },
         { q: "플랫폼은 어디까지 커버되나요?", a: "Instagram Reels, TikTok, YouTube Shorts 전체. 스트리밍 연결은 Spotify / Apple Music / YouTube Music을 우선합니다." },
-        { q: "리포팅 주기는 어떻게 되나요?", a: "매주 1회 원페이지 요약 리포트 + 에셋 라이브러리 + 데이터 부록(Shazam, Spotify, IG Reels 스냅샷)을 전달합니다." },
+        { q: "리포팅 주기는 어떻게 되나요?", a: "매주 1회 원페이지 요약 리포트 + 에셋 라이브러리 + 데이터 부록을 전달하고, Sound Tracker 라이브 대시보드(읽기전용 링크)는 캠페인 기간 내내 언제든 직접 열어보실 수 있습니다." },
         { q: "글로벌 메이저 레이블 건도 가능한가요?", a: "Warner Music Korea 캠페인 등 글로벌 메이저 실행 경험이 있습니다. 아티스트별 비주얼 로컬라이즈와 포맷 재설계를 전담합니다." },
         { q: "기존 대행사와 중복 운영이 가능한가요?", a: "가능합니다. 기존 디지털/ATL 대행사와 RACI를 명확히 나누어 숏폼 단위만 우리가 전담하는 구조가 가장 일반적입니다." }
       ]
@@ -255,14 +250,14 @@ window.NITRO_I18N = {
       eyebrow: "LET'S TALK",
       title_1: "다음 앵커 포스트를,",
       title_em: "함께 설계하시죠.",
-      sub: "프로젝트 개요만 간단히 보내주시면,<br>영업일 기준 2일 내에 파일럿 제안과 레퍼런스를 회신드립니다.",
+      sub: "곡 링크만 간단히 보내주시면,<br>영업일 기준 2일 내에 <b>바이럴 진단 리포트</b>와 레퍼런스를 회신드립니다.<br>분기당 진행 슬롯은 제한되어 있습니다.",
       channels: [
         { k: "EMAIL", v: "nitro@nitromusic.pro" },
         { k: "INSTAGRAM", v: "@audio_room_" },
         { k: "TELEGRAM", v: "@NitroMusic" }
       ],
       form: {
-        head: "회사 제안서 / 캠페인 요청서",
+        head: "바이럴 진단 신청",
         seq: "FORM / 01",
         f_name: "담당자명",
         f_company: "소속",
@@ -276,7 +271,7 @@ window.NITRO_I18N = {
         f_vertical_opts: ["Concert", "VS", "Meme", "Choreo", "Behind"],
         f_msg: "추가 설명 / 타임라인",
         notice: "※ 미발매 곡일 경우, 음성 파일은 <b>nitro@nitromusic.pro</b> 로 별도 전송 부탁드립니다.",
-        submit: "요청서 제출",
+        submit: "진단 신청하기",
         privacy: "개인정보 수집·이용 동의"
       }
     },
@@ -291,19 +286,19 @@ window.NITRO_I18N = {
     }
   },
   en: {
-    nav: { services: "Services", network: "Network", cases: "Campaigns", pilot: "Pilot", column: "Column", faq: "FAQ", contact: "Contact" },
+    nav: { live: "Live demo", network: "Network", cases: "Campaigns", pilot: "Pilot", column: "Column", faq: "FAQ", contact: "Contact" },
     hero: {
       v1_kicker: "NITRO MUSIC × KBK CONSULTING",
-      v1_title_line1: "We make",
-      v1_title_line2: "tracks break.",
-      v1_sub: "Single-format systems for labels, distributors, and artist teams.<br>We engineer conversion — not vanity views.",
-      v1_cta_primary: "Request a proposal",
+      v1_title_line1: "We don't sell views.",
+      v1_title_line2: "We make songs stick.",
+      v1_sub: "We turn short-form virality into fan imprinting and verified streaming growth.<br>Short-form systems for labels, distributors, and artist teams.",
+      v1_cta_primary: "Get your track analyzed",
       v1_cta_secondary: "See campaign results",
       v2_kicker: "SHORT-FORM MUSIC MARKETING",
       v2_title_line1: "Views are up.",
       v2_title_line2: "Streams aren't.",
       v2_sub: "That gap is what we close. Anchor production + long-tail creator ops — NitroMusic designs not just plays, but the act of listening.",
-      v2_cta_primary: "Request a meeting",
+      v2_cta_primary: "Get a viral diagnostic report",
       v2_cta_secondary: "See the 4-week pilot",
       v3_kicker: "FOR LABELS, DISTRIBUTORS & ARTIST TEAMS",
       v3_title_line1: "The short-form engine",
@@ -319,32 +314,26 @@ window.NITRO_I18N = {
       m3_l: "META ad spend managed (KRW)",
       m4_k: "15+",
       m4_l: "Owned short-form channels",
-      status_live: "LIVE · Q2 2026 slots open",
-      date_tag: "SEOUL / 26.04"
+      status_live: "LIVE · Q3 2026 slots open",
+      date_tag: "SEOUL / 26.07"
     },
     ticker: [
       "WARNER MUSIC KOREA", "NOEN — HOLD ME", "RGB / COSM COMPANY", "PAUL KIM — WANNA LOVE YOU",
       "PURPLE PEPPER AGENCY", "DAEHAK NAEIL", "INDEPENDENT ARTIST TEAMS"
     ],
-    service: {
-      eyebrow: "WHAT WE DO",
-      title: "A four-layer short-form system, end to end.",
-      sub: "Taste that catches trends; structure that drives conversion.<br>NitroMusic operates across four disciplined layers — from snippet placement to weekly reporting.",
-      cards: [
-        { n: "01", t: "Format Engineering", d: "Anchor-format design, in-post audio placement — we engineer the sound-and-cut architecture of every edit.", list: [
-          { k: "Visual-mismatch targeting", v: "01" },
-          { k: "Audio snippet placement", v: "02" },
-          { k: "Native UI hooks", v: "03" }
-        ]},
-        { n: "02", t: "Anchor + Long-tail Ops", d: "Our owned anchor posts run in lockstep with long-tail creators — one set of format rules across every asset." },
-        { n: "03", t: "Weekly Format Discipline", d: "Weekly format audit, winner replication, and auto-generated weekly reports." },
-        { n: "04", t: "Performance Reporting", d: "Shazam, Spotify, and IG Reels indicators unified into a one-page summary with full data appendix." }
-      ],
-      feature: {
-        big: "×6.3",
-        t: "Lift over vanilla view-buys",
-        d: "When anchor posts and creator ops run under shared format discipline, listen-conversion averages 6.3× over vanilla view-optimized spend."
-      }
+    live: {
+      eyebrow: "WHAT WE DO / LIVE",
+      title: "75 seconds is<br>all we need.",
+      sub: "What we do, and why we don't sell views —<br>it's faster to just show you.",
+      video_fallback_k: "FILM — IN PRODUCTION",
+      video_fallback_t: "We don't sell views.<br>We make songs stick.",
+      report_eyebrow: "SOUND TRACKER — LIVE REPORT",
+      report_title: "Explore a real tracking report.",
+      report_sub: "FUNK TAKA — reels and TikTok spread aligned with streaming growth on one timeline. Every clip collected daily, deleted videos preserved. Clients get this exact screen as a read-only link for the entire campaign — the report is the ROI proof.",
+      report_open: "Open full screen",
+      report_url: "https://nitrotrack.xyz/preview/funk?lang=en",
+      mobile_note: "This report is built for desktop screens.<br>Open <b>nitromusic.pro on a PC</b> to explore the embedded report hands-on.",
+      mobile_open: "Open in a new tab anyway →"
     },
     network: {
       eyebrow: "NETWORK & INFRASTRUCTURE",
@@ -371,10 +360,10 @@ window.NITRO_I18N = {
           chips: ["Global Major", "Multi-Artist", "Localization"],
           metrics: [{ v: "2.77M", l: "Total views" }, { v: "118K", l: "Likes" }, { v: "37K", l: "Shares" }]
         },
-        { no: "C-002", client: "Noen — Hold me", sub: "Zero-base re-viral of dormant track", period: "Nov 2025 — Jan 2026", posts: "94", views: "13.3M", highlight: "1.9M single post, 266K shares",
-          strategy: "Three-month zero-base re-viral on a dormant track. Snippet junction redesigned three times, optimized for share-first format. 1.9M from a single anchor.",
-          chips: ["Zero-base", "Re-viral", "Share-first"],
-          metrics: [{ v: "13.3M", l: "Total views" }, { v: "266K", l: "Shares" }, { v: "12.9K", l: "Saves" }]
+        { no: "C-002", client: "Noen — Hold me", sub: "13.3M views, ~7.5K monthly streams — the lesson", period: "Nov 2025 — Jan 2026", posts: "94", views: "13.3M", highlight: "13.3M views → ~7.5K monthly streams",
+          strategy: "A self-funded experiment. 94 posts generated 13.3M views — yet streaming stalled around 7.5K a month. A track with zero organic signal doesn't break on reach alone. This failure dataset became the origin of our anchor system and our song-selection kill criteria. We don't hide this case: it's exactly why we don't sell views.",
+          chips: ["Self-funded", "Reach ≠ Conversion", "Origin of Anchor System"],
+          metrics: [{ v: "13.3M", l: "Total views" }, { v: "266K", l: "Shares" }, { v: "~7.5K", l: "Monthly streams" }]
         },
         { no: "C-003", client: "RGB / Cosm Company", sub: "Giwon, Cosmic Boy, Ryul", period: "Jul & Nov 2025", posts: "18", views: "2.79M", highlight: "508K Casanova single post",
           strategy: "Simultaneous launch for three indie hip-hop / R&B artists. Tight post count, high-discipline format — single post hit 508K. Heavily optimized for Saves.",
@@ -391,18 +380,18 @@ window.NITRO_I18N = {
     aggregate: {
       eyebrow: "AGGREGATE PERFORMANCE",
       title: "4 major campaigns, 163 posts.",
-      caption: "<b>23,511,262 views</b> generated in six months. Different genres, different label profiles — reproducible under a single format discipline.",
+      caption: "<b>23,511,262 views</b> generated in six months — but views only open attention. Money rides on <b>imprint signals</b>: saves, shares, format replications. Streaming follows.",
       breakdown: [
         { v: "623,847", l: "TOTAL LIKES" },
         { v: "425,156", l: "TOTAL SHARES" },
         { v: "76,435", l: "TOTAL SAVES" },
-        { v: "4 / 4", l: "CAMPAIGN WINS" }
+        { v: "×6.3", l: "LISTEN CONVERSION" }
       ]
     },
     pilot: {
       eyebrow: "4-WEEK PILOT",
       title: "New team?<br>We start with a 4-week pilot.",
-      sub: "Start small, find the winning format, scale only what converts.",
+      sub: "Start small, find the winning format, scale only what converts. Kill criteria built into week 2 — if play, share, and save signals aren't there, we're the first to call a stop.",
       steps: [
         { wk: "WEEK 0", t: "PREP", d: "Scope, briefs, anchor creator selection." },
         { wk: "WEEK 1", t: "SEED", d: "3–5 reference posts from anchor creators. Format hypotheses validated." },
@@ -473,12 +462,13 @@ window.NITRO_I18N = {
     faq: {
       eyebrow: "FAQ",
       title: "Frequently asked.",
-      sub: "The six questions we hear most before a pilot.",
+      sub: "The questions we hear most before a pilot.",
       items: [
+        { q: "Do you guarantee views?", a: "No. We'll show views as proof of attention, but never bill against them. Money only rides on imprint signals (saves, shares, format replications) and streaming metrics — no view guarantees, no follower-rate deals." },
         { q: "What's the minimum campaign unit?", a: "A 4-week pilot is the minimum. Across Week 0–4, we run one full Prep → Seed → Scale → Consolidate loop to lock the winning format." },
         { q: "Do you run external creators beyond owned channels?", a: "Yes. Our 15+ anchor channels run alongside genre- and listener-matched long-tail creators — all under shared format rules." },
         { q: "Which platforms do you cover?", a: "Instagram Reels, TikTok, and YouTube Shorts in full. Streaming destinations: Spotify, Apple Music, YouTube Music as the priority stack." },
-        { q: "What's the reporting cadence?", a: "Weekly — one-page summary, asset library, and a data appendix (Shazam, Spotify, IG Reels snapshots)." },
+        { q: "What's the reporting cadence?", a: "Weekly — one-page summary, asset library, and data appendix. Plus a read-only Sound Tracker live dashboard you can open anytime, for the entire campaign." },
         { q: "Do you work with global major labels?", a: "Yes — Warner Music Korea among others. We handle artist-level visual localization and per-campaign format redesign." },
         { q: "Can you run alongside an existing agency?", a: "Absolutely. A clean RACI split with existing digital/ATL agencies — NitroMusic owning the short-form layer — is the most common setup." }
       ]
@@ -487,14 +477,14 @@ window.NITRO_I18N = {
       eyebrow: "LET'S TALK",
       title_1: "Let's design",
       title_em: "your next anchor post.",
-      sub: "Send a brief project outline and we'll return<br>a pilot proposal plus references within 2 business days.",
+      sub: "Send us your track link and we'll return<br>a <b>viral diagnostic report</b> plus references within 2 business days.<br>Slots per quarter are limited.",
       channels: [
         { k: "EMAIL", v: "nitro@nitromusic.pro" },
         { k: "INSTAGRAM", v: "@audio_room_" },
         { k: "TELEGRAM", v: "@NitroMusic" }
       ],
       form: {
-        head: "Campaign brief",
+        head: "Viral diagnostic request",
         seq: "FORM / 01",
         f_name: "Your name",
         f_company: "Company / Label",
@@ -508,7 +498,7 @@ window.NITRO_I18N = {
         f_vertical_opts: ["Concert", "VS", "Meme", "Choreo", "Behind"],
         f_msg: "Notes / timeline",
         notice: "※ For unreleased tracks, please email the audio file to <b>nitro@nitromusic.pro</b> separately.",
-        submit: "Submit brief",
+        submit: "Request diagnostic",
         privacy: "I agree to the privacy policy"
       }
     },

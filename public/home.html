@@ -7,8 +7,8 @@
 <link rel="icon" href="/favicon.ico?v=3" sizes="any">
 <link rel="icon" type="image/png" href="/favicon.png?v=3">
 <link rel="shortcut icon" href="/favicon.ico?v=3">
-<link rel="stylesheet" href="styles.css?v=32">
-<link rel="stylesheet" href="mobile.css?v=14">
+<link rel="stylesheet" href="styles.css?v=34">
+<link rel="stylesheet" href="mobile.css?v=15">
 </head>
 <body>
 
@@ -16,7 +16,7 @@
 <nav class="nav">
   <a href="#top" class="nav-logo"><img src="images/logo.png" alt="NitroMusic"></a>
   <div class="nav-links">
-    <a href="#services" class="active" data-n="services">서비스</a>
+    <a href="#live" class="active" data-n="live">라이브 데모</a>
     <a href="#network" data-n="network">네트워크</a>
     <a href="#cases" data-n="cases">캠페인</a>
     <a href="#pilot" data-n="pilot">파일럿</a>
@@ -38,7 +38,7 @@
 <!-- MOBILE MENU DRAWER -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <nav class="mobile-menu-links">
-    <a href="#services" data-n="services">서비스</a>
+    <a href="#live" data-n="live">라이브 데모</a>
     <a href="#network" data-n="network">네트워크</a>
     <a href="#cases" data-n="cases">캠페인</a>
     <a href="#pilot" data-n="pilot">파일럿</a>
@@ -53,7 +53,7 @@
 <!-- SECTION INDICATOR -->
 <aside class="section-indicator">
   <a href="#top" data-label="HERO" class="active"></a>
-  <a href="#services" data-label="SERVICES"></a>
+  <a href="#live" data-label="LIVE DEMO"></a>
   <a href="#network" data-label="NETWORK"></a>
   <a href="#cases" data-label="CAMPAIGNS"></a>
   <a href="#aggregate" data-label="AGGREGATE"></a>
@@ -75,19 +75,19 @@
 
   <div class="hero-inner">
     <div class="hero-meta-top">
-      <div class="pill" id="hero-status-live"><span class="dot"></span> LIVE · 2026 Q2</div>
-      <div id="hero-date">SEOUL / 26.04</div>
+      <div class="pill" id="hero-status-live"><span class="dot"></span> LIVE · 2026 Q3</div>
+      <div id="hero-date">SEOUL / 26.07</div>
     </div>
 
     <div class="hero-title-block reveal">
       <div class="hero-kicker" id="hero-kicker">NITRO MUSIC × KBK CONSULTING</div>
       <h1 class="hero-title">
-        <span id="hero-title-1">음원을,</span><br>
-        <span class="line2" id="hero-title-2">터뜨린다.</span>
+        <span id="hero-title-1">조회수를 팔지 않는다,</span><br>
+        <span class="line2" id="hero-title-2">팬에게 각인시킨다.</span>
       </h1>
       <p class="hero-sub" id="hero-sub">...</p>
       <div class="hero-ctas">
-        <a href="#contact" class="btn-primary" id="hero-cta-primary">회사 제안서 받기 <span class="arrow">→</span></a>
+        <a href="#contact" class="btn-primary" id="hero-cta-primary">내 곡 분석받기 <span class="arrow">→</span></a>
         <a href="#cases" class="btn-ghost" id="hero-cta-secondary">성과 사례 보기 <span>↓</span></a>
       </div>
     </div>
@@ -115,14 +115,41 @@
   </div>
 </section>
 
-<!-- SERVICES -->
-<section id="services">
+<!-- LIVE: INTRO FILM + SOUND TRACKER LIVE REPORT -->
+<section id="live" class="live-section">
   <div class="section-head reveal">
-    <div class="eyebrow" id="svc-eyebrow">WHAT WE DO</div>
-    <h2 class="h-lg kr" id="svc-title">숏폼 레이어 시스템,<br>처음부터 끝까지.</h2>
-    <p class="lead" id="svc-sub" style="margin-top: 24px;">...</p>
+    <div class="eyebrow" id="live-eyebrow">WHAT WE DO / LIVE</div>
+    <h2 class="h-lg kr" id="live-title">설명은 75초면<br>충분합니다.</h2>
+    <p class="lead" id="live-sub" style="margin-top: 20px;">...</p>
   </div>
-  <div class="service-grid reveal" id="svc-grid"></div>
+
+  <div class="live-video-wrap reveal">
+    <video id="live-video" controls muted autoplay loop playsinline preload="metadata">
+      <source src="videos/nitro-intro.mp4" type="video/mp4">
+    </video>
+    <div class="live-video-fallback" id="live-video-fallback" hidden>
+      <div class="k" id="live-fallback-k">FILM — IN PRODUCTION</div>
+      <div class="t" id="live-fallback-t">조회수를 팔지 않는다,<br>팬에게 각인시킨다.</div>
+    </div>
+  </div>
+
+  <div class="live-report reveal">
+    <div class="live-report-head">
+      <div class="live-report-copy">
+        <div class="eyebrow" id="live-rep-eyebrow">SOUND TRACKER — LIVE REPORT</div>
+        <h3 id="live-rep-title">실제 추적 리포트를 직접 만져보세요.</h3>
+        <p id="live-rep-sub">...</p>
+      </div>
+      <a href="https://nitrotrack.xyz/preview/funk" target="_blank" rel="noopener" class="btn-cta live-rep-open" id="live-rep-open">전체 화면으로 열기 <span class="arrow">↗</span></a>
+    </div>
+    <div class="live-report-frame">
+      <iframe id="live-rep-iframe" title="FUNK TAKA — Sound Tracker live report" loading="lazy" allow="fullscreen"></iframe>
+    </div>
+    <div class="live-report-mobile">
+      <p id="live-rep-mobile-note">...</p>
+      <a href="https://nitrotrack.xyz/preview/funk" target="_blank" rel="noopener" id="live-rep-mobile-open">그래도 새 탭에서 열어보기 →</a>
+    </div>
+  </div>
 </section>
 
 <!-- NETWORK -->
@@ -233,7 +260,7 @@
     </div>
     <form class="contact-form reveal" onsubmit="event.preventDefault(); this.innerHTML='<div style=\'text-align:center; padding: 60px 20px;\'><div style=\'font-family: var(--font-display); font-size: 40px; color: var(--red); font-weight: 500;\'>✓</div><div style=\'font-size: 18px; font-weight: 600; margin-top: 16px;\'>요청서가 제출되었습니다.</div><div style=\'color: var(--text-dim); margin-top: 8px; font-size: 14px;\'>영업일 기준 2일 내에 회신드립니다.</div></div>';">
       <div class="form-head">
-        <h3 id="co-form-head">캠페인 요청서</h3>
+        <h3 id="co-form-head">바이럴 진단 신청</h3>
         <div class="seq" id="co-form-seq">FORM / 01</div>
       </div>
       <div id="co-form"></div>
@@ -270,14 +297,14 @@
 
 <!-- STICKY INSIGHT BAR — appears while #aggregate is in view -->
 <div class="stick-bar" id="stick-bar" aria-hidden="true" hidden>
-  <a href="#column" class="stick-bar__cta">
-    <span class="stick-bar__label" id="stick-bar-label">음원 프로모션 인사이트 받기</span>
+  <a href="#contact" class="stick-bar__cta">
+    <span class="stick-bar__label" id="stick-bar-label">바이럴 진단 리포트 받기</span>
     <span class="arrow">→</span>
   </a>
 </div>
 
-<script src="content.js?v=38"></script>
-<script src="app.js?v=30"></script>
+<script src="content.js?v=40"></script>
+<script src="app.js?v=32"></script>
 <script src="mobile.js?v=5"></script>
 <script>
 // Show sticky bar while #aggregate is in viewport

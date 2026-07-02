@@ -382,50 +382,61 @@ section { padding: 120px var(--pad); position: relative; }
   to { transform: translateX(-50%); }
 }
 
-/* =============== SERVICE =============== */
-.service-grid {
-  display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px;
+/* =============== LIVE: INTRO FILM + LIVE REPORT =============== */
+.live-video-wrap {
+  position: relative;
   max-width: var(--maxw); margin: 0 auto;
+  border: 1px solid var(--line); background: #000;
 }
-.service-card {
-  background: var(--bg-1); border: 1px solid var(--line);
-  padding: 36px 32px; position: relative; overflow: hidden;
-  transition: border-color .2s, background .2s;
+.live-video-wrap video {
+  display: block; width: 100%; aspect-ratio: 16 / 9; background: #000;
 }
-.service-card:hover { border-color: var(--red-line); background: var(--bg-2); }
-.service-card .num {
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em;
-  color: var(--text-mute); margin-bottom: 32px;
-}
-.service-card .icon {
-  width: 44px; height: 44px; margin-bottom: 24px;
-  display: grid; place-items: center;
-  color: var(--red);
-}
-.service-card h3 { font-size: 20px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 10px;}
-.service-card p { font-size: 14px; color: var(--text-dim); line-height: 1.55;}
-.service-card ul { margin-top: 16px; font-size: 13px; color: var(--text-dim); list-style: none;}
-.service-card ul li { padding: 6px 0; border-bottom: 1px dashed var(--line); display: flex; justify-content: space-between;}
-.service-card ul li:last-child { border-bottom: 0; }
-.service-card ul li .tag { font-family: var(--font-mono); font-size: 10px; color: var(--red); letter-spacing: 0.1em;}
-
-.service-card.wide { grid-column: span 6;}
-.service-card.narrow { grid-column: span 3; }
-.service-card.feature {
-  grid-column: span 6; grid-row: span 2;
+.live-video-fallback {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; aspect-ratio: 16 / 9; padding: 24px;
   background: linear-gradient(145deg, #1a0d10 0%, var(--bg-1) 60%);
-  border-color: var(--red-line);
-  padding: 48px;
 }
-.service-card.feature .big {
-  font-family: var(--font-display); font-size: 90px; font-weight: 600; color: var(--red);
-  line-height: 1; letter-spacing: -0.04em; margin-top: 32px;
-  text-shadow:
-    0 0 24px rgba(230,57,70,0.5),
-    0 0 56px rgba(230,57,70,0.28);
-  animation: red-glow 3.2s ease-in-out infinite;
+.live-video-fallback[hidden] { display: none; }
+.live-video-fallback .k {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em;
+  color: var(--red); margin-bottom: 18px;
 }
-.service-card.feature h3 { font-size: 28px; }
+.live-video-fallback .t {
+  font-size: clamp(24px, 4vw, 44px); font-weight: 700;
+  letter-spacing: -0.02em; line-height: 1.3;
+}
+
+.live-report { max-width: var(--maxw); margin: 56px auto 0; }
+.live-report-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 24px; margin-bottom: 20px;
+}
+.live-report-copy h3 {
+  font-size: 24px; font-weight: 700; letter-spacing: -0.02em; margin-top: 14px;
+}
+.live-report-copy p {
+  font-size: 14px; color: var(--text-dim); line-height: 1.6;
+  margin-top: 10px; max-width: 680px;
+}
+.live-rep-open { flex-shrink: 0; }
+.live-report-frame {
+  border: 1px solid var(--line-strong); background: var(--bg-1);
+}
+.live-report-frame iframe { display: block; width: 100%; height: 680px; border: 0; }
+.live-report-mobile { display: none; }
+
+@media (max-width: 900px) {
+  .live-report-frame, .live-rep-open { display: none; }
+  .live-report-head { flex-direction: column; align-items: flex-start; }
+  .live-report-mobile {
+    display: block; border: 1px dashed var(--line-strong); padding: 24px;
+  }
+  .live-report-mobile p { font-size: 14px; color: var(--text-dim); line-height: 1.65; }
+  .live-report-mobile a {
+    display: inline-block; margin-top: 14px; color: var(--red); font-size: 13px;
+    text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px;
+  }
+}
 
 /* =============== NETWORK =============== */
 .network-section {
@@ -1056,7 +1067,7 @@ section { padding: 120px var(--pad); position: relative; }
 
 /* =============== SECTION BACKGROUND IMAGES =============== */
 /* 일부 섹션에 이미지 배경 + 어두운 오버레이. PC/모바일 공통. */
-section#services,
+section#live,
 section#network,
 section#cases,
 section#pilot,
@@ -1067,7 +1078,7 @@ section#contact {
   background-position: center;
   background-repeat: no-repeat;
 }
-section#services {
+section#live {
   background-image:
     linear-gradient(rgba(10,10,11,0.64), rgba(10,10,11,0.64)),
     url('images/bg/section-bg-1.png');

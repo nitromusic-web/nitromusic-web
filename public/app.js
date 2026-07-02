@@ -19,7 +19,7 @@
   function renderAll() {
     const d = t();
     // Nav
-    $('[data-n="services"]').textContent = d.nav.services;
+    $('[data-n="live"]').textContent = d.nav.live;
     $('[data-n="network"]').textContent = d.nav.network;
     $('[data-n="cases"]').textContent = d.nav.cases;
     $('[data-n="pilot"]').textContent = d.nav.pilot;
@@ -37,44 +37,29 @@
       ticker.innerHTML = items.map((x, i) => `<span>${x}</span><span class="sep">✦</span>`).join('');
     }
 
-    // Service
-    const s = d.service;
-    $('#svc-eyebrow').textContent = s.eyebrow;
-    $('#svc-title').innerHTML = s.title;
-    $('#svc-sub').innerHTML = s.sub;
-    const svcGrid = $('#svc-grid');
-    const c = s.cards;
-    svcGrid.innerHTML = `
-      <div class="service-card feature">
-        <div class="num">${c[0].n}</div>
-        <div class="icon">${iconLayers()}</div>
-        <h3>${c[0].t}</h3>
-        <p>${c[0].d}</p>
-        <ul>${c[0].list.map(i => `<li><span>${i.k}</span><span class="tag">${i.v}</span></li>`).join('')}</ul>
-        <div class="big">${s.feature.big}</div>
-        <div style="margin-top:12px; font-size:13px; color:var(--text-dim); max-width:560px; line-height:1.55;">
-          <b style="color:var(--text); font-weight:600; display:block; margin-bottom:6px;">${s.feature.t}</b>${s.feature.d}
-        </div>
-      </div>
-      <div class="service-card wide">
-        <div class="num">${c[1].n}</div>
-        <div class="icon">${iconNetwork()}</div>
-        <h3>${c[1].t}</h3>
-        <p>${c[1].d}</p>
-      </div>
-      <div class="service-card narrow">
-        <div class="num">${c[2].n}</div>
-        <div class="icon">${iconChart()}</div>
-        <h3>${c[2].t}</h3>
-        <p>${c[2].d}</p>
-      </div>
-      <div class="service-card narrow">
-        <div class="num">${c[3].n}</div>
-        <div class="icon">${iconCalendar()}</div>
-        <h3>${c[3].t}</h3>
-        <p>${c[3].d}</p>
-      </div>
-    `;
+    // Live (intro film + Sound Tracker live report)
+    const lv = d.live;
+    $('#live-eyebrow').textContent = lv.eyebrow;
+    $('#live-title').innerHTML = lv.title;
+    $('#live-sub').innerHTML = lv.sub;
+    $('#live-fallback-k').textContent = lv.video_fallback_k;
+    $('#live-fallback-t').innerHTML = lv.video_fallback_t;
+    $('#live-rep-eyebrow').textContent = lv.report_eyebrow;
+    $('#live-rep-title').textContent = lv.report_title;
+    $('#live-rep-sub').innerHTML = lv.report_sub;
+    const repOpen = $('#live-rep-open');
+    repOpen.innerHTML = `${lv.report_open} <span class="arrow">↗</span>`;
+    repOpen.href = lv.report_url;
+    // Embed only on desktop-sized screens — mobile shows the "open on PC" notice instead.
+    const repFrame = $('#live-rep-iframe');
+    if (window.matchMedia('(min-width: 901px)').matches && repFrame.dataset.src !== lv.report_url) {
+      repFrame.src = lv.report_url;
+      repFrame.dataset.src = lv.report_url;
+    }
+    $('#live-rep-mobile-note').innerHTML = lv.mobile_note;
+    const repMobileOpen = $('#live-rep-mobile-open');
+    repMobileOpen.textContent = lv.mobile_open;
+    repMobileOpen.href = lv.report_url;
 
     // Network
     const n = d.network;
@@ -247,11 +232,11 @@
       </a>
     `;}).join('');
 
-    // Sticky insight bar label (bilingual)
+    // Sticky diagnostic CTA bar label (bilingual)
     const sbl = document.getElementById('stick-bar-label');
     if (sbl) sbl.textContent = state.lang === 'kr'
-      ? '음원 프로모션 인사이트 받기'
-      : 'Get music promotion insights';
+      ? '바이럴 진단 리포트 받기'
+      : 'Get a viral diagnostic report';
 
     // FAQ
     const fa = d.faq;
@@ -369,12 +354,6 @@
   }
 
   // ---------------- Icons ----------------
-  function iconLayers() { return `<svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 6 L38 14 L22 22 L6 14 Z"/><path d="M6 22 L22 30 L38 22" opacity=".6"/><path d="M6 30 L22 38 L38 30" opacity=".3"/></svg>`; }
-  function iconNetwork() { return `<svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="22" cy="22" r="4"/><circle cx="8" cy="8" r="3"/><circle cx="36" cy="8" r="3"/><circle cx="8" cy="36" r="3"/><circle cx="36" cy="36" r="3"/><path d="M22 22 L8 8 M22 22 L36 8 M22 22 L8 36 M22 22 L36 36" opacity=".5"/></svg>`; }
-  function iconLink() { return `<svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 26 L26 18"/><path d="M14 22 L10 26 C7 29 7 33 10 36 C13 39 17 39 20 36 L24 32"/><path d="M30 22 L34 18 C37 15 37 11 34 8 C31 5 27 5 24 8 L20 12"/></svg>`; }
-  function iconCalendar() { return `<svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="10" width="32" height="28"/><path d="M6 18 H38"/><path d="M14 6 V14 M30 6 V14"/><circle cx="14" cy="26" r="1.5" fill="currentColor"/><circle cx="22" cy="26" r="1.5" fill="currentColor"/></svg>`; }
-  function iconChart() { return `<svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 34 H38"/><path d="M6 34 V8"/><path d="M10 28 L18 20 L24 24 L36 12"/><circle cx="36" cy="12" r="2" fill="currentColor"/></svg>`; }
-
   function platformIcon(key) {
     const k = key || '';
     // Instagram Reels — camera w/ play
@@ -497,11 +476,23 @@
     }, { passive: true });
   }
 
+  // ---------------- Live intro video fallback ----------------
+  function initLiveVideo() {
+    const v = document.getElementById('live-video');
+    const fb = document.getElementById('live-video-fallback');
+    if (!v || !fb) return;
+    const showFallback = () => { v.style.display = 'none'; fb.hidden = false; };
+    v.addEventListener('error', showFallback);
+    const src = v.querySelector('source');
+    if (src) src.addEventListener('error', showFallback);
+  }
+
   // ---------------- Boot ----------------
   function boot() {
     renderAll();
     initNav();
     initSectionIndicator();
+    initLiveVideo();
   }
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
