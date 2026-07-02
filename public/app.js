@@ -64,13 +64,13 @@
       </div>
       <div class="service-card narrow">
         <div class="num">${c[2].n}</div>
-        <div class="icon">${iconChart()}</div>
+        <div class="icon">${iconCalendar()}</div>
         <h3>${c[2].t}</h3>
         <p>${c[2].d}</p>
       </div>
       <div class="service-card narrow">
         <div class="num">${c[3].n}</div>
-        <div class="icon">${iconCalendar()}</div>
+        <div class="icon">${iconChart()}</div>
         <h3>${c[3].t}</h3>
         <p>${c[3].d}</p>
       </div>
@@ -247,11 +247,11 @@
       </a>
     `;}).join('');
 
-    // Sticky insight bar label (bilingual)
+    // Sticky diagnostic CTA bar label (bilingual)
     const sbl = document.getElementById('stick-bar-label');
     if (sbl) sbl.textContent = state.lang === 'kr'
-      ? '음원 프로모션 인사이트 받기'
-      : 'Get music promotion insights';
+      ? '바이럴 진단 리포트 받기'
+      : 'Get a viral diagnostic report';
 
     // FAQ
     const fa = d.faq;

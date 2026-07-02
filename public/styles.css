@@ -1210,3 +1210,18 @@ section#contact {
   .stick-bar__cta { gap: 12px; }
   .stick-bar__cta::before { width: 9px; height: 9px; }
 }
+
+/* Sound Tracker live demo link (service card 04) */
+.service-card .svc-demo-link {
+  display: inline-block;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--red);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: opacity 0.2s ease;
+}
+.service-card .svc-demo-link:hover { opacity: 0.7; }
