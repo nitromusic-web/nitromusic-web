@@ -5,7 +5,7 @@
 window.NITRO_I18N = {
   kr: {
     nav: {
-      services: "서비스",
+      live: "라이브 데모",
       network: "네트워크",
       cases: "캠페인",
       pilot: "파일럿",
@@ -51,25 +51,19 @@ window.NITRO_I18N = {
       "WARNER MUSIC KOREA", "NOEN — HOLD ME", "RGB / COSM COMPANY", "PAUL KIM — WANNA LOVE YOU",
       "PURPLE PEPPER AGENCY", "DAEHAK NAEIL", "INDEPENDENT ARTIST TEAMS"
     ],
-    service: {
-      eyebrow: "WHAT WE DO",
-      title: "숏폼 레이어 시스템,<br>처음부터 끝까지.",
-      sub: "트렌드를 잡는 감각과 전환을 만드는 구조.<br>NitroMusic은 재생수가 아닌 듣는 행동까지<br>설계하는 4단계 레이어로 움직입니다.",
-      cards: [
-          { n: "01", t: "포맷 엔지니어링", d: "앵커 포맷 설계부터 숏폼 내 음원 결합 구간까지.<br>소리와 컷의 배치를 공학적으로 설계합니다.", list: [
-          { k: "비주얼 미스매치 타겟팅", v: "01" },
-          { k: "오디오 스니펫 배치 설계", v: "02" },
-          { k: "네이티브 UI 훅", v: "03" }
-        ]},
-        { n: "02", t: "앵커 + 롱테일 운영", d: "우리가 직접 운영하는 메인 채널과 외부 크리에이터들을,<br>같은 제작 기준으로 동시에 움직입니다." },
-        { n: "03", t: "주간 포맷 규율", d: "매주 포맷 규율 점검, 위너 포맷 확산, 주간 리포트 자동 생성." },
-        { n: "04", t: "Sound Tracker & 라이브 대시보드", d: "자체 개발 트래커가 캠페인의 모든 클립 조회수를 매일 수집하고 — 삭제된 영상까지 보존 — Spotify·YouTube Music·Shazam과 한 타임라인에 정렬합니다. 고객은 읽기전용 라이브 대시보드를 언제든 직접 엽니다. 리포트가 곧 ROI 증빙입니다.<br><a href=\"https://nitrotrack.xyz/preview/funk\" target=\"_blank\" rel=\"noopener\" class=\"svc-demo-link\">LIVE DEMO — FUNK TAKA →</a>" }
-      ],
-      feature: {
-        big: "×6.3",
-        t: "단순 재생 대비 전환율",
-        d: "메인 영상과 외부 크리에이터를 같은 기획으로 함께 돌리면,<br>조회수만 얻는 광고 대비 실제로 ‘음원을 들어보는’ 비율이 평균 6.3배 높아집니다."
-      }
+    live: {
+      eyebrow: "WHAT WE DO / LIVE",
+      title: "설명은 75초면<br>충분합니다.",
+      sub: "우리가 무엇을 하는지, 왜 조회수를 팔지 않는지 —<br>말보다 직접 보여드리는 게 빠릅니다.",
+      video_fallback_k: "FILM — IN PRODUCTION",
+      video_fallback_t: "조회수를 팔지 않는다,<br>팬에게 각인시킨다.",
+      report_eyebrow: "SOUND TRACKER — LIVE REPORT",
+      report_title: "실제 추적 리포트를 직접 만져보세요.",
+      report_sub: "FUNK TAKA — 릴스·틱톡 확산과 스트리밍 상승을 한 타임라인에 정렬한 실제 리포트입니다. 모든 클립을 매일 수집하고, 삭제된 영상까지 보존합니다. 고객은 캠페인 기간 내내 이 화면을 읽기전용 링크로 받습니다 — 리포트가 곧 ROI 증빙입니다.",
+      report_open: "전체 화면으로 열기",
+      report_url: "https://nitrotrack.xyz/preview/funk",
+      mobile_note: "이 리포트는 PC 화면에 최적화되어 있습니다.<br><b>PC에서 nitromusic.pro</b>를 열면 임베드된 리포트를 직접 만져볼 수 있습니다.",
+      mobile_open: "그래도 새 탭에서 열어보기 →"
     },
     network: {
       eyebrow: "NETWORK & INFRASTRUCTURE",
@@ -292,7 +286,7 @@ window.NITRO_I18N = {
     }
   },
   en: {
-    nav: { services: "Services", network: "Network", cases: "Campaigns", pilot: "Pilot", column: "Column", faq: "FAQ", contact: "Contact" },
+    nav: { live: "Live demo", network: "Network", cases: "Campaigns", pilot: "Pilot", column: "Column", faq: "FAQ", contact: "Contact" },
     hero: {
       v1_kicker: "NITRO MUSIC × KBK CONSULTING",
       v1_title_line1: "We don't sell views.",
@@ -327,25 +321,19 @@ window.NITRO_I18N = {
       "WARNER MUSIC KOREA", "NOEN — HOLD ME", "RGB / COSM COMPANY", "PAUL KIM — WANNA LOVE YOU",
       "PURPLE PEPPER AGENCY", "DAEHAK NAEIL", "INDEPENDENT ARTIST TEAMS"
     ],
-    service: {
-      eyebrow: "WHAT WE DO",
-      title: "A four-layer short-form system, end to end.",
-      sub: "Taste that catches trends; structure that drives conversion.<br>NitroMusic operates across four disciplined layers — from snippet placement to weekly reporting.",
-      cards: [
-        { n: "01", t: "Format Engineering", d: "Anchor-format design, in-post audio placement — we engineer the sound-and-cut architecture of every edit.", list: [
-          { k: "Visual-mismatch targeting", v: "01" },
-          { k: "Audio snippet placement", v: "02" },
-          { k: "Native UI hooks", v: "03" }
-        ]},
-        { n: "02", t: "Anchor + Long-tail Ops", d: "Our owned anchor posts run in lockstep with long-tail creators — one set of format rules across every asset." },
-        { n: "03", t: "Weekly Format Discipline", d: "Weekly format audit, winner replication, and auto-generated weekly reports." },
-        { n: "04", t: "Sound Tracker & Live Dashboard", d: "Our in-house tracker collects every campaign clip daily — deleted videos preserved — and aligns them with Spotify, YouTube Music, and Shazam on one timeline. Clients open a read-only live dashboard anytime. The report is the ROI proof.<br><a href=\"https://nitrotrack.xyz/preview/funk?lang=en\" target=\"_blank\" rel=\"noopener\" class=\"svc-demo-link\">LIVE DEMO — FUNK TAKA →</a>" }
-      ],
-      feature: {
-        big: "×6.3",
-        t: "Lift over vanilla view-buys",
-        d: "When anchor posts and creator ops run under shared format discipline, listen-conversion averages 6.3× over vanilla view-optimized spend."
-      }
+    live: {
+      eyebrow: "WHAT WE DO / LIVE",
+      title: "75 seconds is<br>all we need.",
+      sub: "What we do, and why we don't sell views —<br>it's faster to just show you.",
+      video_fallback_k: "FILM — IN PRODUCTION",
+      video_fallback_t: "We don't sell views.<br>We make songs stick.",
+      report_eyebrow: "SOUND TRACKER — LIVE REPORT",
+      report_title: "Explore a real tracking report.",
+      report_sub: "FUNK TAKA — reels and TikTok spread aligned with streaming growth on one timeline. Every clip collected daily, deleted videos preserved. Clients get this exact screen as a read-only link for the entire campaign — the report is the ROI proof.",
+      report_open: "Open full screen",
+      report_url: "https://nitrotrack.xyz/preview/funk?lang=en",
+      mobile_note: "This report is built for desktop screens.<br>Open <b>nitromusic.pro on a PC</b> to explore the embedded report hands-on.",
+      mobile_open: "Open in a new tab anyway →"
     },
     network: {
       eyebrow: "NETWORK & INFRASTRUCTURE",

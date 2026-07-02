@@ -307,28 +307,9 @@
     line-height: 1.6;
   }
 
-  /* ---- SERVICE GRID 1열 스택 ---- */
-  .service-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-  .service-card,
-  .service-card.wide,
-  .service-card.narrow,
-  .service-card.feature {
-    grid-column: 1 / -1;
-    padding: 26px 22px;
-  }
-  .service-card .num {
-    font-size: 12px;
-  }
-  .service-card h3 { font-size: 18px; }
-  .service-card p { font-size: 14px; }
-  .service-card.feature h3 { font-size: 22px; }
-  .service-card.feature .big {
-    font-size: 52px;
-    margin-top: 20px;
-  }
+  /* ---- LIVE 섹션 (인트로 영상 + 리포트 안내) ---- */
+  .live-report { margin-top: 36px; }
+  .live-report-copy h3 { font-size: 19px; }
 
   /* ---- NETWORK STATS 2x2 ---- */
   .stat-grid {
